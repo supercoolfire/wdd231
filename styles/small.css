@@ -115,6 +115,10 @@ a:hover {
     text-decoration: underline;
 }
 
+main a {
+    text-decoration: underline;
+}
+
 /* ==========================================================================
    Header — CSS Grid (logo | name | hamburger)
    ========================================================================== */
