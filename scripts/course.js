@@ -1,40 +1,40 @@
 /**
- * Course Cards v1.0
-	* Author: Jayser Pilapil
-	* Date: 2026-10-31
-	* Description: Fetches major course data from JSON, renders neumorphic cards,
-	* and supports subject filter buttons (All / WDD / CSE) and live search.
-	* Version: 1.0
+ * Course Cards v2.0
+ * Author: Jayser Pilapil
+ * Date: 2026-11-02
+ * Description: Fetches course data from JSON, builds data-driven filter buttons,
+ * renders neumorphic cards, and supports live search.
  * Features:
- * - Fetches course data from an external JSON file (data/web-certificate-courses.json)
- * - Filter buttons: All, WDD, CSE — using Array.filter()
+ * - Fetches course data from data/web-certificate-courses.json
+ * - Filter buttons generated from unique subjects in the data (data-driven)
+ * - "All" button always first; subject buttons sorted alphabetically
  * - Live search — matches subject+number, title, and certificate name
  * - Completed courses rendered with a distinct completed style
  * - Credit total dynamically computed using Array.reduce()
  * - Empty state message when no courses match the current filter/search
- * * Usage:
+ * Usage:
  * <script src="scripts/course.js" defer></script>
- * Requires .web-cert-courses section with .filter-btn[data-filter] buttons
+ * Requires .web-cert-courses section with .filter-buttons container
  * and #course-search input in the HTML.
  */
 
-const courseSection = document.querySelector('.web-cert-courses');
-const filterButtons = courseSection.querySelectorAll('.filter-btn');
-const searchInput   = document.querySelector('#course-search');
+const courseSection   = document.querySelector('.web-cert-courses');
+const filterContainer = courseSection.querySelector('.filter-buttons');
+const searchInput     = document.querySelector('#course-search');
 
-let allCourses   = [];   // full dataset from JSON
+let allCourses   = [];    // full dataset from JSON
 let activeFilter = 'ALL'; // current subject filter
 let searchQuery  = '';    // current search string
 
-/**
- * Fetch
- */
+/* ─── Fetch ─────────────────────────────────────────────────────────────── */
 
 async function loadCourses() {
   try {
     const response = await fetch('data/web-certificate-courses.json');
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     allCourses = await response.json();
+
+    buildFilterButtons(allCourses);
     renderCourses(getFiltered());
   } catch (err) {
     courseSection.insertAdjacentHTML(
@@ -44,19 +44,47 @@ async function loadCourses() {
   }
 }
 
-/**
- * Filter + Search Logic
- */
+/* ─── Build Filter Buttons (data-driven) ────────────────────────────────── */
+
+function buildFilterButtons(courses) {
+  // Derive unique subjects, sorted alphabetically
+  const subjects = [...new Set(courses.map(c => c.subject))].sort();
+
+  // "All" button first
+  filterContainer.appendChild(createFilterBtn('ALL', 'All', true));
+
+  // One button per unique subject
+  subjects.forEach(subject => {
+    filterContainer.appendChild(createFilterBtn(subject, subject, false));
+  });
+}
+
+function createFilterBtn(filterValue, label, isActive) {
+  const btn = document.createElement('button');
+  btn.classList.add('filter-btn');
+  if (isActive) btn.classList.add('active');
+  btn.dataset.filter = filterValue;
+  btn.textContent = label;
+
+  btn.addEventListener('click', () => {
+    filterContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = filterValue;
+    renderCourses(getFiltered());
+  });
+
+  return btn;
+}
+
+/* ─── Filter + Search Logic ─────────────────────────────────────────────── */
 
 function getFiltered() {
   const query = searchQuery.trim().toLowerCase();
 
   return allCourses.filter(course => {
-    // Subject filter
     const matchesFilter =
       activeFilter === 'ALL' || course.subject === activeFilter;
 
-    // Live search — matches course number, title, subject, or certificate
     const matchesSearch =
       query === '' ||
       `${course.subject} ${course.number}`.toLowerCase().includes(query) ||
@@ -67,9 +95,7 @@ function getFiltered() {
   });
 }
 
-/**
- * Render
- */
+/* ─── Render ─────────────────────────────────────────────────────────────── */
 
 function renderCourses(list) {
   courseSection.querySelector('.course-cards-grid')?.remove();
@@ -111,30 +137,13 @@ function renderCourses(list) {
   courseSection.appendChild(totalEl);
 }
 
-/**
- * Filter Buttons
- */
-
-filterButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    activeFilter = btn.dataset.filter;
-    renderCourses(getFiltered());
-  });
-});
-
-/**
- * Live Search
- */
+/* ─── Live Search ────────────────────────────────────────────────────────── */
 
 searchInput.addEventListener('input', () => {
   searchQuery = searchInput.value;
   renderCourses(getFiltered());
 });
 
-/**
- * Initialization Logic
- */
+/* ─── Init ───────────────────────────────────────────────────────────────── */
 
 loadCourses();
