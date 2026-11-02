@@ -4,7 +4,7 @@
    ========================================================================== */
 
 /* ── 320px+ ───────────────────────────────────────────────────────────────── */
-@media (min-width: 320px) {
+@media (min-width: 600px) {
 
     /* Hide hamburger, show nav horizontally */
     #menu {
@@ -16,7 +16,7 @@
     nav {
         grid-column: 1 / -1;
         display: block;
-        background-color: transparent;
+        background-color: var(--header-bg-color);
         overflow: visible;
         margin-right: 40px;
     }
