@@ -16,6 +16,7 @@
     --nav-bg-color:     #0a5a8a;
     --nav-link-color:   #e0f2ff;
     --nav-link-hover:   #ffffff;
+    --nav-hover-bg:     #ffffff26;
     --nav-active-bg:    #063d61;
     --nav-active-color: #ffd484;
     --main-bg-color:    #ddeeff;
@@ -28,9 +29,12 @@
     --card-complete-bg:   #d4edda;
     --card-complete-shadow-dark:  #a8ccb0;
     --card-complete-shadow-light: #ffffff;
+    --card-border:        #b3d9f2;
+    --badge-complete-bg:  #28a745;
     --btn-bg:           #0e6ea6;
     --btn-color:        #ffffff;
     --btn-active-bg:    #063d61;
+    --btn-focus-ring:   #0e6ea64d;
     --link-color:       #0e6ea6;
     --link-hover:       #063d61;
 }
@@ -45,6 +49,7 @@
     --nav-bg-color:     #010e1a;
     --nav-link-color:   #c8e6f5;
     --nav-link-hover:   #ffffff;
+    --nav-hover-bg:     #ffffff1a;
     --nav-active-bg:    #ebd531;
     --nav-active-color: #021629;
     --main-bg-color:    #1e2d3d;
@@ -57,9 +62,12 @@
     --card-complete-bg:   #1a3a1a;
     --card-complete-shadow-dark:  #ffffff;
     --card-complete-shadow-light: #0a1f0a;
+    --card-border:        #2a4a6a;
+    --badge-complete-bg:  #28a745;
     --btn-bg:           #1a4a6e;
     --btn-color:        #ffffff;
     --btn-active-bg:    #ebd531;
+    --btn-focus-ring:   #1a4a6e4d;
     --link-color:       #7cc8f5;
     --link-hover:       #b3e0ff;
 }
@@ -124,7 +132,6 @@ header {
     color: var(--header-color);
 }
 .brand-link:hover {
-    text-decoration: none;
     opacity: 0.9;
 }
 
@@ -151,8 +158,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.3);
+    background-color: var(--nav-hover-bg);
+    border: 1px solid var(--nav-link-color);
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.4rem;
@@ -162,7 +169,7 @@ header {
     transition: background-color 0.2s ease;
 }
 #menu:hover {
-    background-color: rgba(255,255,255,0.25);
+    opacity: 0.85;
 }
 #menu::before {
     content: "\2630"; /* ☰ */
@@ -200,11 +207,11 @@ nav ul li a {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid var(--nav-hover-bg);
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 nav ul li a:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: var(--nav-hover-bg);
     color: var(--nav-link-hover);
     text-decoration: none;
 }
@@ -304,7 +311,7 @@ h2 {
 .course-search {
     width: 100%;
     padding: 0.4rem 0.75rem;
-    border: 1px solid var(--card-border, #b3d9f2);
+    border: 1px solid var(--card-border);
     border-radius: 4px;
     font-family: inherit;
     font-size: 0.9rem;
@@ -315,7 +322,7 @@ h2 {
 .course-search:focus {
     outline: none;
     border-color: var(--btn-bg);
-    box-shadow: 0 0 0 2px color-mix(in srgb, var(--btn-bg) 30%, transparent);
+    box-shadow: 0 0 0 2px var(--btn-focus-ring);
 }
 .course-search::placeholder {
     opacity: 0.6;
@@ -376,14 +383,6 @@ h2 {
     min-width: 240px;
     max-width: 240px;
 }
-@media (prefers-reduced-motion: no-preference) {
-    .course-card:hover {
-        transform: translateY(-3px);
-        box-shadow:
-            -6px -6px 14px var(--card-shadow-dark),
-             6px  6px 14px var(--card-shadow-light);
-    }
-}
 .course-card.completed {
     background-color: var(--card-complete-bg);
     box-shadow:
@@ -391,8 +390,16 @@ h2 {
         -6px -6px 12px var(--card-complete-shadow-light);
 }
 @media (prefers-reduced-motion: no-preference) {
+    .course-card:hover,
     .course-card.completed:hover {
         transform: translateY(-3px);
+    }
+    .course-card:hover {
+        box-shadow:
+            -6px -6px 14px var(--card-shadow-dark),
+             6px  6px 14px var(--card-shadow-light);
+    }
+    .course-card.completed:hover {
         box-shadow:
             -6px -6px 14px var(--card-complete-shadow-dark),
              6px  6px 14px var(--card-complete-shadow-light);
@@ -416,7 +423,7 @@ h2 {
     display: inline-block;
     margin-top: 0.4rem;
     padding: 0.15rem 0.5rem;
-    background-color: #28a745;
+    background-color: var(--badge-complete-bg);
     color: #fff;
     font-size: 0.75rem;
     font-weight: 700;
@@ -494,17 +501,3 @@ html[data-theme="light"] .light { display: block; }
 html[data-theme="dark"]  .light { display: none; }
 html[data-theme="dark"]  .dark  { display: block; }
 
-/* ==========================================================================
-   Loading Dots animation (kept from boilerplate)
-   ========================================================================== */
-.loading-dots::after {
-    content: '';
-    animation: dots 1.5s infinite steps(4);
-}
-@keyframes dots {
-    0%   { content: ''; }
-    25%  { content: '.'; }
-    50%  { content: '..'; }
-    75%  { content: '...'; }
-    100% { content: '....'; }
-}
