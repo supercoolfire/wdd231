@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="author" content="Jayser Pilapil">
+    <meta name="description" content="WDD 231 Web Frontend Development I — Jayser Pilapil's course home page featuring certificate courses, student info, and responsive design.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>WDD 231 - Web Frontend Development I | Jayser Pilapil</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/modal-click-origin.css">
+
+    <!-- Scripts -->
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/theme-toggle.js" defer></script>
+    <script src="scripts/nav-burger.js" defer></script>
+    <script src="scripts/modal-click-origin.js" defer></script>
+    <script src="scripts/rickster-egg-v2.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+
+    <!-- Data -->
+    <link rel="preload" href="data/home.json" as="fetch" crossorigin>
+    <link rel="preload" href="data/web-certificate-courses.json" as="fetch" crossorigin>
+    <script src="scripts/hydrate-v5.1.js" data-file="data/home.json" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="brand-link">
+            <img src="images/logo.svg" alt="site logo" class="brand-logo" width="24" height="24">
+            <span class="brand-name">Jayser Pilapil</span>
+        </a>
+        <button type="button" id="menu" aria-label="Menu"></button>
+        <nav>
+            <ul id="navigation">
+                <li class="loading-dots rickster-egg">Loading navigation</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-home">
+        <h1>Home</h1>
+
+        <section class="about-me">
+            <h2 class="rickster-egg">About Me</h2>
+            <p>I'm Brother Pilapil — Jayser Pilapil. My friends call me "J" and I call them back "Huh?", and my not-friends call me "Hey" — what a good rhyme. I grew up with cats all over the Philippines due to unforeseen events, and I also lived abroad. I was already married when I became a member, so I didn't have time to go on a full-time mission, but I became a Pathway missionary and have been continuing for almost 6 years now.</p>
+            <p>In my free time, I develop useful apps for Android, Windows, and TV, like <a href="https://supercoolfire.github.io/ImageSmaller-Site/" target="_blank" rel="noopener">ImageSmaller</a>. I also build proprietary automation tools — a safety-focused Git wrapper and a project-standardization engine — to help me code faster and with fewer errors. When I'm stressed, I need a mathematical model fusing the three dimensions of space-time. I play computer games. I can't go outside easily because of a leg injury; my tibia is cracked from a motorcycle accident.</p>
+            <p>I used to have an associate's degree in computer programming, but the school was defunct, so my certificate and transcript are just pieces of paper now. I'm already a sophomore, but I'm taking this class because of the catalog transition from 2018 to 2024.</p>
+        </section>
+
+        <section class="student-photo">
+            <h2>Student Photo</h2>
+            <figure>
+                <picture>
+                    <source media="(min-width: 640px)" srcset="images/profile-pic-large.webp" width="400" height="400">
+                    <source media="(min-width: 320px)" srcset="images/profile-pic-medium.webp" width="200" height="200">
+                    <img src="images/profile-pic-small.webp" alt="Jayser Pilapil with a cat" width="160" height="160" loading="lazy">
+                </picture>
+                <figcaption>Jayser Pilapil — me and my cat</figcaption>
+            </figure>
+        </section>
+
+        <section class="web-cert-courses">
+            <h2>Web Certificate Courses</h2>
+            <div class="course-controls">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="ALL">All</button>
+                    <button class="filter-btn" data-filter="WDD">WDD</button>
+                    <button class="filter-btn" data-filter="CSE">CSE</button>
+                </div>
+                <div class="course-search-wrap">
+                    <label for="course-search" class="visually-hidden">Search courses</label>
+                    <input
+                        type="search"
+                        id="course-search"
+                        class="course-search"
+                        placeholder="Search courses…"
+                        aria-label="Search courses"
+                        autocomplete="off">
+                </div>
+            </div>
+            <!-- Course cards and credit total injected by course.js -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a class="rickster-egg" href="https://github.com/supercoolfire" target="_blank" rel="noopener">
+                <img src="images/github.svg" alt="GitHub profile" width="36" height="36">
+            </a>
+            <a class="rickster-egg" href="https://linkedin.com" target="_blank" rel="noopener">
+                <img src="images/linkedin.svg" alt="LinkedIn profile" width="36" height="36">
+            </a>
+        </div>
+        <p>
+            &copy;<span id="currentyear"></span> | Jayser Pilapil | Philippines
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+
+</html>

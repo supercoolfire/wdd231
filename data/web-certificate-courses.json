@@ -1,0 +1,14 @@
+[
+  { "subject": "CSE", "number": "110",  "title": "Introduction to Programming",  "credits": 2, "certificate": "Web and Computer Programming", "completed": true },
+  { "subject": "WDD", "number": "130",  "title": "Web Fundamentals",             "credits": 2, "certificate": "Web and Computer Programming", "completed": true },
+  { "subject": "CSE", "number": "111",  "title": "Programming with Functions",   "credits": 2, "certificate": "Web and Computer Programming", "completed": true },
+  { "subject": "CSE", "number": "210",  "title": "Programming with Classes",     "credits": 2, "certificate": "Web and Computer Programming", "completed": true },
+  { "subject": "WDD", "number": "131",  "title": "Dynamic Web Fundamentals",     "credits": 2, "certificate": "Web and Computer Programming", "completed": true },
+  { "subject": "WDD", "number": "231",  "title": "Frontend Web Development I",   "credits": 2, "certificate": "Web and Computer Programming", "completed": false },
+  { "subject": "CSE", "number": "121B", "title": "JavaScript Language",          "credits": 1, "certificate": "Web and Computer Programming", "completed": true },
+  { "subject": "WDD", "number": "230",  "title": "Web Frontend Development I",   "credits": 3, "certificate": "Web Development",             "completed": true },
+  { "subject": "WDD", "number": "330",  "title": "Web Frontend Development II",  "credits": 3, "certificate": "Web Development",             "completed": true },
+  { "subject": "CSE", "number": "340",  "title": "Web Backend Development",      "credits": 3, "certificate": "Web Development",             "completed": true },
+  { "subject": "CSE", "number": "341",  "title": "Web Services",                 "credits": 3, "certificate": "Web Development",             "completed": true },
+  { "subject": "WDD", "number": "430",  "title": "Web Full-Stack Development",   "credits": 3, "certificate": "Web Development",             "completed": true }
+]

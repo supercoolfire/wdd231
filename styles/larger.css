@@ -1,0 +1,65 @@
+/* ==========================================================================
+   larger.css — responsive overrides for wider screens
+   WDD 231 | Jayser Pilapil
+   ========================================================================== */
+
+/* ── 320px+ ───────────────────────────────────────────────────────────────── */
+@media (min-width: 320px) {
+
+    /* Hide hamburger, show nav horizontally */
+    #menu {
+        display: none;
+    }
+
+    /* Navigation: always visible, horizontal flex              */
+    /* margin-right accounts for fixed theme-toggle (~40px wide) */
+    nav {
+        grid-column: 1 / -1;
+        display: block;
+        background-color: transparent;
+        overflow: visible;
+        margin-right: 40px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 0.25rem;
+        padding: 0.5rem 0 0;
+    }
+
+    nav ul li a {
+        border-bottom: none;
+        border-radius: 4px;
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Two-column layout: about flexible | photo fixed 350px */
+    .main-home {
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        grid-template-areas:
+            "h1      h1"
+            "about   photo"
+            "courses courses";
+        gap: 1.5rem;
+        align-items: start;
+    }
+
+    h1                { grid-area: h1; }
+    .about-me         { grid-area: about; }
+    .student-photo    { grid-area: photo; }
+    .web-cert-courses { grid-area: courses; }
+
+    /* Course cards: auto-fill → 3 cols wide, 2 cols mid, 1 col narrow */
+    .course-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 240px));
+        gap: 0.75rem;
+        justify-content: center;
+    }
+}
