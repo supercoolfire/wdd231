@@ -1,14 +1,15 @@
 /**
- * Course Cards v2.0
+ * Course Cards v2.1
  * Author: Jayser Pilapil
  * Date: 2026-11-02
  * Description: Fetches course data from JSON, builds data-driven filter buttons,
- * renders neumorphic cards, and supports live search.
+ * renders neumorphic cards with search-term highlighting, and supports live search.
  * Features:
  * - Fetches course data from data/web-certificate-courses.json
  * - Filter buttons generated from unique subjects in the data (data-driven)
  * - "All" button always first; subject buttons sorted alphabetically
  * - Live search — matches subject+number, title, and certificate name
+ * - Matched text highlighted with <mark> so users see why a card is included
  * - Completed courses rendered with a distinct completed style
  * - Credit total dynamically computed using Array.reduce()
  * - Empty state message when no courses match the current filter/search
@@ -47,13 +48,8 @@ async function loadCourses() {
 /* ─── Build Filter Buttons (data-driven) ────────────────────────────────── */
 
 function buildFilterButtons(courses) {
-  // Derive unique subjects, sorted alphabetically
   const subjects = [...new Set(courses.map(c => c.subject))].sort();
-
-  // "All" button first
   filterContainer.appendChild(createFilterBtn('ALL', 'All', true));
-
-  // One button per unique subject
   subjects.forEach(subject => {
     filterContainer.appendChild(createFilterBtn(subject, subject, false));
   });
@@ -95,6 +91,33 @@ function getFiltered() {
   });
 }
 
+/* ─── Highlight helper ───────────────────────────────────────────────────── */
+
+/**
+ * Escapes HTML special chars, then wraps every case-insensitive occurrence
+ * of `query` with <mark>. Safe against XSS because we escape first.
+ */
+function highlight(text, query) {
+  const safe = escapeHtml(text);
+  if (!query) return safe;
+  const safeQuery = escapeHtml(query.trim());
+  if (!safeQuery) return safe;
+  const re = new RegExp(`(${escapeRegex(safeQuery)})`, 'gi');
+  return safe.replace(re, '<mark>$1</mark>');
+}
+
+function escapeHtml(str) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function escapeRegex(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 /* ─── Render ─────────────────────────────────────────────────────────────── */
 
 function renderCourses(list) {
@@ -110,7 +133,8 @@ function renderCourses(list) {
     return;
   }
 
-  const grid = document.createElement('div');
+  const query = searchQuery.trim();
+  const grid  = document.createElement('div');
   grid.classList.add('course-cards-grid');
 
   list.forEach(course => {
@@ -118,10 +142,13 @@ function renderCourses(list) {
     card.classList.add('course-card');
     if (course.completed) card.classList.add('completed');
 
+    const courseCode = `${course.subject} ${course.number}`;
+
     card.innerHTML = `
-      <h3>${course.subject} ${course.number}</h3>
-      <p class="course-title">${course.title}</p>
+      <h3>${highlight(courseCode, query)}</h3>
+      <p class="course-title">${highlight(course.title, query)}</p>
       <p class="course-credits">${course.credits} credits</p>
+      <p class="course-cert">${highlight(course.certificate, query)}</p>
       ${course.completed ? '<span class="badge-complete">&#10003; Completed</span>' : ''}
     `;
     grid.appendChild(card);

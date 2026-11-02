@@ -36,6 +36,8 @@
     --btn-focus-ring:   #0e6ea64d;
     --link-color:       #0e6ea6;
     --link-hover:       #063d61;
+    --mark-bg:          #ffe066;
+    --mark-color:       #1a1a1a;
 }
 
 [data-theme="dark"] {
@@ -68,6 +70,8 @@
     --btn-focus-ring:   #1a4a6e4d;
     --link-color:       #7cc8f5;
     --link-hover:       #b3e0ff;
+    --mark-bg:          #c8a000;
+    --mark-color:       #ffffff;
 }
 
 /* ==========================================================================
@@ -309,6 +313,7 @@ h2 {
     font-family: inherit;
     font-size: 0.9rem;
     background-color: var(--main-bg-color);
+    color: var(--body-text-color);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .course-search:focus {
@@ -411,6 +416,12 @@ h2 {
     font-size: 0.8rem;
     opacity: 0.75;
 }
+.course-card .course-cert {
+    margin: 0.15rem 0 0;
+    font-size: 0.75rem;
+    opacity: 0.6;
+    font-style: italic;
+}
 .badge-complete {
     display: inline-block;
     margin-top: 0.4rem;
@@ -493,3 +504,14 @@ html[data-theme="light"] .light { display: block; }
 html[data-theme="dark"]  .light { display: none; }
 html[data-theme="dark"]  .dark  { display: block; }
 
+
+/* ==========================================================================
+   Search highlight — <mark> inside course cards
+   ========================================================================== */
+.course-card mark {
+    background-color: var(--mark-bg);
+    color: var(--mark-color);
+    border-radius: 2px;
+    padding: 0 1px;
+    font-style: normal;
+}
