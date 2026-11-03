@@ -141,6 +141,7 @@ function renderCourses(list) {
     const card = document.createElement('div');
     card.classList.add('course-card');
     if (course.completed) card.classList.add('completed');
+    if (!course.completed) card.classList.add('rickster-egg');
 
     const courseCode = `${course.subject} ${course.number}`;
 
