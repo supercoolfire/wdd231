@@ -384,6 +384,11 @@ h2 {
     outline-offset: 2px;
 }
 
+.course-cards-grid {
+    justify-items: center;
+}
+
+
 /* Course cards — neumorphic glow (fluorescent backlight on wall) */
 .course-card {
     background-color: var(--card-bg);
