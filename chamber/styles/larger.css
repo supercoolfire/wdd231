@@ -1,12 +1,16 @@
 @media only screen and (min-width: 900px) {
 
     header, main, nav, footer {
-        max-width: 1500px;
+        max-width: 1000px;
         margin: 0 auto;
     }
 
+    /* **************** HEADER *****************/
     header {
-        grid-template-columns: 24px auto;
+        grid-template-columns: 24px auto auto;
+
+    background-color: rgb(245, 222, 19);
+    padding: 5px;
     }
     .hamburger {
         display: none;
@@ -14,11 +18,24 @@
     .navigation {
         display: block;
         border-bottom: solid 1px #eee;
+    background-color: rgb(207, 19, 245);
+    padding: 5px;
     }
     .navigation ul {
         display: flex;
+
+    background-color: rgb(30, 202, 82);
+    padding: 5px;
+    }
+    .navigation ul li {
+        
+    background-color: rgb(247, 9, 207);
+    padding: 5px;
     }
     .navigation a {
         border: none;
+
+    background-color: rgb(212, 8, 8);
+    padding: 5px;
     }
 }
