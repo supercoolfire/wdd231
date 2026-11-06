@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="styles/modal-click-origin.css">
 
     <script src="scripts/date.js" defer></script>
-    <script src="scripts/prophets.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/modal-click-origin.js" defer></script>
     <script src="scripts/rickster-egg-v2.js" defer></script>
@@ -34,22 +34,22 @@
         <img src="images/logo.svg" alt="Site Logo" width="512" height="512">
         <span>Jay's Chamber of Commerce</span>
         <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" aria-expanded="false"></button>
+        <nav id="nav-bar" class="navigation">
+            <ul>
+                <li><a class="rickster-egg" href="#">Home</a></li>
+                <li><a class="rickster-egg" href="#">Discover</a></li>
+                <li class="current" aria-current="page"><a class="rickster-egg" href="#">Business Directory</a></li>
+                <li><a class="rickster-egg" href="#">Join</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav id="nav-bar" class="navigation">
-    <ul>
-        <li><a class="rickster-egg" href="#">Home</a></li>
-        <li><a class="rickster-egg" href="#">Discover</a></li>
-        <li class="current" aria-current="page"><a class="rickster-egg" href="#">Business Directory</a></li>
-        <li><a class="rickster-egg" href="#">Join</a></li>
-    </ul>
-    </nav>
     <main>
         <h1>Chamber Directory</h1>
-        <div id="cards"></div>
+        <div id="cards" class="grid"></div>
     </main>
     <footer>
         <p>
-            &copy;<span id="currentyear"></span> | Jayser Pilapil | Latter-day Prophets
+            &copy;<span id="currentyear"></span> | Jayser Pilapil | Chamber of Commerce
         </p>
         <p id="lastModified"></p>
     </footer>

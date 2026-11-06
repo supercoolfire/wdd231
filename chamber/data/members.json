@@ -1,0 +1,94 @@
+{
+  "members": [
+    {
+      "name": "Grill or No Grill",
+      "tagline": "Steak your claim on flavor.",
+      "address": "12 Sizzle St, Grill City, GC 10001",
+      "phone": "800-555-0101",
+      "website": "https://grillornogrillbbq.com",
+      "email": "info@grillornogrillbbq.com",
+      "image": "https://picsum.photos/id/292/200/200",
+      "membershipLevel": 3
+    },
+    {
+      "name": "Florist Gump Flowers",
+      "tagline": "Life is like a box of blooms.",
+      "address": "33 Petal Ave, Bloom Town, BT 20202",
+      "phone": "800-555-0202",
+      "website": "https://floristgump.com",
+      "email": "hello@floristgump.com",
+      "image": "https://picsum.photos/id/152/200/200",
+      "membershipLevel": 2
+    },
+    {
+      "name": "Brokowski Brothers Plumbing",
+      "tagline": "We go where no pipe has gone before.",
+      "address": "77 Drain Rd, Pipesville, PS 30303",
+      "phone": "800-555-0303",
+      "website": "https://brokowskiplumbing.com",
+      "email": "drains@brokowskiplumbing.com",
+      "image": "https://picsum.photos/id/414/200/200",
+      "membershipLevel": 1
+    },
+    {
+      "name": "Para-Nails Salon",
+      "tagline": "Nails so sharp they are dangerous.",
+      "address": "9 Polish Blvd, Gloss Park, GP 40404",
+      "phone": "800-555-0404",
+      "website": "https://paranailssalon.com",
+      "email": "book@paranailssalon.com",
+      "image": "https://picsum.photos/id/64/200/200",
+      "membershipLevel": 2
+    },
+    {
+      "name": "Bready or Not Bakery",
+      "tagline": "You will rise to the occasion.",
+      "address": "5 Flour Lane, Crumb Falls, CF 50505",
+      "phone": "800-555-0505",
+      "website": "https://breadyornotbakery.com",
+      "email": "loaves@breadyornotbakery.com",
+      "image": "https://picsum.photos/id/312/200/200",
+      "membershipLevel": 3
+    },
+    {
+      "name": "Lore M. Ipsum Law Offices",
+      "tagline": "Lorem ipsum dolor sit amet, justice.",
+      "address": "404 Brief St, Placeholder City, PC 60606",
+      "phone": "800-555-0606",
+      "website": "https://loremipsumlaw.com",
+      "email": "case@loremipsumlaw.com",
+      "image": "https://picsum.photos/id/180/200/200",
+      "membershipLevel": 3
+    },
+    {
+      "name": "Curl Up and Dye Hair Studio",
+      "tagline": "Where every bad hair day ends.",
+      "address": "21 Tress Terrace, Strand City, SC 70707",
+      "phone": "800-555-0707",
+      "website": "https://curlupdyehair.com",
+      "email": "snip@curlupdyehair.com",
+      "image": "https://picsum.photos/id/91/200/200",
+      "membershipLevel": 1
+    },
+    {
+      "name": "Byte Me IT Solutions",
+      "tagline": "We fix it before you throw it.",
+      "address": "64 Kernel Ct, Silicon Flats, SF 80808",
+      "phone": "800-555-0808",
+      "website": "https://bytemeit.com",
+      "email": "support@bytemeit.com",
+      "image": "https://picsum.photos/id/0/200/200",
+      "membershipLevel": 2
+    },
+    {
+      "name": "Alpaca My Bags Travel Co.",
+      "tagline": "We pack. You relax.",
+      "address": "88 Wanderer Way, Nomad Heights, NH 90909",
+      "phone": "800-555-0909",
+      "website": "https://alpacamybagstravel.com",
+      "email": "trips@alpacamybagstravel.com",
+      "image": "https://picsum.photos/id/538/200/200",
+      "membershipLevel": 2
+    }
+  ]
+}
