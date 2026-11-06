@@ -51,16 +51,25 @@ header span {
 
 
 /* **************** NAVIGATION *****************/
+
 .navigation {
-    display: none;
+    display: grid;
+
+    /* Drawer effect: 0fr comming soon */
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
 }
 .navigation.show {
-    display: block;
+    /* Drawer effect: 1fr now showing */
+    grid-template-rows: 1fr;
 }
 .navigation ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+
+    /* Drawer effect: submisive to container size */
+    overflow: hidden;
 }
 .navigation a {
     display: block;
