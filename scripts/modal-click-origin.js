@@ -1,7 +1,58 @@
 /**
- * Click Modaler v1.1 - Plug & Play Image Expansion
-* CSS Usage: This comes with modal-click-origin.css
-*/
+ * * Click Modaler v1.1 - Plug & Play Image Expansion
+ * Author: Jayser Pilapil
+ * Date: 2026-05-15
+ * Description: Click-to-expand image modal with seamless origin-based transitions
+ * Version: 1.1
+ * Features:
+ * - Plug & Play: zero configuration required, auto-injects modal DOM on first use
+ * - Works on any <img> inside a '.card' or <figure> container
+ * - Seamless expand/collapse animation that originates from the clicked image's exact position
+ * - Automatic high-resolution image swapping (replaces '-small'/'-medium' suffix with '-large')
+ * - Dynamic zoom-in/zoom-out cursor styling
+ * - Developer-friendly console warnings when an image lacks a valid container
+ * - Graceful error handling with actionable console messages
+ * CSS Dependency:
+ * - Requires 'modal-click-origin.css' (styles #img-modal and #modal-content)
+ * 
+ * Usage: 
+ * <link rel="stylesheet" href="styles/modal-click-origin.css">
+ * <script src="scripts/modal-click-origin.js" defer></script>
+ * 
+ * Trigger Conditions:
+ * - An <img> triggers the modal if a '.card' or <figure> exists anywhere up its
+ *   ancestor chain (uses element.closest(), so depth/nesting does not matter).
+ * - If the image has no '.card' or <figure> ancestor, a console warning is logged
+ *   and the modal does not open.
+ *
+ * All valid trigger examples:
+ * 1. Direct child:
+ *    <div class="card">
+ *        <img src="images/photo-small.webp" alt="Description">
+ *    </div>
+ *
+ * 2. Deeply nested descendant (depth does not matter):
+ *    <div class="card">
+ *        <div class="inner">
+ *            <picture><img src="images/photo-small.webp" alt="Description"></picture>
+ *        </div>
+ *    </div>
+ *
+ * 3. Image carries the '.card' class itself:
+ *    <img class="card" src="images/photo-small.webp" alt="Description">
+ *
+ * 4. Same three patterns also work with <figure> instead of .card:
+ *    <figure><img src="images/photo-small.webp" alt="Description"></figure>
+ * 
+ * High-Resolution Naming Convention:
+ * - Source image: photo-small.webp or photo-medium.webp
+ * - Modal swaps to: photo-large.webp (suffix replaced automatically)
+ * 
+ * CSS Classes & IDs Used:
+ * - #img-modal        -> the modal overlay container (injected into <body>)
+ * - #modal-content    -> the <img> inside the modal
+ * - .active           -> class toggled on #img-modal to trigger the CSS transition
+ */
 
 // Handle dynamic cursor styles for zoomable images
 document.addEventListener('mouseover', (e) => {
