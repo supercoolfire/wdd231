@@ -3,38 +3,43 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Jayser Pilapil">
+    <meta name="description" content="Latter-day Prophets - a WDD 231 Week 2 learning activity that fetches prophet data from a JSON source and renders cards dynamically using the Fetch API and async/await.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="title" content="Document">
-    <meta name="description" content="Week 2 learning activity">
-    <meta name="image" content="">
-    <meta name="url" content="">
+    <meta property="og:title" content="Latter-day Prophets">
+    <meta property="og:description" content="Explore the Latter-day Prophets through dynamically rendered cards built with the Fetch API and async/await. A WDD 231 learning activity by Jayser Pilapil.">
+    <meta property="og:image" content="https://supercoolfire.github.io/wdd231/week02/learning-activity/images/logo.svg">
+    <meta property="og:url" content="https://supercoolfire.github.io/wdd231/week02/learning-activity/prophets.html">
 
-    <title>Document</title>
+    <title>Latter-day Prophets</title>
 
     <link rel="icon" href="images/favicon.ico">
 
     <!-- Style Sheets Here -->
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/prophets.css">
     <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/modal-click-origin.css">
 
     <script src="scripts/date.js" defer></script>
     <script src="scripts/prophets.js" defer></script>
     <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/modal-click-origin.js" defer></script>
+    <script src="scripts/rickster-egg-v2.js" defer></script>
 </head>
 
 <body>
     <header>
         <img src="images/logo.svg" alt="Site Logo" width="512" height="512">
         <span>Jay's Site Title</span>
-        <button id="ham-btn" class="hamburger"></button>
+        <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" aria-expanded="false"></button>
     </header>
     <nav id="nav-bar" class="navigation">
     <ul>
-        <li><a href="#" aria-current="page">News &amp; Events</a></li>
-        <li class="current"><a href="#">Dedicated Temples</a></li>
-        <li><a href="#">Announced Temples</a></li>
+        <li><a class="rickster-egg" href="#">News &amp; Events</a></li>
+        <li class="current" aria-current="page"><a class="rickster-egg" href="#">Prophets</a></li>
+        <li><a class="rickster-egg" href="#">Announced Temples</a></li>
     </ul>
     </nav>
     <main>

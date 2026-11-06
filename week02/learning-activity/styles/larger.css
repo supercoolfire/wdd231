@@ -1,7 +1,7 @@
-@media only screen and (min-width: 38rem) {
+@media only screen and (min-width: 900px) {
 
     header, main, nav, footer {
-        max-width: 900px;
+        max-width: 1500px;
         margin: 0 auto;
     }
 

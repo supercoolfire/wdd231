@@ -79,3 +79,31 @@ header span {
 h1 {
     margin-left: 10px;
 }
+
+
+/* **************** CARDS *****************/
+#cards {
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eee;
+    border: 1px solid rgb(0 0 0 / 10%);
+    padding: 0.5rem;
+}
+h2 {
+    margin: 0;
+}
+section > p {
+    text-align: center;
+}
+#cards > section > img {
+    width: auto;
+    max-width: 325px;
+    box-shadow: 0 0 30px #789;
+    padding: 5px;
+}
