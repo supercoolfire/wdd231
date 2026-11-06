@@ -38,6 +38,7 @@ header span {
     color: #3D405B;
     cursor: pointer;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: background-color 0.2s ease;
 }
 .hamburger::after {
     content: "\2630";
