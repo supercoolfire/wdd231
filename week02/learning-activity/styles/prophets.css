@@ -31,6 +31,12 @@ header span {
     color: #3D405B;
 }
 
+
+/* **************** FOOTER *****************/
+footer {
+    text-align: center;
+}
+
 /* **************** HAMBURGER *****************/
 .hamburger {
     background: none;
@@ -95,6 +101,7 @@ h1 {
     display: grid;
     grid-gap: 0.5rem;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    padding: 10px;
 }
 section {
     display: flex;
