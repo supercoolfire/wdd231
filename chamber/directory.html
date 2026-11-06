@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jayser Pilapil">
+    <meta name="description" content="Browse the member business directory for the local Chamber of Commerce. Find contact info, websites, and membership levels for all registered members.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Chamber Directory">
+    <meta property="og:description" content="Browse local member businesses in the Chamber of Commerce directory. View contact details, websites, and membership levels.">
+    <meta property="og:image" content="https://supercoolfire.github.io/wdd231/chamber/images/logo.svg">
+    <meta property="og:url" content="https://supercoolfire.github.io/wdd231/chamber/directory.html">
+
+    <title>Chamber Directory</title>
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Style Sheets Here -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/modal-click-origin.css">
+
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/prophets.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/modal-click-origin.js" defer></script>
+    <script src="scripts/rickster-egg-v2.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.svg" alt="Site Logo" width="512" height="512">
+        <span>Jay's Chamber of Commerce</span>
+        <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" aria-expanded="false"></button>
+    </header>
+    <nav id="nav-bar" class="navigation">
+    <ul>
+        <li><a class="rickster-egg" href="#">Home</a></li>
+        <li><a class="rickster-egg" href="#">Discover</a></li>
+        <li class="current" aria-current="page"><a class="rickster-egg" href="#">Business Directory</a></li>
+        <li><a class="rickster-egg" href="#">Join</a></li>
+    </ul>
+    </nav>
+    <main>
+        <h1>Chamber Directory</h1>
+        <div id="cards"></div>
+    </main>
+    <footer>
+        <p>
+            &copy;<span id="currentyear"></span> | Jayser Pilapil | Latter-day Prophets
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
