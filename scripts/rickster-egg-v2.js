@@ -1,14 +1,32 @@
 /**
- * Rickster Egg - v2.1
- * Triggered by the class ".rickster-egg"
- * Handles modal toggle and video playback.
+ * * Rickster Egg v2.1 - Easter Egg Video Modal
+ * Author: Jayser Pilapil
+ * Date: 2026-05-15
+ * Description: Click-to-toggle rick-roll video modal, triggered by the '.rickster-egg' class
+ * Version: 2.1
+ * Features:
+ * - Plug & Play: auto-injects modal HTML and its own <style> block (no external CSS needed)
+ * - Event delegation: works for triggers added to the DOM at any time (e.g. after hydration)
+ * - Click '.rickster-egg' to open; click again or click the dark backdrop to close
+ * - Closes on Escape key
+ * - Guards against double-initialization
  * 
- * Usage:
- * 1. Add <script src="/cripts/rickster-egg-v2.js" defer></script> to your HTML head.
- * 2. Put the mp4 video at root /images/rick-roll.mp4 or update the source in the script.
- * 3. Add class="rickster-egg" to any element you want as a trigger (e.g., <span class="rickster-egg">Title</span>).
- * 4. Ensure the triggering element is visible and reachable in the DOM.
- * 5. The script automatically injects the necessary modal HTML if it's not present.
+ * Usage: 
+ * <script src="scripts/rickster-egg-v2.js" defer></script>
+ * 
+ * Trigger Format (any element with the '.rickster-egg' class):
+ * <span class="rickster-egg">Title</span>
+ * or
+ * <button class="rickster-egg">Surprise</button>
+ * 
+ * Video Source:
+ * - Place the video at images/rick-roll.mp4 (or update the <source> path in the script)
+ * 
+ * CSS Classes & IDs Used:
+ * - .rickster-egg        -> click trigger (cursor: pointer)
+ * - .modal-rickster-egg  -> the modal overlay (fixed, full-screen, dark backdrop)
+ * - #video-container     -> the modal element (same node as .modal-rickster-egg)
+ * - #rick-video          -> the <video> element
  */
 
 (function injectRicksterStyles() {
