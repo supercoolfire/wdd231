@@ -31,27 +31,31 @@
 
 <body>
     <header>
-        <img src="images/logo.svg" alt="Site Logo" width="512" height="512">
-        <span>Jay's Chamber of Commerce</span>
-        <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" aria-expanded="false"></button>
-        <nav id="nav-bar" class="navigation">
-            <ul>
-                <li><a class="rickster-egg" href="#">Home</a></li>
-                <li><a class="rickster-egg" href="#">Discover</a></li>
-                <li class="current" aria-current="page"><a class="rickster-egg" href="#">Business Directory</a></li>
-                <li><a class="rickster-egg" href="#">Join</a></li>
-            </ul>
-        </nav>
+        <div class="page">
+            <img src="images/logo.svg" alt="Site Logo" width="512" height="512">
+            <span>Jay's Chamber of Commerce</span>
+            <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" aria-expanded="false"></button>
+            <nav id="nav-bar" class="navigation">
+                <ul>
+                    <li><a class="rickster-egg" href="#">Home</a></li>
+                    <li><a class="rickster-egg" href="#">Discover</a></li>
+                    <li class="current" aria-current="page"><a class="rickster-egg" href="#">Business Directory</a></li>
+                    <li><a class="rickster-egg" href="#">Join</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <h1>Chamber Directory</h1>
         <div id="cards" class="grid"></div>
     </main>
     <footer>
-        <p>
-            &copy;<span id="currentyear"></span> | Jayser Pilapil | Chamber of Commerce
-        </p>
-        <p id="lastModified"></p>
+        <div class="footer-page">
+            <p>
+                &copy;<span id="currentyear"></span> | Jayser Pilapil | Chamber of Commerce
+            </p>
+            <p id="lastModified"></p>
+        </div>
     </footer>
 </body>
 

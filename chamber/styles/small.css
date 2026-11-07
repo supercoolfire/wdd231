@@ -6,12 +6,15 @@ deep slate blue #3D405B,
 /* **************** SITE WIDE *****************/
 
 * {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
 }
 
 /* **************** HEADER *****************/
 header {
+    background-color: rgb(245, 222, 19);
+}
+.page {
     display: grid;
     grid-template-columns: 24px auto 44px;
     padding: 5px 0 5px 10px;
@@ -34,9 +37,12 @@ header span {
 
 /* **************** FOOTER *****************/
 footer {
+    width: 100vw;
     text-align: center;
 }
+.footer-page {
 
+}
 /* **************** HAMBURGER *****************/
 .hamburger {
     background: none;
@@ -95,31 +101,59 @@ h1 {
     margin-left: 10px;
 }
 
-
 /* **************** CARDS *****************/
 #cards {
     display: grid;
     grid-gap: 0.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     padding: 10px;
+    width: 100%;
+
+    justify-items: center;
+    justify-content: end;
+    background-color: rgb(202, 30, 150);
 }
 section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-areas: 
+    'businessName businessName'
+    'tagLine tagLine'
+    'logo contactInfo';
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: auto auto 1fr auto auto auto;
+    align-items: start;
+    align-content: start;
     background-color: #eee;
     border: 1px solid rgb(0 0 0 / 10%);
     padding: 0.5rem;
+    width: 350px;
+    height: auto;
+  container-type: inline-size;
 }
 h2 {
-    margin: 0;
-}
-section > p {
+    grid-area: businessName;
+    box-shadow: 0 0 30px #789;
+    width: 100%;
     text-align: center;
+    margin: 0;
+  white-space: nowrap;
+  font-size: clamp(0.75rem, 6cqw, 1.5rem);
 }
-#cards > section > img {
+.tagLine {
+    grid-area: tagLine;
+}
+.logo {
+    grid-area: logo;
     width: auto;
     max-width: 325px;
     box-shadow: 0 0 30px #789;
     padding: 5px;
+}
+.contactInfo > p {
+    grid-area: contactInfo;
+    font-size: smaller;
+    margin: 0 0 13px 10px;
+}
+.card-label {
+    font-weight: bold;
 }

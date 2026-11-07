@@ -7,7 +7,7 @@
       "phone": "800-555-0101",
       "website": "https://grillornogrillbbq.com",
       "email": "info@grillornogrillbbq.com",
-      "image": "https://picsum.photos/id/292/200/200",
+      "image": "grill-or-no-grill.webp",
       "membershipLevel": 3
     },
     {
@@ -17,7 +17,7 @@
       "phone": "800-555-0202",
       "website": "https://floristgump.com",
       "email": "hello@floristgump.com",
-      "image": "https://picsum.photos/id/152/200/200",
+      "image": "florist-gump.webp",
       "membershipLevel": 2
     },
     {
@@ -27,27 +27,27 @@
       "phone": "800-555-0303",
       "website": "https://brokowskiplumbing.com",
       "email": "drains@brokowskiplumbing.com",
-      "image": "https://picsum.photos/id/414/200/200",
+      "image": "brokowski-brothers.webp",
       "membershipLevel": 1
     },
     {
       "name": "Para-Nails Salon",
-      "tagline": "Nails so sharp they are dangerous.",
+      "tagline": "Nails so sharp they're dangerous.",
       "address": "9 Polish Blvd, Gloss Park, GP 40404",
       "phone": "800-555-0404",
       "website": "https://paranailssalon.com",
       "email": "book@paranailssalon.com",
-      "image": "https://picsum.photos/id/64/200/200",
+      "image": "para-nails.webp",
       "membershipLevel": 2
     },
     {
       "name": "Bready or Not Bakery",
-      "tagline": "You will rise to the occasion.",
+      "tagline": "You'll rise to the occasion.",
       "address": "5 Flour Lane, Crumb Falls, CF 50505",
       "phone": "800-555-0505",
       "website": "https://breadyornotbakery.com",
       "email": "loaves@breadyornotbakery.com",
-      "image": "https://picsum.photos/id/312/200/200",
+      "image": "bready-or-not.webp",
       "membershipLevel": 3
     },
     {
@@ -57,17 +57,17 @@
       "phone": "800-555-0606",
       "website": "https://loremipsumlaw.com",
       "email": "case@loremipsumlaw.com",
-      "image": "https://picsum.photos/id/180/200/200",
+      "image": "lorem-ipsum-law.webp",
       "membershipLevel": 3
     },
     {
-      "name": "Curl Up and Dye Hair Studio",
+      "name": "Curl Up & Dye Hair Studio",
       "tagline": "Where every bad hair day ends.",
       "address": "21 Tress Terrace, Strand City, SC 70707",
       "phone": "800-555-0707",
       "website": "https://curlupdyehair.com",
       "email": "snip@curlupdyehair.com",
-      "image": "https://picsum.photos/id/91/200/200",
+      "image": "curl-up-and-dye.webp",
       "membershipLevel": 1
     },
     {
@@ -77,7 +77,7 @@
       "phone": "800-555-0808",
       "website": "https://bytemeit.com",
       "email": "support@bytemeit.com",
-      "image": "https://picsum.photos/id/0/200/200",
+      "image": "byte-me-it.webp",
       "membershipLevel": 2
     },
     {
@@ -87,7 +87,7 @@
       "phone": "800-555-0909",
       "website": "https://alpacamybagstravel.com",
       "email": "trips@alpacamybagstravel.com",
-      "image": "https://picsum.photos/id/538/200/200",
+      "image": "alpaca-my-bags.webp",
       "membershipLevel": 2
     }
   ]

@@ -1,17 +1,29 @@
 @media only screen and (min-width: 900px) {
 
-    header, main, nav, footer {
-        max-width: 1000px;
+    main, nav {
+        max-width: 1300px;
         margin: 0 auto;
     }
 
     /* **************** HEADER *****************/
-    header {
+    header, footer {
+    background-color: rgb(167, 156, 62);
+    }
+
+    .page {
         grid-template-columns: 24px auto auto;
+        margin: 0 auto;
+        max-width: 1300px;
+
 
     background-color: rgb(245, 222, 19);
-    padding: 5px;
     }
+    .footer-page {
+    background-color: rgb(245, 222, 19);
+        margin: 0 auto;
+        max-width: 1300px;
+    }
+
     .hamburger {
         display: none;
     }

@@ -31,27 +31,28 @@ const displayMembers = (members) => {
         logo.setAttribute('class', 'card');
 
         businessName.textContent = `${member.name}`;
+        businessName.setAttribute('class', 'businessName');
         tagLine.textContent = `${member.tagline}`;
-        tagLine.setAttribute('class', 'tagline');
+        tagLine.setAttribute('class', 'tagLine');
 
         logo.setAttribute('src', member.imageurl);
         logo.setAttribute('alt', `logo of ${businessName.textContent}`);
         logo.setAttribute('loading', 'lazy');
         logo.setAttribute('width', '100');
         logo.setAttribute('height', '100');
+        logo.setAttribute('class', 'logo');
 
-        email.textContent = `${member.email}`;
+        email.innerHTML = `<span class="card-label">EMAIL:</span> ${member.email}`;
         email.setAttribute('class', 'email');
 
-        phone.textContent = `${member.phone}`;
+        phone.innerHTML = `<span class="card-label">PHONE:</span> ${member.phone}`;
         phone.setAttribute('class', 'phone');
 
-        url.textContent = `${member.url}`;
+        url.innerHTML = `<span class="card-label">URL:</span> ${member.website}`;
         url.setAttribute('class', 'url');
         
         contactInfo.appendChild(email);
         contactInfo.appendChild(phone);
-
         contactInfo.appendChild(url);
         contactInfo.setAttribute('class', 'contactInfo');
 
@@ -59,9 +60,7 @@ const displayMembers = (members) => {
         card.appendChild(businessName);
         card.appendChild(tagLine);
         card.appendChild(logo);
-        card.appendChild(email);
-        card.appendChild(phone);
-        card.appendChild(url);
+        card.appendChild(contactInfo);
 
         cards.appendChild(card);
     });
