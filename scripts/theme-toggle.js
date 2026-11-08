@@ -27,26 +27,32 @@
  *
  *        <script src="theme-toggle.js" defer></script>
  *
- *   3. Full toggle button (shows the NEXT action):
- *
- *        <button class="theme-toggle" aria-label="Switch to dark mode"
- *                title="Switch to dark mode">
- *          <span class="theme-icon">🌙</span>
- *          <span class="theme-text">Dark Mode</span>
- *        </button>
- *
- *   4. Minimalist icon-only variant:
- *
- *        <button class="theme-toggle" aria-label="Switch to dark mode"
- *                title="Switch to dark mode">🌙</button>
- *
- *   5. For element swapping, pair contextual classes with your styles:
+ *   3. For element swapping, pair contextual classes with your styles:
  *
  *        <div class="foo bar light">Visible only in light mode</div>
  *        <div class="foo bar dark">Visible only in dark mode</div>
- *
- * ============================================================================
  */
+
+/* ============================================================================
+   CSS STARTER KIT — Paste to first line
+   ============================================================================
+
+:root, [data-theme="light"] {
+  --toggle-btn-bg:     #e0e0e0;
+  --toggle-text-color: #333333;
+  --body-text-color:   #333333;
+}
+
+[data-theme="dark"] {
+  --toggle-btn-bg:     #333333;
+  --toggle-text-color: #f0f0f0;
+  --body-text-color:   #f0f0f0;
+}
+
+[data-theme="light"] .dark  { display: none; }
+[data-theme="dark"]  .light { display: none; }
+
+   ============================================================================ */
 
 
 // Select all buttons using the shared class name
