@@ -64,6 +64,7 @@ const displayMembers = (members) => {
 
         cards.appendChild(card);
     });
+    fitTitles(); 
 }
 getMemberData();
 
@@ -79,6 +80,7 @@ gridbutton.addEventListener("click", () => {
 	// example using arrow function
 	display.classList.add("grid");
 	display.classList.remove("list");
+    fitTitles(); 
 });
 
 listbutton.addEventListener("click", showList); // example using defined function
@@ -86,4 +88,20 @@ listbutton.addEventListener("click", showList); // example using defined functio
 function showList() {
 	display.classList.add("list");
 	display.classList.remove("grid");
+    fitTitles(); 
 }
+
+
+/* **************** H2wow *****************/
+function fitTitles() {
+  document.querySelectorAll('#cards.grid h2').forEach(h => {
+    h.style.fontSize = '';                       // reset to CSS value
+    const ratio = h.clientWidth / h.scrollWidth;
+    if (ratio < 1) {
+      const size = parseFloat(getComputedStyle(h).fontSize);
+      h.style.fontSize = (size * ratio * 0.98) + 'px';
+    }
+  });
+}
+fitTitles();
+window.addEventListener('resize', fitTitles);

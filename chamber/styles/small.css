@@ -37,8 +37,12 @@ header span {
 
 /* **************** FOOTER *****************/
 footer {
-    width: 100vw;
     text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.footer-page {
+    background-color: rgb(245, 222, 19);
 }
 /* **************** HAMBURGER *****************/
 .hamburger {
@@ -67,6 +71,8 @@ footer {
     /* Drawer effect: 0fr comming soon */
     grid-template-rows: 0fr;
     transition: grid-template-rows 0.3s ease;
+    justify-self: end;
+    margin: 0;
 }
 .navigation.show {
     /* Drawer effect: 1fr now showing */
@@ -90,8 +96,8 @@ footer {
 .navigation li.current {
     background-color: #eee;
 }
-.navigation a:hover {
-    background-color: #E07A5F;
+.navigation li:hover {
+    background-color: #e1e7be;
 }
 
 h1 {
@@ -167,7 +173,7 @@ section {
     'businessName businessName'
     'tagLine tagLine'
     'logo contactInfo';
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 100px minmax(0, 1fr);
     grid-template-rows: auto auto 1fr auto auto auto;
     align-items: start;
     align-content: start;
@@ -180,11 +186,12 @@ section {
 }
 h2 {
     grid-area: businessName;
+    min-width: 0;
     width: 100%;
     text-align: center;
     margin: 0;
-  white-space: nowrap;
-  font-size: clamp(0.75rem, 6cqw, 1.5rem);
+    white-space: nowrap;
+    font-size: 1.5rem; /* fitTitles() will take over if business name is longer */
 }
 .tagLine { grid-area: tagLine; }
 .logo {

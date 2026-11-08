@@ -31,12 +31,12 @@
       "membershipLevel": 1
     },
     {
-      "name": "Nailkea Nail Salon",
-      "tagline": "Flat-pack manicures. Some assembly required.",
-      "address": "9 Allen Key Blvd, Gloss Park, GP 40404",
+      "name": "Apple Soup Pot",
+      "tagline": "Our soup is Pro Max. Bowl sold separately.",
+      "address": "9 Ladle Blvd, Simmer Park, SP 40404",
       "phone": "800-555-0404",
-      "website": "https://nailkea.com",
-      "email": "book@nailkea.com",
+      "website": "https://applesouppot.com",
+      "email": "genius@applesouppot.com",
       "image": "para-nails.webp",
       "membershipLevel": 2
     },
@@ -61,14 +61,14 @@
       "membershipLevel": 3
     },
     {
-      "name": "Dolce & Gab-Bangs Hair Studio",
-      "tagline": "Runway looks. Bangs we regret together.",
-      "address": "21 Milan Split Ends Terrace, Strand City, SC 70707",
-      "phone": "800-555-0707",
-      "website": "https://dolceandgabbangs.com",
-      "email": "snip@dolceandgabbangs.com",
-      "image": "curl-up-and-dye.webp",
-      "membershipLevel": 1
+      "name": "LBM PC",
+      "tagline": "Personal Constipation Business.",
+      "address": "1 Fiber Way, Backed-Up Heights, BU 10504",
+      "phone": "800-555-0111",
+      "website": "https://lbmpc.com",
+      "email": "think@lbmpc.com",
+      "image": "byte-me-it.webp",
+      "membershipLevel": 2
     },
     {
       "name": "Goo-Gull Tech Support",
@@ -99,6 +99,26 @@
       "email": "grow@mikeroesopt.com",
       "image": "mike-roes-opt.webp",
       "membershipLevel": 2
+    },
+    {
+      "name": "American Expense",
+      "tagline": "Don't leave home without it. You can't afford to.",
+      "address": "1 Overdraft Plaza, Debt Heights, DH 10286",
+      "phone": "800-555-0112",
+      "website": "https://americanexpense.com",
+      "email": "billing@americanexpense.com",
+      "image": "american-expense.webp",
+      "membershipLevel": 3
+    },
+    {
+      "name": "Electronic Farts",
+      "tagline": "Challenge Everything. Ventilate Everywhere.",
+      "address": "209 Redwood Shores Pkwy, Gas City, GC 94065",
+      "phone": "800-555-0113",
+      "website": "https://electronicfarts.com",
+      "email": "support@electronicfarts.com",
+      "image": "electronic-farts.webp",
+      "membershipLevel": 3
     }
   ]
 }
