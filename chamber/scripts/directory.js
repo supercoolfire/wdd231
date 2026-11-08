@@ -35,7 +35,7 @@ const displayMembers = (members) => {
         tagLine.textContent = `${member.tagline}`;
         tagLine.setAttribute('class', 'tagLine');
 
-        logo.setAttribute('src', member.imageurl);
+        logo.setAttribute('src', member.image);
         logo.setAttribute('alt', `logo of ${businessName.textContent}`);
         logo.setAttribute('loading', 'lazy');
         logo.setAttribute('width', '100');
