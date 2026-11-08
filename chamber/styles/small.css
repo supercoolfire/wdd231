@@ -40,9 +40,6 @@ footer {
     width: 100vw;
     text-align: center;
 }
-.footer-page {
-
-}
 /* **************** HAMBURGER *****************/
 .hamburger {
     background: none;
@@ -101,8 +98,23 @@ h1 {
     margin-left: 10px;
 }
 
+
+/* **************** MENU *****************/
+.menu {
+    margin: 1rem auto;
+    text-align: center;
+	button {
+		padding: 0.5rem 1rem;
+		font-weight: 700;
+        border-radius: 10px;
+	}
+    button:hover {
+        background-color: aquamarine;
+    }
+}
+
 /* **************** CARDS *****************/
-#cards {
+#cards.grid {
     display: grid;
     grid-gap: 0.5rem;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -113,6 +125,42 @@ h1 {
     justify-content: end;
     background-color: rgb(202, 30, 150);
 }
+#cards.list {
+    display: flex;
+    flex-direction: column;
+
+    section {
+        grid-template-areas: 'businessName contactInfo';
+        grid-template-columns: 1fr 2fr;
+        width: 100%;
+
+        &:nth-child(even) {
+            background-color: #d8dbce;
+        }
+        &:nth-child(odd) {
+            background-color: #fffdec;
+        }
+    }
+
+    h2 { 
+        font-size: 1rem;
+        text-align: start;
+        display: inline;
+    }
+    .tagLine { display: none; }
+    img { display: none; }
+    .contactInfo {
+        display: grid;
+        grid-template-areas: 'email phone url';
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1px;
+    }
+    .email { grid-area: email; }
+    .phone { grid-area: phone; }
+    .url { grid-area: url; }
+    .card-label { display: none; }
+}
+
 section {
     display: grid;
     grid-template-areas: 
@@ -132,16 +180,13 @@ section {
 }
 h2 {
     grid-area: businessName;
-    box-shadow: 0 0 30px #789;
     width: 100%;
     text-align: center;
     margin: 0;
   white-space: nowrap;
   font-size: clamp(0.75rem, 6cqw, 1.5rem);
 }
-.tagLine {
-    grid-area: tagLine;
-}
+.tagLine { grid-area: tagLine; }
 .logo {
     grid-area: logo;
     width: auto;
@@ -154,6 +199,4 @@ h2 {
     font-size: smaller;
     margin: 0 0 13px 10px;
 }
-.card-label {
-    font-weight: bold;
-}
+.card-label { font-weight: bold; }
