@@ -1,6 +1,7 @@
 const url = 'data/members.json';
 
 const cards = document.querySelector('#cards');
+cards.innerHTML = ""
 
 const getMemberData = async () => {
     try {
@@ -56,7 +57,7 @@ const displayMembers = (members) => {
         contactInfo.appendChild(url);
         contactInfo.setAttribute('class', 'contactInfo');
 
-
+        
         card.appendChild(businessName);
         card.appendChild(tagLine);
         card.appendChild(logo);

@@ -1,13 +1,67 @@
 :root, [data-theme="light"] {
-  --toggle-btn-bg:     #e0e0e0;
-  --toggle-text-color: #333333;
-  --body-text-color:   #333333;
+    --toggle-btn-bg: #2a2a2a;
+    --toggle-text-color: #f0f0f0;
+    --body-text-color:   #333333;
+    --body-background-color: #d4e7e1;
+    --header-background-color: #cbe78a;
+    --header-page-background-color: #f5de13;
+    --site-name-color: #3D405B;
+    --page-border-bottom: #ddd;
+    --hamburger-color:  #3D405B;
+    --navigation-li-hover-background-color: #e1e7be;
+    --navigation-a-color: #3D405B;
+    --navigation-current-background-color: #ddd;
+    --h1-color:#3D405B;
+    --filter-button-color: #3D405B;
+    --filter-button-background-color: #ddd;
+    --filter-button-hover-background-color: #e1e7be;
+    --cards-grid-background-color: #ffffff0c;
+    --cards-list-even-color: #3D405B;
+    --cards-list-even-background-color: #d8dbce;
+    --cards-list-odd--color: #3D405B;
+    --cards-list-odd-background-color: #fffdec;
+    --card-color: #3D405B;
+    --card-background-color: #fffdec;
+    --card-border: #8a85857e;
+    --logo-box-shadow: 0 0 30px #789;
+    --footer-page: #3D405B;
+
+    --icon-bg: #d4e7e1;
+    --icon-color: #3D405B;
+    --icon-hover: #E07A5F;
 }
 
 [data-theme="dark"] {
-  --toggle-btn-bg:     #333333;
-  --toggle-text-color: #f0f0f0;
-  --body-text-color:   #f0f0f0;
+    --toggle-btn-bg: #f0f0f0;
+    --toggle-text-color: #2a2a2a;
+    --body-text-color:   #f0f0f0;
+    --body-background-color: #101313;
+    --header-background-color: #5e6b3e;
+    --header-page-background-color: #534c0c;
+    --site-name-color: #e3e6ff;
+    --page-border-bottom: #f8f8f8;
+    --hamburger-color:  #090a0c;
+    --navigation-li-hover-background-color: #886a6a;
+    --navigation-a-color: #e3e6ff;
+    --navigation-current-background-color: #493636;
+    --h1-color:#e3e6ff;
+    --filter-button-color: #e3e6ff;
+    --filter-button-background-color: #493636;
+    --filter-button-hover-background-color: #886a6a;
+    --cards-grid-background-color: #ffffff0c;
+    --cards-list-even-color: #fffdec;
+    --cards-list-even-background-color: #595e88;
+    --cards-list-odd--color: #fffdec;
+    --cards-list-odd-background-color: #3D405B;
+    --card-color: #e3e6ff;
+    --card-background-color: #3D405B;
+    --card-border: #fffefed3;
+    --logo-box-shadow: 0 0 30px #3e4d5c;
+    --footer-page: #e3e6ff;
+
+    --icon-bg: #2b2d42;
+    --icon-color: #f5de13;
+    --icon-hover: #E07A5F;
 }
 
 [data-theme="light"] .dark  { display: none; }
@@ -20,18 +74,22 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: var(--body-background-color);
+}
 /* **************** HEADER *****************/
 header {
-    background-color: rgb(245, 222, 19);
+    background-color: var(--header-background-color);
 }
 .page {
     display: grid;
     grid-template-columns: 24px auto 44px;
     padding: 5px 0 5px 10px;
     align-items: end;
-    border-bottom: solid 1px #ddd;
+    border-bottom: solid 1px var(--page-border-bottom);
     column-gap: 8px;
     padding-right: 55px;
+    background-color: var(--header-page-background-color);
 }
 
 header img {
@@ -42,24 +100,15 @@ header img {
 }
 header span {
     font-size: 1.2rem;
-    color: #3D405B;
+    color: var(--site-name-color);
 }
 
 
-/* **************** FOOTER *****************/
-footer {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-}
-.footer-page {
-    background-color: rgb(245, 222, 19);
-}
 /* **************** HAMBURGER *****************/
 .hamburger {
     background: none;
     border: none;
-    color: #3D405B;
+    color: var(--hamburger-color);
     cursor: pointer;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     transition: background-color 0.2s ease;
@@ -100,19 +149,20 @@ footer {
 .navigation a {
     display: block;
     padding: .8rem 10px;
-    color: #3D405B;
+    color: var(--navigation-a-color);
     text-decoration: none;
-    border-bottom: solid 1px #ddd;
+    border-bottom: solid 1px var(--navigation-current-background-color);
 }
 .navigation li.current {
-    background-color: #eee;
+    background-color: var(--navigation-current-background-color);
 }
 .navigation li:hover {
-    background-color: #e1e7be;
+    background-color: var(--navigation-li-hover-background-color);
 }
 
 h1 {
     margin-left: 10px;
+    color: var(--h1-color);
 }
 
 
@@ -124,9 +174,11 @@ h1 {
 		padding: 0.5rem 1rem;
 		font-weight: 700;
         border-radius: 10px;
+        color: var(--filter-button-color);
+        background-color: var(--filter-button-background-color);
 	}
     button:hover {
-        background-color: aquamarine;
+        background-color: var(--filter-button-hover-background-color);
     }
 }
 
@@ -140,7 +192,7 @@ h1 {
 
     justify-items: center;
     justify-content: end;
-    background-color: rgb(202, 30, 150);
+    background-color: var(--cards-grid-background-color);
 }
 #cards.list {
     display: flex;
@@ -152,10 +204,12 @@ h1 {
         width: 100%;
 
         &:nth-child(even) {
-            background-color: #d8dbce;
+            color: var(--cards-list-even-color);
+            background-color: var(--cards-list-even-background-color);
         }
         &:nth-child(odd) {
-            background-color: #fffdec;
+            color: var(--cards-list-odd--color);
+            background-color: var(--cards-list-odd-background-color);
         }
     }
 
@@ -188,8 +242,9 @@ section {
     grid-template-rows: auto auto 1fr auto auto auto;
     align-items: start;
     align-content: start;
-    background-color: #eee;
-    border: 1px solid rgb(0 0 0 / 10%);
+    color: var(--card-color);
+    background-color: var(--card-background-color);
+    border: 1px solid var(--card-border);
     padding: 0.5rem;
     width: 350px;
     height: auto;
@@ -218,7 +273,7 @@ h2 {
     grid-area: logo;
     width: auto;
     max-width: 325px;
-    box-shadow: 0 0 30px #789;
+    box-shadow: var(--logo-box-shadow);
     padding: 5px;
 }
 .contactInfo > p {
@@ -227,3 +282,42 @@ h2 {
     margin: 0 0 13px 10px;
 }
 .card-label { font-weight: bold; }
+
+
+/* **************** FOOTER *****************/
+footer {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+    .footer-page p {
+        margin: 0;
+    }
+}
+footer * {
+    color: var(--site-name-color);
+}
+.foot-left, .foot-right {
+    text-align: left;
+    padding-left: 10px;
+    align-items: start;
+    margin: 0;
+}
+.social {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem;
+}
+.social a {
+    color: var(--icon-color);
+    transition: color 0.2s ease;
+}
+.social a:hover { color: var(--icon-hover); }
+.social svg {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+.social .bg { fill: currentColor; }
+.social .glyph { fill: var(--icon-bg); }

@@ -6,13 +6,8 @@
     }
 
     /* **************** HEADER *****************/
-    header, footer {
-    background-color: rgb(167, 156, 62);
-    }
-
     .page {
         grid-template-columns: 24px auto auto;
-    background-color: rgb(245, 222, 19);
     }
     .hamburger {
         display: none;
@@ -32,5 +27,12 @@
     .navigation a {
         border: none;
         padding: 5px;
+    }
+
+    /* **************** FOOTER *****************/
+    .footer-page {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
     }
 }
