@@ -35,4 +35,31 @@
         grid-template-columns: 1fr 1fr 1fr;
 
     }
+        /* **************** LIST VIEW (table) *****************/
+    .member-table {
+        display: table;
+        border-collapse: collapse;
+    }
+    .member-table thead { display: table-header-group; }
+    .member-table tbody { display: table-row-group; }
+    .member-table tr {
+        display: table-row;
+        margin: 0;
+        border: none;
+    }
+    .member-table th {
+        text-align: left;
+        padding: 0.6rem 0.75rem;
+        color: var(--filter-button-color);
+        background-color: var(--filter-button-background-color);
+    }
+    .member-table td {
+        display: table-cell;
+        padding: 0.6rem 0.75rem;
+    }
+    .member-table td::before { display: none; }
+    .member-table td.name {
+        padding: 0.6rem 0.75rem;
+        font-size: 1rem;
+    }
 }
