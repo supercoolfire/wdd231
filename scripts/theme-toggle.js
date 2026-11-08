@@ -4,34 +4,47 @@
  * COPYLEFT: 2026
  * PROJECT : Light/Dark Theme Switcher Boilerplate
  * ============================================================================
- * * ============================================================================
- * FEATURE & USAGE NOTES
- * ============================================================================
- * * FEATURES:
- * 1. Plug-and-Play: No need to modify your existing HTML structure.
- * 2. Persistent Storage: Saves user theme preference to localStorage.
- * 3. System Preference Sync: Automatically respects OS/browser light/dark settings 
- * if no manual preference has been saved yet.
- * 4. Element Swapping: Provides seamless CSS hooks to swap UI elements 
- * conditionally depending on the active theme.
- * 5. Zero Flash (Anti-FOUC): Optimized to prevent a bright white flash on load 
- * when dark mode is active.
- * * * REQUIRED HTML STRUCTURE:
- * 1. The <html> element must include a `data-theme` attribute (defaulting to "light"):
-  <html lang="en" data-theme="light">
- * * 2. The script must be included in the <head> with the `defer` attribute to 
- * ensure the DOM is ready without blocking initial HTML parsing:
-  <script src="boilerplate.js" defer></script>
- * * 3. A toggle button with an internal structure showing the NEXT action:
-  <button class="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">
-  <span class="theme-icon">🌙</span>
-  <span class="theme-text">Dark Mode</span>
-  </button>
- * * 4. ALTERNATIVE: A minimalist icon-only toggle button:
-  <button class="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">🌙</button>
- * * 5. For element swapping, apply matching contextual classes alongside your styles:
-  <div class="foo bar light">Visible only in light mode</div>
-  <div class="foo bar dark">Visible only in dark mode</div>
+ *
+ * FEATURES:
+ *   1. Plug-and-Play: No need to modify your existing HTML structure.
+ *   2. Persistent Storage: Saves user theme preference to localStorage.
+ *   3. System Preference Sync: Automatically respects OS/browser light/dark
+ *      settings if no manual preference has been saved yet.
+ *   4. Element Swapping: Provides seamless CSS hooks to swap UI elements
+ *      conditionally depending on the active theme.
+ *   5. Zero Flash (Anti-FOUC): Optimized to prevent a bright white flash on
+ *      load when dark mode is active.
+ *
+ * ----------------------------------------------------------------------------
+ * REQUIRED HTML STRUCTURE:
+ * ----------------------------------------------------------------------------
+ *
+ *   1. The <html> element must include a `data-theme` attribute:
+ *
+ *        <html lang="en" data-theme="light">
+ *
+ *   2. Include this script in <head> with the `defer` attribute:
+ *
+ *        <script src="theme-toggle.js" defer></script>
+ *
+ *   3. Full toggle button (shows the NEXT action):
+ *
+ *        <button class="theme-toggle" aria-label="Switch to dark mode"
+ *                title="Switch to dark mode">
+ *          <span class="theme-icon">🌙</span>
+ *          <span class="theme-text">Dark Mode</span>
+ *        </button>
+ *
+ *   4. Minimalist icon-only variant:
+ *
+ *        <button class="theme-toggle" aria-label="Switch to dark mode"
+ *                title="Switch to dark mode">🌙</button>
+ *
+ *   5. For element swapping, pair contextual classes with your styles:
+ *
+ *        <div class="foo bar light">Visible only in light mode</div>
+ *        <div class="foo bar dark">Visible only in dark mode</div>
+ *
  * ============================================================================
  */
 
