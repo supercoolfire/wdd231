@@ -20,6 +20,8 @@
     .navigation {
         display: block;
         border-bottom: solid 1px #eee;
+        grid-column: auto;
+        justify-self: end;
     }
     .navigation ul {
         display: flex;

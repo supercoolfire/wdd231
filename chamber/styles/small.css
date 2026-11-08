@@ -21,6 +21,7 @@ header {
     align-items: end;
     border-bottom: solid 1px #ddd;
     column-gap: 8px;
+    padding-right: 45px;
 }
 
 header img {
@@ -71,7 +72,7 @@ footer {
     /* Drawer effect: 0fr comming soon */
     grid-template-rows: 0fr;
     transition: grid-template-rows 0.3s ease;
-    justify-self: end;
+    grid-column: 1 / -1; 
     margin: 0;
 }
 .navigation.show {
