@@ -3,8 +3,10 @@ const url = 'data/members.json';
 const cards = document.querySelector('#cards');
 const gridbutton = document.querySelector('#grid');
 const listbutton = document.querySelector('#list');
+const searchInput = document.querySelector('#member-search');
 
 let allMembers = [];
+let searchQuery = '';
 
 const getMemberData = async () => {
     try {
@@ -20,10 +22,54 @@ const getMemberData = async () => {
     }
 };
 
+/* ─── Filter logic ───────────────────────────────────────────────────────── */
+
+function getFiltered() {
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) return allMembers;
+    return allMembers.filter(member =>
+        member.name.toLowerCase().includes(query) ||
+        (member.tagline  && member.tagline.toLowerCase().includes(query)) ||
+        (member.email    && member.email.toLowerCase().includes(query)) ||
+        (member.phone    && member.phone.toLowerCase().includes(query)) ||
+        (member.website  && member.website.toLowerCase().includes(query))
+    );
+}
+
+/* ─── Highlight helper ───────────────────────────────────────────────────── */
+
+function escapeHtml(str) {
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
+function escapeRegex(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function highlight(text, query) {
+    const safe = escapeHtml(text);
+    if (!query) return safe;
+    const safeQ = escapeHtml(query.trim());
+    if (!safeQ) return safe;
+    const re = new RegExp(`(${escapeRegex(safeQ)})`, 'gi');
+    return safe.replace(re, '<mark>$1</mark>');
+}
+
 /* **************** GRID VIEW (cards) *****************/
 
 const displayMembers = (members) => {
     cards.innerHTML = '';
+
+    if (members.length === 0) {
+        cards.innerHTML = '<p class="member-empty">No members match your search.</p>';
+        return;
+    }
+
+    const query = searchQuery.trim();
 
     members.forEach((member) => {
         const card = document.createElement('section');
@@ -35,10 +81,10 @@ const displayMembers = (members) => {
         const phone = document.createElement('p');
         const site = document.createElement('p');
 
-        businessName.textContent = member.name;
+        businessName.innerHTML = highlight(member.name, query);
         businessName.setAttribute('class', 'businessName');
 
-        tagLine.textContent = member.tagline;
+        tagLine.innerHTML = highlight(member.tagline, query);
         tagLine.setAttribute('class', 'tagLine');
 
         logo.setAttribute('src', member.image);
@@ -48,13 +94,13 @@ const displayMembers = (members) => {
         logo.setAttribute('height', '100');
         logo.setAttribute('class', 'logo card');
 
-        email.innerHTML = `<span class="card-label">EMAIL:</span> ${member.email}`;
+        email.innerHTML = `<span class="card-label">EMAIL:</span> ${highlight(member.email, query)}`;
         email.setAttribute('class', 'email');
 
-        phone.innerHTML = `<span class="card-label">PHONE:</span> ${member.phone}`;
+        phone.innerHTML = `<span class="card-label">PHONE:</span> ${highlight(member.phone, query)}`;
         phone.setAttribute('class', 'phone');
 
-        site.innerHTML = `<span class="card-label">URL:</span> ${member.website}`;
+        site.innerHTML = `<span class="card-label">URL:</span> ${highlight(member.website, query)}`;
         site.setAttribute('class', 'url');
         
         contactInfo.append(email, phone, site);
@@ -75,6 +121,13 @@ const displayMembers = (members) => {
 
 const displayTable = (members) => {
     cards.innerHTML = '';
+
+    if (members.length === 0) {
+        cards.innerHTML = '<p class="member-empty">No members match your search.</p>';
+        return;
+    }
+
+    const query = searchQuery.trim();
 
     const columns = [
         { label: 'Name',    key: 'name',    cls: 'name' },
@@ -104,7 +157,7 @@ const displayTable = (members) => {
         const row = document.createElement('tr');
         columns.forEach((col) => {
             const td = document.createElement('td');
-            td.textContent = member[col.key];
+            td.innerHTML = highlight(member[col.key], query);
             td.setAttribute('data-label', col.label);   // used by mobile CSS
             td.setAttribute('class', col.cls);
             row.appendChild(td);
@@ -121,17 +174,32 @@ const displayTable = (members) => {
 function showGrid() {
     cards.classList.add('grid');
     cards.classList.remove('list');
-    displayMembers(allMembers);
+    gridbutton.setAttribute('aria-pressed', 'true');
+    listbutton.setAttribute('aria-pressed', 'false');
+    displayMembers(getFiltered());
 }
 
 function showList() {
     cards.classList.add('list');
     cards.classList.remove('grid');
-    displayTable(allMembers);
+    listbutton.setAttribute('aria-pressed', 'true');
+    gridbutton.setAttribute('aria-pressed', 'false');
+    displayTable(getFiltered());
 }
 
 gridbutton.addEventListener('click', showGrid);
 listbutton.addEventListener('click', showList);
+
+/* **************** LIVE SEARCH *****************/
+
+searchInput.addEventListener('input', () => {
+    searchQuery = searchInput.value;
+    if (cards.classList.contains('list')) {
+        displayTable(getFiltered());
+    } else {
+        displayMembers(getFiltered());
+    }
+});
 
 /* **************** H2wow *****************/
 

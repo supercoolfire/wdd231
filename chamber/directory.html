@@ -57,8 +57,18 @@
     <main>
         <h1>Chamber Directory</h1>
         <div class="menu">
-            <button id="grid">Grid</button>
-            <button id="list">List</button>
+            <button id="grid" aria-pressed="true">Grid</button>
+            <button id="list" aria-pressed="false">List</button>
+            <div class="member-search-wrap">
+                <label for="member-search" class="visually-hidden">Search members</label>
+                <input
+                    type="search"
+                    id="member-search"
+                    class="member-search"
+                    placeholder="Search members…"
+                    aria-label="Search members"
+                    autocomplete="off">
+            </div>
         </div>
         <div id="cards" class="grid loading-dots rickster-egg">Loading greedy cards</div>
     </main>

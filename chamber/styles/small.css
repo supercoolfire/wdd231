@@ -349,3 +349,71 @@ footer * {
 .social .glyph {
     color: var(--icon-bg);
 }
+
+/* **************** LIVE SEARCH *****************/
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem auto;
+    justify-content: center;
+}
+.member-search-wrap {
+    flex: 1;
+    min-width: 160px;
+}
+.member-search {
+    width: 100%;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    background-color: var(--card-background-color);
+    color: var(--card-color);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.member-search:focus {
+    outline: none;
+    border-color: var(--filter-button-color);
+    box-shadow: 0 0 0 2px var(--cards-grid-background-color);
+}
+.member-search::placeholder {
+    opacity: 0.6;
+}
+.member-empty {
+    text-align: center;
+    opacity: 0.65;
+    padding: 1.5rem 0;
+    font-style: italic;
+    color: var(--card-color);
+}
+
+/* Highlight match inside cards and table cells */
+section mark,
+.member-table mark {
+    background-color: #ffe066;
+    color: #1a1a1a;
+    border-radius: 2px;
+    padding: 0 1px;
+    font-style: normal;
+}
+[data-theme="dark"] section mark,
+[data-theme="dark"] .member-table mark {
+    background-color: #c8a000;
+    color: #ffffff;
+}
+
+/* Visually hidden (accessible label) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
