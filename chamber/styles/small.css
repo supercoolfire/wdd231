@@ -14,7 +14,7 @@
     --h1-color:#3D405B;
     --filter-button-color: #3D405B;
     --filter-button-background-color: #ddd;
-    --filter-button-hover-background-color: #e1e7be;
+\--filter-button-hover-background-color: #e1e7be;
     --cards-grid-background-color: #ffffff0c;
     --cards-list-even-color: #3D405B;
     --cards-list-even-background-color: #d8dbce;
@@ -56,7 +56,7 @@
     --card-color: #e3e6ff;
     --card-background-color: #3D405B;
     --card-border: #fffefed3;
-    --logo-box-shadow: 0 0 30px #3e4d5c;
+    --logo-box-shadow: #3e4d5c;
     --footer-page: #e3e6ff;
 
     --icon-bg: #2b2d42;
@@ -198,7 +198,6 @@ section {
     padding: 0.5rem;
     width: 350px;
     height: auto;
-  container-type: inline-size;
 }
 h2 {
     grid-area: businessName;
@@ -222,7 +221,7 @@ h2 {
     grid-area: logo;
     width: auto;
     max-width: 325px;
-    box-shadow: var(--logo-box-shadow);
+    box-shadow: 0 0 30px var(--logo-box-shadow);
     padding: 5px;
 }
 .contactInfo > p {
