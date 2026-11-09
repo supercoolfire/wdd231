@@ -340,12 +340,12 @@ footer * {
     display: block;
 }
 .social .bg {
-    fill: var(--icon-color);
-    transition: fill 0.2s ease;
+    color: var(--icon-color);
+    transition: color 0.2s ease;
 }
 .social a:hover .bg {
-    fill: var(--icon-hover);
+    color: var(--icon-hover);
 }
 .social .glyph {
-    fill: var(--icon-bg);
+    color: var(--icon-bg);
 }
