@@ -1,177 +1,164 @@
 /**
- * Course Cards v2.1
+ * * Course Cards v3.0
  * Author: Jayser Pilapil
- * Date: 2026-11-02
- * Description: Fetches course data from JSON, builds data-driven filter buttons,
- * renders neumorphic cards with search-term highlighting, and supports live search.
+ * Date: 2026-11-13
+ * Description: Renders Web Certificate course cards from the official course array,
+ *              with All / WDD / CSE filter buttons and a dynamic credit total.
+ * Version: 3.0
  * Features:
- * - Fetches course data from data/web-certificate-courses.json
- * - Filter buttons generated from unique subjects in the data (data-driven)
- * - "All" button always first; subject buttons sorted alphabetically
- * - Live search — matches subject+number, title, and certificate name
- * - Matched text highlighted with <mark> so users see why a card is included
- * - Completed courses rendered with a distinct completed style
+ * - **UPDATE** Official 6-course array copied from the W01 assignment (no fetch, no JSON)
+ * - completed: true set for personally completed courses
+ * - Filter buttons: All, WDD, CSE — using Array.filter()
  * - Credit total dynamically computed using Array.reduce()
- * - Empty state message when no courses match the current filter/search
+ * - Credit total updates when a filter is applied
+ * - Completed courses rendered with a visually distinct style
+ * - All cards rendered dynamically — page auto-adjusts if data changes
  * Usage:
  * <script src="scripts/course.js" defer></script>
- * Requires .web-cert-courses section with .filter-buttons container
- * and #course-search input in the HTML.
+ * Requires .web-cert-courses section with .filter-buttons container in the HTML.
  */
+
+/* ─── Official Course List Array (W01 Assignment) ────────────────────────── */
+
+const courses = [
+    {
+        subject: 'CSE',
+        number: 110,
+        title: 'Introduction to Programming',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages (variables, decisions, calculations, loops, array, and input/output) and use them to solve problems.',
+        technology: ['Python'],
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 130,
+        title: 'Web Fundamentals',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course introduces students to the World Wide Web and to careers in web site design and development. The course is hands on with students actually participating in simple web designs and programming. It is anticipated that students who complete this course will understand the fields of web design and development and will have a good idea if they want to pursue this degree as a major.',
+        technology: ['HTML', 'CSS'],
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 111,
+        title: 'Programming with Functions',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'CSE 111 students become more organized, efficient, and powerful computer programmers by learning to research and call functions written by others; to write, call , debug, and test their own functions; and to handle errors within functions. CSE 111 students write programs with functions to solve problems in many disciplines, including business, physical science, human performance, and humanities.',
+        technology: ['Python'],
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 210,
+        title: 'Programming with Classes',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course will introduce the notion of classes and objects. It will present encapsulation at a conceptual level. It will also work with inheritance and polymorphism.',
+        technology: ['C#'],
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 131,
+        title: 'Dynamic Web Fundamentals',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course builds on prior experience in Web Fundamentals and programming. Students will learn to create dynamic websites that use JavaScript to respond to events, update content, and create responsive user experiences.',
+        technology: ['HTML', 'CSS', 'JavaScript'],
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 231,
+        title: 'Frontend Web Development I',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course builds on prior experience with Dynamic Web Fundamentals and programming. Students will focus on user experience, accessibility, compliance, performance optimization, and basic API usage.',
+        technology: ['HTML', 'CSS', 'JavaScript'],
+        completed: false
+    }
+];
+
+/* ─── DOM References ─────────────────────────────────────────────────────── */
 
 const courseSection   = document.querySelector('.web-cert-courses');
 const filterContainer = courseSection.querySelector('.filter-buttons');
-const searchInput     = document.querySelector('#course-search');
 
-let allCourses   = [];    // full dataset from JSON
-let activeFilter = 'ALL'; // current subject filter
-let searchQuery  = '';    // current search string
+let activeFilter = 'ALL';
 
-/* ─── Fetch ─────────────────────────────────────────────────────────────── */
+/* ─── Build Filter Buttons ───────────────────────────────────────────────── */
 
-async function loadCourses() {
-  try {
-    const response = await fetch('data/web-certificate-courses.json');
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    allCourses = await response.json();
+function buildFilterButtons() {
+    const filters = [
+        { value: 'ALL', label: 'All' },
+        { value: 'WDD', label: 'WDD' },
+        { value: 'CSE', label: 'CSE' },
+    ];
 
-    buildFilterButtons(allCourses);
-    renderCourses(getFiltered());
-  } catch (err) {
-    courseSection.insertAdjacentHTML(
-      'beforeend',
-      `<p class="course-error">Could not load courses: ${err.message}</p>`
-    );
-  }
+    filters.forEach(({ value, label }, index) => {
+        const btn = document.createElement('button');
+        btn.classList.add('filter-btn');
+        if (index === 0) btn.classList.add('active');
+        btn.dataset.filter = value;
+        btn.textContent = label;
+
+        btn.addEventListener('click', () => {
+            filterContainer.querySelectorAll('.filter-btn')
+                .forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeFilter = value;
+            renderCourses(getFiltered());
+        });
+
+        filterContainer.appendChild(btn);
+    });
 }
 
-/* ─── Build Filter Buttons (data-driven) ────────────────────────────────── */
-
-function buildFilterButtons(courses) {
-  const subjects = [...new Set(courses.map(c => c.subject))].sort();
-  filterContainer.appendChild(createFilterBtn('ALL', 'All', true));
-  subjects.forEach(subject => {
-    filterContainer.appendChild(createFilterBtn(subject, subject, false));
-  });
-}
-
-function createFilterBtn(filterValue, label, isActive) {
-  const btn = document.createElement('button');
-  btn.classList.add('filter-btn');
-  if (isActive) btn.classList.add('active');
-  btn.dataset.filter = filterValue;
-  btn.textContent = label;
-
-  btn.addEventListener('click', () => {
-    filterContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    activeFilter = filterValue;
-    renderCourses(getFiltered());
-  });
-
-  return btn;
-}
-
-/* ─── Filter + Search Logic ─────────────────────────────────────────────── */
+/* ─── Filter Logic ───────────────────────────────────────────────────────── */
 
 function getFiltered() {
-  const query = searchQuery.trim().toLowerCase();
-
-  return allCourses.filter(course => {
-    const matchesFilter =
-      activeFilter === 'ALL' || course.subject === activeFilter;
-
-    const matchesSearch =
-      query === '' ||
-      `${course.subject} ${course.number}`.toLowerCase().includes(query) ||
-      course.title.toLowerCase().includes(query) ||
-      course.certificate.toLowerCase().includes(query);
-
-    return matchesFilter && matchesSearch;
-  });
-}
-
-/* ─── Highlight helper ───────────────────────────────────────────────────── */
-
-/**
- * Escapes HTML special chars, then wraps every case-insensitive occurrence
- * of `query` with <mark>. Safe against XSS because we escape first.
- */
-function highlight(text, query) {
-  const safe = escapeHtml(text);
-  if (!query) return safe;
-  const safeQuery = escapeHtml(query.trim());
-  if (!safeQuery) return safe;
-  const re = new RegExp(`(${escapeRegex(safeQuery)})`, 'gi');
-  return safe.replace(re, '<mark>$1</mark>');
-}
-
-function escapeHtml(str) {
-  return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
-
-function escapeRegex(str) {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (activeFilter === 'ALL') return courses;
+    return courses.filter(c => c.subject === activeFilter);
 }
 
 /* ─── Render ─────────────────────────────────────────────────────────────── */
 
 function renderCourses(list) {
-  courseSection.querySelector('.course-cards-grid')?.remove();
-  courseSection.querySelector('.credit-total')?.remove();
-  courseSection.querySelector('.course-empty')?.remove();
+    courseSection.querySelector('.course-cards-grid')?.remove();
+    courseSection.querySelector('.credit-total')?.remove();
 
-  if (list.length === 0) {
-    courseSection.insertAdjacentHTML(
-      'beforeend',
-      '<p class="course-empty">No courses match your search.</p>'
-    );
-    return;
-  }
+    const grid = document.createElement('div');
+    grid.classList.add('course-cards-grid');
 
-  const query = searchQuery.trim();
-  const grid  = document.createElement('div');
-  grid.classList.add('course-cards-grid');
+    list.forEach(course => {
+        const card = document.createElement('div');
+        card.classList.add('course-card');
+        if (course.completed) card.classList.add('completed');
 
-  list.forEach(course => {
-    const card = document.createElement('div');
-    card.classList.add('course-card');
-    if (course.completed) card.classList.add('completed');
-    if (!course.completed) card.classList.add('rickster-egg');
+        card.innerHTML = `
+            <h3>${course.subject} ${course.number}</h3>
+            <p class="course-title">${course.title}</p>
+            <p class="course-credits">${course.credits} credits</p>
+            ${course.completed ? '<span class="badge-complete">&#10003; Completed</span>' : ''}
+        `;
+        grid.appendChild(card);
+    });
 
-    const courseCode = `${course.subject} ${course.number}`;
+    courseSection.appendChild(grid);
 
-    card.innerHTML = `
-      <h3>${highlight(courseCode, query)}</h3>
-      <p class="course-title">${highlight(course.title, query)}</p>
-      <p class="course-credits">${course.credits} credits</p>
-      <p class="course-cert">${highlight(course.certificate, query)}</p>
-      ${course.completed ? '<span class="badge-complete">&#10003; Completed</span>' : ''}
-    `;
-    grid.appendChild(card);
-  });
-
-  courseSection.appendChild(grid);
-
-  // Credit total via Array.reduce
-  const total = list.reduce((sum, c) => sum + c.credits, 0);
-  const totalEl = document.createElement('p');
-  totalEl.classList.add('credit-total');
-  totalEl.textContent = `Total Credits: ${total}`;
-  courseSection.appendChild(totalEl);
+    // Credit total via Array.reduce()
+    const total = list.reduce((sum, c) => sum + c.credits, 0);
+    const totalEl = document.createElement('p');
+    totalEl.classList.add('credit-total');
+    totalEl.textContent = `Total Credits: ${total}`;
+    courseSection.appendChild(totalEl);
 }
-
-/* ─── Live Search ────────────────────────────────────────────────────────── */
-
-searchInput.addEventListener('input', () => {
-  searchQuery = searchInput.value;
-  renderCourses(getFiltered());
-});
 
 /* ─── Init ───────────────────────────────────────────────────────────────── */
 
-loadCourses();
+buildFilterButtons();
+renderCourses(getFiltered());
