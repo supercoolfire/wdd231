@@ -23,6 +23,8 @@
     --icon-bg: #d4e7e1;
     --icon-color: #3D405B;
     --icon-hover: #E07A5F;
+
+    --generic-box-shadow: 0 10px 15px -3px #0000008d;
 }
 
 [data-theme="dark"] {
@@ -50,6 +52,8 @@
     --icon-bg: #1C1C1E;
     --icon-color: #64D2FF;
     --icon-hover: #FF453A;
+
+    --generic-box-shadow: 0 10px 15px -3px #ffffff4d;
 }
 
 [data-theme="light"] .dark  { display: none; }
@@ -187,6 +191,7 @@ section {
     color: var(--card-color);
     background-color: var(--card-background-color);
     border: 1px solid var(--card-border);
+    box-shadow: var(--generic-box-shadow);
     padding: 0.5rem;
     width: 350px;
     height: auto;
@@ -234,6 +239,7 @@ h2 {
 .member-table {
     width: 100%;
     border-collapse: collapse;
+    box-shadow: var(--generic-box-shadow);
 }
 .member-table th {
     padding: 0.6rem 0.75rem;
