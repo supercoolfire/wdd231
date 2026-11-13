@@ -9,7 +9,8 @@
   --font-main:         "Comic Sans MS", "Chalkboard SE", cursive;
   --toggle-btn-bg:     #333333;
   --toggle-text-color: #f0f0f0;
-  --page-bg:           #008080;
+  --body-text-color:   #000000;
+  --page-bg:           #00808087;
   --page-text:         #000000;
   --card-bg:           #d4d0c8;
   --card-border:       #000000;
@@ -33,8 +34,9 @@
 }
 
 [data-theme="dark"] {
-  --toggle-btn-bg:     #d4d0c8;
+  --toggle-btn-bg:     #e0e0e0;
   --toggle-text-color: #333333;
+  --body-text-color:   #e0e0ff;
   --page-bg:        #0d0d1a;
   --page-text:      #e0e0ff;
   --card-bg:        #12122a;
@@ -47,7 +49,7 @@
   --header-bg:      #0a0a1a;
   --header-text:    #00ffe7;
   --footer-bg:      #0a0a1a;
-  --footer-text:    #ff00ff;
+  --footer-text:    #ff47ff;
   --toggle-bg:      #00ffe7;
   --toggle-color:   #0d0d1a;
   --toggle-hover:   #ff00ff;
@@ -113,38 +115,18 @@ header .page {
 
 /* ─── Theme Toggle Button (injected by theme-toggle.js) ──────── */
 .theme-toggle {
-  background: var(--toggle-bg);
-  color: var(--toggle-color);
+  background: var(--toggle-btn-bg);
+  color: var(--toggle-text-color);
   border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  border-radius: 30px;
+  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   flex-shrink: 0;
-  transition: background var(--transition), box-shadow var(--transition);
+  transition: background var(--transition);
 }
-
-.theme-toggle:hover {
-  background: var(--toggle-hover);
-  box-shadow: var(--accent-glow);
-}
-
-.theme-toggle svg {
-  width: 20px;
-  height: 20px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-/* Show sun icon in dark mode, moon in light mode */
-[data-theme="light"] .icon-moon { display: none; }
-[data-theme="dark"]  .icon-sun  { display: none; }
 
 /* ─── Main ───────────────────────────────────────────────────── */
 main {
@@ -270,15 +252,20 @@ main > h1 {
 }
 
 /* ─── Current Temp Span (second section) ─────────────────────── */
+main > p {
+  color: var(--page-text);
+}
+
 #current-temp {
   font-weight: 700;
 }
 
 [data-theme="light"] #current-temp {
-  color: #000000; /* #000000 on #008080 teal = 4.78:1 ✅ AA */
+  color: #000000; 
 }
 
 [data-theme="dark"] #current-temp {
+  color: #fff9f9; 
   text-shadow: 0 0 10px var(--temp-color);
 }
 
