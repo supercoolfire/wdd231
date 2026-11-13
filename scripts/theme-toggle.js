@@ -38,14 +38,14 @@
    ============================================================================
 
 :root, [data-theme="light"] {
-  --toggle-btn-bg:     #e0e0e0;
-  --toggle-text-color: #333333;
+  --toggle-btn-bg:     #333333;
+  --toggle-text-color: #f0f0f0;
   --body-text-color:   #333333;
 }
 
 [data-theme="dark"] {
-  --toggle-btn-bg:     #333333;
-  --toggle-text-color: #f0f0f0;
+  --toggle-btn-bg:     #e0e0e0;
+  --toggle-text-color: #333333;
   --body-text-color:   #f0f0f0;
 }
 

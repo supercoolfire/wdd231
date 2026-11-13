@@ -21,16 +21,16 @@
  *
  *   1. The <html> element must include a `data-theme` attribute:
  *
-        <html lang="en" data-theme="light">
+ *        <html lang="en" data-theme="light">
  *
  *   2. Include this script in <head> with the `defer` attribute:
  *
-        <script src="theme-toggle.js" defer></script>
+ *        <script src="theme-toggle.js" defer></script>
  *
  *   3. For element swapping, pair contextual classes with your styles:
  *
-        <div class="foo bar light">Visible only in light mode</div>
-        <div class="foo bar dark">Visible only in dark mode</div>
+ *        <div class="foo bar light">Visible only in light mode</div>
+ *        <div class="foo bar dark">Visible only in dark mode</div>
  */
 
 /* ============================================================================
@@ -38,15 +38,15 @@
    ============================================================================
 
 :root, [data-theme="light"] {
-    --toggle-btn-bg: #2a2a2a;
-    --toggle-text-color: #f0f0f0;
-    --body-text-color:   #333333;
+  --toggle-btn-bg:     #333333;
+  --toggle-text-color: #f0f0f0;
+  --body-text-color:   #333333;
 }
 
 [data-theme="dark"] {
-    --toggle-btn-bg: #f0f0f0;
-    --toggle-text-color: #2a2a2a;
-    --body-text-color:   #f0f0f0;
+  --toggle-btn-bg:     #e0e0e0;
+  --toggle-text-color: #333333;
+  --body-text-color:   #f0f0f0;
 }
 
 [data-theme="light"] .dark  { display: none; }
@@ -69,8 +69,8 @@ style.type = 'text/css';
 style.innerHTML = `
 .theme-toggle {
 	position: fixed;
-	top: 8px;
-	right: 10px;
+	top: 20px;
+	right: 15px;
 	z-index: 100;
 
     padding: 8px 8px;
