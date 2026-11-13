@@ -1,0 +1,302 @@
+﻿/* base.css — Weather Lab
+   Light theme: clean modern card
+   Dark theme:  cyberpunk neon
+   Theme driven by data-theme on <html>, toggled by theme-toggle.js
+*/
+
+/* ─── Custom Properties ─────────────────────────────────────── */
+:root {
+  --font-main:         "Comic Sans MS", "Chalkboard SE", cursive;
+  --toggle-btn-bg:     #333333;
+  --toggle-text-color: #f0f0f0;
+  --page-bg:           #008080;
+  --page-text:         #000000;
+  --card-bg:           #d4d0c8;
+  --card-border:       #000000;
+  --card-shadow:       inset -1px -1px 0 #000000,
+                       inset  1px  1px 0 #ffffff,
+                       inset -2px -2px 0 #808080,
+                       inset  2px  2px 0 #dfdfdf;
+  --accent:            #000080;
+  --accent-glow:       transparent;
+  --temp-color:        #800000;
+  --desc-color:        #000080;
+  --header-bg:         #000080;
+  --header-text:       #ffffff;
+  --footer-bg:         #d4d0c8;
+  --footer-text:       #000000;
+  --toggle-bg:         #d4d0c8;
+  --toggle-color:      #000000;
+  --toggle-hover:      #bab8b2;
+  --radius:            0px;
+  --transition:        0.3s ease;
+}
+
+[data-theme="dark"] {
+  --toggle-btn-bg:     #d4d0c8;
+  --toggle-text-color: #333333;
+  --page-bg:        #0d0d1a;
+  --page-text:      #e0e0ff;
+  --card-bg:        #12122a;
+  --card-border:    #00ffe7;
+  --card-shadow:    0 0 32px #00ffe755, 0 0 64px #ff00ff22;
+  --accent:         #00ffe7;
+  --accent-glow:    0 0 12px #00ffe7cc;
+  --temp-color:     #ff00ff;
+  --desc-color:     #a0ffef;
+  --header-bg:      #0a0a1a;
+  --header-text:    #00ffe7;
+  --footer-bg:      #0a0a1a;
+  --footer-text:    #ff00ff;
+  --toggle-bg:      #00ffe7;
+  --toggle-color:   #0d0d1a;
+  --toggle-hover:   #ff00ff;
+}
+
+/* ─── Reset ──────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Base ───────────────────────────────────────────────────── */
+html {
+  font-family: var(--font-main);
+  background-color: var(--page-bg);
+  color: var(--page-text);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ─── Header ─────────────────────────────────────────────────── */
+header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color var(--transition);
+}
+
+/* 90s Win95 title bar gradient */
+[data-theme="light"] header {
+  background: linear-gradient(to right, #000080, #1084d0);
+  border-bottom: 2px solid #000000;
+}
+
+[data-theme="dark"] header {
+  border-bottom: 1px solid var(--accent);
+  text-shadow: 0 0 10px var(--accent);
+}
+
+header h1 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* .page wrapper — theme-toggle.js looks for header .page to inject its button */
+header .page {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* ─── Theme Toggle Button (injected by theme-toggle.js) ──────── */
+.theme-toggle {
+  background: var(--toggle-bg);
+  color: var(--toggle-color);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.theme-toggle:hover {
+  background: var(--toggle-hover);
+  box-shadow: var(--accent-glow);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Show sun icon in dark mode, moon in light mode */
+[data-theme="light"] .icon-moon { display: none; }
+[data-theme="dark"]  .icon-sun  { display: none; }
+
+/* ─── Main ───────────────────────────────────────────────────── */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+}
+
+main > h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* 90s WordArt rainbow heading */
+[data-theme="light"] main > h1 {
+  background: linear-gradient(90deg, #ff0000, #ff8800, #ffff00, #00cc00, #0000ff, #9900cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.35));
+}
+
+[data-theme="dark"] main > h1 {
+  color: var(--accent);
+  text-shadow: 0 0 14px var(--accent);
+}
+
+/* ─── Weather Card ───────────────────────────────────────────── */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  padding: 2rem;
+  width: min(480px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+/* 90s Win95 card: raised border + fake title bar */
+[data-theme="light"] .card {
+  position: relative;
+  padding-top: 2.5rem;
+}
+
+[data-theme="light"] .card::before {
+  content: "Weather Data";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.3rem 0.6rem;
+}
+
+[data-theme="dark"] .card {
+  outline: 1px solid #ff00ff44;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+[data-theme="light"] .card h2 {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+[data-theme="dark"] .card h2 {
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent);
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+}
+
+[data-theme="dark"] .card img {
+  filter: drop-shadow(0 0 8px var(--accent));
+}
+
+/* ─── Temperature ────────────────────────────────────────────── */
+#temperatureImperial,
+#temperatureMetric {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--temp-color);
+  letter-spacing: 0.02em;
+}
+
+[data-theme="dark"] #temperatureImperial,
+[data-theme="dark"] #temperatureMetric {
+  text-shadow: 0 0 16px var(--temp-color), 0 0 32px var(--temp-color);
+}
+
+/* ─── Description ────────────────────────────────────────────── */
+#description {
+  font-size: 1rem;
+  color: var(--desc-color);
+  text-transform: capitalize;
+  letter-spacing: 0.03em;
+}
+
+[data-theme="light"] #description {
+  font-style: italic;
+}
+
+/* ─── Current Temp Span (second section) ─────────────────────── */
+#current-temp {
+  font-weight: 700;
+}
+
+[data-theme="light"] #current-temp {
+  color: #000000; /* #000000 on #008080 teal = 4.78:1 ✅ AA */
+}
+
+[data-theme="dark"] #current-temp {
+  text-shadow: 0 0 10px var(--temp-color);
+}
+
+/* ─── Footer ─────────────────────────────────────────────────── */
+footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+[data-theme="light"] footer {
+  border-top: 2px solid #808080;
+}
+
+[data-theme="dark"] footer {
+  border-top: 1px solid var(--accent);
+  text-shadow: 0 0 8px var(--footer-text);
+}

@@ -1,0 +1,39 @@
+<! DOCTYPE html>
+    <html lang="en" data-theme="light">
+
+    <head>
+        <meta charset="UTF-8">
+        <link href="styles/base.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BYUI Weather Data</title>
+        <script src="scripts/weather.js" defer></script>
+        <script src="scripts/theme-toggle.js" defer></script>
+    </head>
+
+
+    <header>
+        <h1>OpenWeatherMap.org API Test</h1>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2 id="town"></h2>
+            <img id="graphic" src="" alt="">
+            <p id="description"></p>
+            <p><span id="temperatureImperial"></span>&nbsp;|&nbsp;
+                <span id="temperatureMetric"></span>
+            </p>
+        </div>
+
+        <p>The current temperature in Point Nemo is <span id="current-temp"></span></p>
+        <figure>
+            <img id="weather-icon" src="" alt="">
+            <figcaption></figcaption>
+        </figure>
+    </main>
+    <footer>
+        Jayser Pilapil | OpenWeatherMap.org | CC BY-SA 4.0
+    </footer>
+    </body>
+
+    </html>
