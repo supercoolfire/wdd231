@@ -15,14 +15,6 @@
                             { "tag": "span", "textContent": "W01 Learning Activity: Header & Navigation" }
                         ]},
                         { "tag": "div", "class": "card", "items": [
-                            { "tag": "a", "class": "preview", "id": "preview-w1a2", "href": "week01/favorite-city.html", "innerHTML": "<p class='loading-dots'>Loading preview</p>" },
-                            { "tag": "span", "textContent": "W01 Activity: Favorite City" }
-                        ]},
-                        { "tag": "div", "class": "card", "items": [
-                            { "tag": "a", "class": "preview", "id": "preview-w1home", "href": "chamber-site-plan.html", "innerHTML": "<p class='loading-dots'>Loading preview</p>" },
-                            { "tag": "span", "textContent": "W01 Assignment: Chamber Site Plan" }
-                        ]},
-                        { "tag": "div", "class": "card", "items": [
                             { "tag": "a", "class": "preview", "id": "preview-w1home", "href": "index.html", "innerHTML": "<p class='loading-dots'>Loading preview</p>" },
                             { "tag": "span", "textContent": "W01 Assignment: Course Home Page" }
                         ]}
@@ -53,6 +45,10 @@
                         { "tag": "div", "class": "card", "items": [
                             { "tag": "a", "class": "preview", "id": "preview-w3a1", "href": "week3/modules.html", "innerHTML": "<p class='loading-dots'>Loading preview</p>" },
                             { "tag": "span", "textContent": "W03 Learning Activity: ES Modules" }
+                        ]},
+                        { "tag": "div", "class": "card", "items": [
+                            { "tag": "a", "class": "preview", "id": "preview-w3assign", "href": "week3/weather/index.html", "innerHTML": "<p class='loading-dots'>Loading preview</p>" },
+                            { "tag": "span", "textContent": "W03 Assignment: Chamber Home Page" }
                         ]},
                         { "tag": "div", "class": "card", "items": [
                             { "tag": "a", "class": "preview", "id": "preview-w3assign", "href": "chamber/index.html", "innerHTML": "<p class='loading-dots'>Loading preview</p>" },
