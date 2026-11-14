@@ -81,25 +81,25 @@ hambutton.addEventListener('click', () => {
 });
 
 // Set active class on the nav link that matches the current page.
-// Must run after hydration since nav links are injected by hydrate-v5.js.
+// Must run after hydration since nav links are injected by the hydrator.
+// Compares the full href against the end of window.location.pathname so that
+// links with the same filename in different folders (e.g. index.html vs
+// <directory>/index.html) never both match at the same time.
 const setActiveNavLink = () => {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const pathname = window.location.pathname;
     document.querySelectorAll('nav ul li a').forEach(link => {
-        const linkPage = link.getAttribute('href').split('/').pop();
-        if (linkPage === currentPage) {
+        const href = link.getAttribute('href').replace(/^\.\//, '');
+        if (pathname.endsWith('/' + href)) {
             link.classList.add('active');
         }
     });
 };
 
-// Try multiple ways to ensure active nav link is set
-const trySetActiveNavLink = () => {
-    setActiveNavLink();
-};
+// Listens for both event names: hydrationFinished (v5) and hydrationComplete (v5.1 / v6).
+document.addEventListener('hydrationFinished', setActiveNavLink);
+document.addEventListener('hydrationComplete', setActiveNavLink);
+document.addEventListener('DOMContentLoaded', setActiveNavLink);
 
-document.addEventListener('hydrationFinished', trySetActiveNavLink);
-document.addEventListener('DOMContentLoaded', trySetActiveNavLink);
-
-// Also try a short delay in case both events fire too early
-setTimeout(trySetActiveNavLink, 100);
-setTimeout(trySetActiveNavLink, 500);
+// Short delay fallback in case events fire before nav links are in the DOM
+setTimeout(setActiveNavLink, 100);
+setTimeout(setActiveNavLink, 500);
