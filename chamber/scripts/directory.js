@@ -5,6 +5,8 @@ const gridbutton = document.querySelector('#grid');
 const listbutton = document.querySelector('#list');
 const searchInput = document.querySelector('#member-search');
 
+cards.setAttribute('class','directory-cards');
+
 let allMembers = [];
 let searchQuery = '';
 
@@ -81,8 +83,10 @@ const displayMembers = (members) => {
         const phone = document.createElement('p');
         const site = document.createElement('p');
 
+        card.setAttribute('class', 'directory-card');
+
         businessName.innerHTML = highlight(member.name, query);
-        businessName.setAttribute('class', 'businessName');
+        businessName.setAttribute('class', 'card-businessName');
 
         tagLine.innerHTML = highlight(member.tagline, query);
         tagLine.setAttribute('class', 'tagLine');
@@ -92,7 +96,7 @@ const displayMembers = (members) => {
         logo.setAttribute('loading', 'lazy');
         logo.setAttribute('width', '100');
         logo.setAttribute('height', '100');
-        logo.setAttribute('class', 'logo card');
+        logo.setAttribute('class', 'logo-card');
 
         email.innerHTML = `<span class="card-label">EMAIL:</span> ${highlight(member.email, query)}`;
         email.setAttribute('class', 'email');
