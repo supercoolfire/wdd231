@@ -1,9 +1,10 @@
 /**
- * * Just-In-Time Universal Hydrator v5.0 (Modified)
-	* Author: Jayser Pilapil
-	* Date: 2026-05-15
-	* Description: Makes html clean as possible
-	* Version: 5.0
+ * Just-In-Time Universal Hydrator v5.0 (Modified)
+ * Author: Jayser Pilapil
+ * Date: 2026-05-15
+ * Description: Makes html clean as possible
+ * Version: 5.0
+ *
  * Features:
  * - Support for unique identifiers as keys
  * - Optional 'querySelector' property for explicit targeting
@@ -13,71 +14,71 @@
  * - Support for 'innerHTML' attribute for raw HTML injection (v4.1)
  * - Support for text-only nodes in 'items' (removes <undefined> tag) (v4.2)
  * - v5.0 Upgrade: Support for complex, multi-type array properties (e.g., srcset/sizes arrays)
- * Event Usage:
- * - Triggered by 'hydrationFinished' event
- * - Example: 
- document.addEventListener("hydrationFinished", function() {
-     [function-name]();
- * });
- * * Usage: 
- * <script src="/scripts/hydrate-v5.js" data-production="true" data-production-file="/data/production.json" data-placeholder-file="/data/placeholder.json"></script>
- * or
- * <script src="/scripts/hydrate-v5.js" data-file="/data/production.json"></script>
- * 
- * JSON Format: production.json
- {
-    "unique-id-key": { 
-        "querySelector": "CSS-selector", 
-        "tag": "HTML-tag-to-create",
-        "insertion": "after | before | append | prepend | replace",
+ *
+ * Event:
+ * Dispatches 'hydrationFinished' when done.
+ *
+document.addEventListener("hydrationFinished", function() {
+    myFunction();
+});
+ *
+ * Usage — single file:
+<script src="scripts/hydrate-v5.js" data-file="data/page.json" defer></script>
+ *
+ * Usage — production / placeholder toggle:
+<script src="scripts/hydrate-v5.js"
+        data-production="true"
+        data-production-file="data/production.json"
+        data-placeholder-file="data/placeholder.json"
+        defer></script>
+ *
+ * JSON Format:
+{
+    "unique-key": {
+        "querySelector": "CSS-selector",
+        "tag": "html-tag-to-create",
+        "insertion": "replace | append | prepend | before | after",
         "id": "optional-id",
         "class": "optional-class",
         "textContent": "optional-text",
         "innerHTML": "optional-raw-html",
         "items": [
-            {
-                "tag": "child-tag",
-                "src": "attribute-value",
-                "textContent": "child-text"
-            },
-            {
-                "textContent": "raw-text-node-no-tag"
-            }
+            { "tag": "child-tag", "src": "value", "textContent": "child-text" },
+            { "textContent": "raw-text-node-no-tag" }
         ]
     }
 }
-* 
-* Plug-and-Play Example
+ *
+ * Plug-and-Play Example (append a deferred script after <title>):
 {
-    "sample-file": { 
+    "sample-script": {
         "querySelector": "title",
         "tag": "title",
         "insertion": "after",
         "items": [
-            { "tag": "script", "src": "/scripts/sample-file.js", "defer": "true"  }
+            { "tag": "script", "src": "scripts/sample.js", "defer": "true" }
         ]
     }
 }
-*
-* Backward compatibility 
+ *
+ * Backward-compatible key-as-selector:
 {
-"body": {
-   "tag": "title", 
-   "insertion": "after",
-   "items": [
-      { "tag": "script", "src": "/scripts/sample-file.js", "defer": "true" }
-   ]
+    "body": {
+        "tag": "title",
+        "insertion": "after",
+        "items": [
+            { "tag": "script", "src": "scripts/sample.js", "defer": "true" }
+        ]
+    }
 }
-}
-*
-* v5.0 Advanced Attribute Array Mapping Example
+ *
+ * v5.0 Responsive Image Example (array values joined with ", " for srcset/sizes):
 {
-    "responsive-hero-banner": {
+    "hero-banner": {
         "querySelector": "#hero-container",
         "tag": "img",
         "insertion": "append",
-        "class": "responsive-banner-fluid",
-        "alt": "Hero structural graphic display banner",
+        "alt": "Hero banner",
         "src": "images/hero-large.webp",
         "srcset": [
             "images/hero-small.webp 480w",
