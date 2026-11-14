@@ -1,0 +1,67 @@
+{
+    "main-content": {
+        "querySelector": "main",
+        "tag": "main",
+        "insertion": "replace",
+        "items": [
+            { "tag": "h1", "textContent": "Portfolio" },
+            { "tag": "div", "class": "weeks", "items": [
+
+                { "tag": "div", "class": "week", "items": [
+                    { "tag": "h2", "textContent": "Week 1" },
+                    { "tag": "div", "class": "cards", "items": [
+                        { "tag": "div", "class": "card", "items": [
+                            { "tag": "a", "class": "preview", "id": "preview-w1a1", "href": "week01/learning-activity/index.html", "innerHTML": "<p class='loading-dots'>Loading preview</p>" },
+                            { "tag": "span", "textContent": "W01 Learning Activity: Header & Navigation" }
+                        ]},
+                        { "tag": "div", "class": "card", "items": [
+                            { "tag": "a", "class": "preview", "id": "preview-w1a2", "href": "week01/favorite-city.html", "innerHTML": "<p class='loading-dots'>Loading preview</p>" },
+                            { "tag": "span", "textContent": "W01 Activity: Favorite City" }
+                        ]},
+                        { "tag": "div", "class": "card", "items": [
+                            { "tag": "a", "class": "preview", "id": "preview-w1home", "href": "chamber-site-plan.html", "innerHTML": "<p class='loading-dots'>Loading preview</p>" },
+                            { "tag": "span", "textContent": "W01 Assignment: Chamber Site Plan" }
+                        ]},
+                        { "tag": "div", "class": "card", "items": [
+                            { "tag": "a", "class": "preview", "id": "preview-w1home", "href": "index.html", "innerHTML": "<p class='loading-dots'>Loading preview</p>" },
+                            { "tag": "span", "textContent": "W01 Assignment: Course Home Page" }
+                        ]}
+                    ]}
+                ]},
+
+                { "tag": "div", "class": "week", "items": [
+                    { "tag": "h2", "textContent": "Week 2" },
+                    { "tag": "div", "class": "cards", "items": [
+                        { "tag": "div", "class": "card", "items": [
+                            { "tag": "a", "class": "preview", "id": "preview-w2a1", "href": "week02/learning-activity/prophets.html", "innerHTML": "<p class='loading-dots'>Loading preview</p>" },
+                            { "tag": "span", "textContent": "W02 Learning Activity: Latter-day Prophets" }
+                        ]},
+                        { "tag": "div", "class": "card", "items": [
+                            { "tag": "a", "class": "preview", "id": "preview-w2siteplan", "href": "chamber-site-plan.html", "innerHTML": "<p class='loading-dots'>Loading preview</p>" },
+                            { "tag": "span", "textContent": "W02 Site Plan: Chamber of Commerce" }
+                        ]},
+                        { "tag": "div", "class": "card", "items": [
+                            { "tag": "a", "class": "preview", "id": "preview-w2assign", "href": "chamber/directory.html", "innerHTML": "<p class='loading-dots'>Loading preview</p>" },
+                            { "tag": "span", "textContent": "W02 Assignment: Chamber Directory" }
+                        ]}
+                    ]}
+                ]},
+
+                { "tag": "div", "class": "week", "items": [
+                    { "tag": "h2", "textContent": "Week 3" },
+                    { "tag": "div", "class": "cards", "items": [
+                        { "tag": "div", "class": "card", "items": [
+                            { "tag": "a", "class": "preview", "id": "preview-w3a1", "href": "week3/modules.html", "innerHTML": "<p class='loading-dots'>Loading preview</p>" },
+                            { "tag": "span", "textContent": "W03 Learning Activity: ES Modules" }
+                        ]},
+                        { "tag": "div", "class": "card", "items": [
+                            { "tag": "a", "class": "preview", "id": "preview-w3assign", "href": "chamber/index.html", "innerHTML": "<p class='loading-dots'>Loading preview</p>" },
+                            { "tag": "span", "textContent": "W03 Assignment: Chamber Home Page" }
+                        ]}
+                    ]}
+                ]}
+
+            ]}
+        ]
+    }
+}

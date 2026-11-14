@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="author" content="Jayser Pilapil">
+    <meta name="description" content="Portfolio of all WDD 231 Web Frontend Development I activities, assignments, and projects by Jayser Pilapil.">
+    <meta name="keywords" content="portfolio, WDD 231, web frontend development, BYU-Idaho, activities, assignments, Jayser Pilapil">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Portfolio | WDD 231 – Web Frontend Development I – Jayser Pilapil</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        media="print" onload="this.media='all'">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/portfolio.css">
+    <link rel="stylesheet" href="styles/portfolio-large.css" media="(min-width: 640px)">
+
+    <!-- Preload JSON -->
+    <link rel="preload" href="data/nav.json" as="fetch" crossorigin>
+    <link rel="preload" href="data/portfolio.json" as="fetch" crossorigin>
+
+    <!-- Scripts -->
+    <script src="scripts/theme-toggle.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/nav-burger.js" defer></script>
+    <script src="scripts/modal-click-origin.js" defer></script>
+    <script src="scripts/rickster-egg-v2.js" defer></script>
+    <script src="scripts/preview-card.js" defer></script>
+    <script src="scripts/hydrate-v6.js" data-file="data/nav.json data/portfolio.json" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="brand-link">
+            <img src="images/logo.svg" alt="site logo" class="brand-logo" width="24" height="24">
+            <span class="brand-name">Jayser Pilapil</span>
+        </a>
+        <button type="button" id="menu" aria-label="Menu"></button>
+        <nav>
+            <ul id="navigation">
+                <li class="loading-dots rickster-egg">Loading navigation</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="loading-dots">Loading portfolio</div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a class="rickster-egg" href="https://github.com/supercoolfire" target="_blank" rel="noopener noreferrer">
+                <img src="images/github.svg" alt="GitHub profile" width="36" height="36">
+            </a>
+            <a class="rickster-egg" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/linkedin.svg" alt="LinkedIn profile" width="36" height="36">
+            </a>
+        </div>
+        <p>
+            &copy;<span id="currentyear"></span> | Jayser Pilapil | Philippines
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
+

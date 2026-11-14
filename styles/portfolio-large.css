@@ -1,0 +1,63 @@
+/* ==========================================================================
+   portfolio-large.css — overrides for screens 640px and wider
+   WDD 231 | Jayser Pilapil
+   ========================================================================== */
+
+@media (min-width: 640px) {
+
+    /* ── Hide hamburger, show nav horizontally ── */
+    #menu {
+        display: none;
+    }
+
+    nav {
+        grid-column: 1 / -1;
+        display: block;
+        background-color: var(--header-bg-color);
+        overflow: visible;
+        margin-right: 40px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 0.25rem;
+        padding: 0.5rem 0 0;
+    }
+
+    nav ul li a {
+        border-bottom: none;
+        border-radius: 4px;
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* ── Cards: more per row on wider screens ── */
+    .cards {
+        gap: 12px;
+    }
+
+    .card {
+        width: 210px;
+    }
+
+    /* ── Weeks: two-column grid on wide screens ── */
+    .weeks {
+        gap: 1.5rem;
+    }
+
+}
+
+@media (min-width: 900px) {
+
+    .weeks {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+        gap: 1.5rem;
+        align-items: start;
+    }
+
+}

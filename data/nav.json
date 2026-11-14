@@ -1,0 +1,14 @@
+{
+    "#navigation": {
+        "tag": "ul",
+        "id": "navigation",
+        "insertion": "replace",
+        "items": [
+            { "tag": "li", "items": [{ "tag": "a", "href": "index.html",              "textContent": "Home",               "title": "Home",               "rel": "noopener" }] },
+            { "tag": "li", "items": [{ "tag": "a", "href": "chamber/index.html",      "textContent": "Chamber Project",    "title": "Chamber Project",    "rel": "noopener" }] },
+            { "tag": "li", "items": [{ "tag": "a", "href": "chamber-site-plan.html",  "textContent": "Chamber Site Plan",  "title": "Chamber Site Plan",  "rel": "noopener" }] },
+            { "tag": "li", "items": [{ "tag": "a", "href": "final.html",              "textContent": "Final Project",      "title": "Final Project",      "rel": "noopener" }] },
+            { "tag": "li", "items": [{ "tag": "a", "href": "portfolio.html",          "textContent": "Portfolio",          "title": "Portfolio",          "rel": "noopener" }] }
+        ]
+    }
+}
