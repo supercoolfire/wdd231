@@ -1,11 +1,3 @@
 {
-  "rickster-egg": { "tag": "title", "insertion": "after", "items": [{ "tag": "script", "src": "scripts/rickster-egg-v2.js", "defer": "true" }] },
-  "#navigation": {
-    "tag": "ul", "id": "navigation",
-    "items": [
-      { "tag": "li", "items": [{ "tag": "a", "href": "index.html",   "textContent": "Home", "title": "House",    "rel": "noopener" }] },
-      { "tag": "li", "items": [{ "tag": "a", "href": "chamber.html", "textContent": "Chamber Project", "title": "Chamber Project", "rel": "noopener" }] },
-      { "tag": "li", "items": [{ "tag": "a", "href": "final.html",   "textContent": "Final Project",   "title": "Final Project",   "rel": "noopener" }] }
-    ]
-  }
+  "rickster-egg": { "tag": "title", "insertion": "after", "items": [{ "tag": "script", "src": "scripts/rickster-egg-v2.js", "defer": "true" }] }
 }
