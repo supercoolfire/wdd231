@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Jayser Pilapil">
-    <meta name="description" content="Browse the member business directory for the local Chamber of Commerce. Find contact info, websites, and membership levels for all registered members.">
+    <meta name="description" content="Welcome to the Point Nemo Chamber of Commerce — your gateway to the most remote business community on Earth. Weather, events, and member spotlights.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:title" content="Chamber Directory">
-    <meta property="og:description" content="Browse local member businesses in the Chamber of Commerce directory. View contact details, websites, and membership levels.">
-    <meta property="og:image" content="https://supercoolfire.github.io/wdd231/chamber/images/logo.svg">
-    <meta property="og:url" content="https://supercoolfire.github.io/wdd231/chamber/directory.html">
+    <meta property="og:title" content="Point Nemo Chamber of Commerce | Home">
+    <meta property="og:description" content="Welcome to Point Nemo — the most remote place on Earth and home to a thriving business community.">
+    <meta property="og:image" content="https://supercoolfire.github.io/wdd231/chamber/images/hero/hero-light-medium.webp">
+    <meta property="og:url" content="https://supercoolfire.github.io/wdd231/chamber/index.html">
 
-    <title>Point Nemo Chamber of Commerce | Directory</title>
+    <title>Point Nemo Chamber of Commerce | Home</title>
 
     <link rel="icon" href="images/favicon.ico">
 
@@ -35,6 +35,9 @@
     <script src="scripts/modal-click-origin.js" defer></script>
     <script src="scripts/rickster-egg-v2.js" defer></script>
     <script src="scripts/theme-toggle.js" defer></script>
+
+    <script src="scripts/weather-home.js" defer></script>
+    <script src="scripts/spotlights.js" defer></script>
 </head>
 
 <body>
@@ -45,9 +48,9 @@
             <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" aria-expanded="false"></button>
             <nav id="nav-bar" class="navigation">
                 <ul>
-                    <li class="current"><a  href="index.html">Home</a></li>
+                    <li class="current"><a href="index.html" aria-current="page">Home</a></li>
                     <li><a class="rickster-egg" href="#">Discover</a></li>
-                    <li><a href="directory.html" aria-current="page">Business Directory</a></li>
+                    <li><a href="directory.html">Business Directory</a></li>
                     <li><a class="rickster-egg" href="#">Join</a></li>
                 </ul>
             </nav>
@@ -55,34 +58,76 @@
     </header>
     <main>
         <h1>Home</h1>
-        <!-- 1. Herro + CTA -->
+        <!-- 1. Hero + CTA -->
         <section class="hero">
-            <img src="images/hero-small.webp"
-             srcset="images/hero-small.webp 500w, images/hero-medium.webp 1000w"
-             sizes="(min-width: 640px) 1000px, 500px"
-             alt="Point Nemo coastline aerial view"
-             width="1000" height="500"
-             fetchpriority="high">
-             <div class="hero-content">
+            <picture class="light">
+                <source media="(min-width: 1000px)" srcset="images/hero/hero-light-large.webp">
+                <source media="(min-width: 500px)"  srcset="images/hero/hero-light-medium.webp">
+                <img class="light"
+                     src="images/hero/hero-light-small.webp"
+                     alt="Point Nemo — the most remote ocean point on Earth, surrounded by endless Pacific water"
+                     width="500" height="281"
+                     fetchpriority="high">
+            </picture>
+            <picture class="dark">
+                <source media="(min-width: 1000px)" srcset="images/hero/hero-dark-large.webp">
+                <source media="(min-width: 500px)"  srcset="images/hero/hero-dark-medium.webp">
+                <img class="dark"
+                     src="images/hero/hero-dark-small.webp"
+                     alt="Point Nemo — the most remote ocean point on Earth, surrounded by endless Pacific water"
+                     width="500" height="281"
+                     fetchpriority="high">
+            </picture>
+            <div class="hero-content">
                 <h2>Welcome to Point Nemo</h2>
                 <p class="light">The most populated place on Earth by repatriated debris</p>
                 <p class="dark">The most populated place on Earth by repatriated debris like shooting stars</p>
                 <a href="join.html" class="cta-btn">Become a Member</a>
-             </div>
+            </div>
         </section>
+
+        <!-- 2–4. Info columns -->
+        <div class="home-grid">
 
         <!-- 2. Current Events -->
-        <section class="events"></section>
+        <section class="events">
+            <h2>Current Events</h2>
+            <article>
+                <h3>Annual Flotsam &amp; Jetsam Expo</h3>
+                <p><time datetime="2025-08-15">August 15, 2025</time></p>
+                <p>The Pacific's premier showcase of washed-up innovation. Meet vendors, see exhibits, and place bids on the finest maritime debris.</p>
+            </article>
+            <article>
+                <h3>Chamber Networking Luncheon</h3>
+                <p><time datetime="2025-07-20">July 20, 2025</time></p>
+                <p>Monthly luncheon for all silver and gold members. This month's theme: "Business at the Edge of the World."</p>
+            </article>
+            <article>
+                <h3>Satellite Reentry Watch Party</h3>
+                <p><time datetime="2025-09-03">September 3, 2025</time></p>
+                <p>Point Nemo's favorite annual tradition. Blankets, binoculars, and complimentary hard hats provided.</p>
+            </article>
+        </section>
 
-        <!-- 3. Weather you like it or not, it's gonna rain -->
+        <!-- 3. Weather -->
         <section class="weather">
             <h2>Current Weather</h2>
+            <div class="weather-current">
+                <img id="weather-icon" src="" alt="" width="100" height="100">
+                <p id="weather-desc"><span class="loading-dots">Loading Weather</span></p>
+                <p class="weather-temp"><span id="weather-temp-f"></span> | <span id="weather-temp-c"></span></p>
+            </div>
+            <h3>3-Day Forecast</h3>
+            <div id="weather-forecast" class="weather-forecast"></div>
         </section>
 
-        <!-- 4. Spotty lights flush lite -->
-        <section class="spotlighs">
+        <!-- 4. Spotlights -->
+        <section class="spotlights">
             <h2>Member Spotlights</h2>
+            <div id="spotlights-container" class="spotlights-container"><span class="loading-dots">Loading Spotlights</span></div>
         </section>
+
+        </div><!-- end .home-grid -->
     </main>
     <footer>
         <div class="footer-page">

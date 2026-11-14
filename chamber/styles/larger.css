@@ -29,11 +29,33 @@
         padding: 5px;
     }
 
+    /* **************** HOME *****************/
+    .hero {
+        position: relative;
+        overflow: hidden;
+    }
+    .hero-content {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 2rem;
+        right: auto;
+        max-width: 480px;
+        background-color: #000000b8;
+        color: #ffffff;
+        border-radius: 8px;
+    }
+    .hero-content h2 {
+        font-size: 2rem;
+        color: #ffffff;
+    }
+    .hero-content p {
+        color: #ffffff;
+    }
+
     /* **************** FOOTER *****************/
     .footer-page {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-
     }
         /* **************** LIST VIEW (table) *****************/
     .member-table {

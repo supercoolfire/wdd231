@@ -151,6 +151,197 @@ h1 {
 /*                           H O M E                           */
 /* ----------------------------------------------------------- */
 
+/* ── Hero ──────────────────────────────────────────────────── */
+.hero {
+    width: 100%;
+}
+.hero picture,
+.hero picture img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.hero-content {
+    padding: 1rem;
+    background-color: var(--card-background-color);
+    color: var(--card-color);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.hero-content h2 {
+    margin: 0 0 0.4rem;
+    font-size: 1.4rem;
+    color: var(--site-name-color);
+}
+.hero-content p {
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
+}
+.cta-btn {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background-color: var(--icon-hover);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: opacity 0.2s ease;
+}
+.cta-btn:hover {
+    opacity: 0.85;
+}
+
+/* ── Events ────────────────────────────────────────────────── */
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    align-items: start;
+}
+.events {
+    padding: 0;
+}
+.events h2 {
+    color: var(--site-name-color);
+}
+.events article {
+    background-color: var(--card-background-color);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--card-color);
+}
+.events article h3 {
+    margin: 0 0 0.25rem;
+}
+.events article p {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+}
+
+/* ── Weather ───────────────────────────────────────────────── */
+.weather {
+    padding: 0;
+}
+.weather h2,
+.weather h3 {
+    color: var(--site-name-color);
+}
+.weather-current {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--card-background-color);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    color: var(--card-color);
+}
+.weather-current img {
+    flex-shrink: 0;
+}
+.weather-temp {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0;
+}
+.weather-forecast {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.forecast-day {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--card-background-color);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    color: var(--card-color);
+}
+.forecast-label {
+    font-weight: 700;
+    min-width: 7rem;
+    margin: 0;
+}
+.forecast-desc {
+    flex: 1;
+    margin: 0;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+.forecast-temp {
+    margin: 0;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* ── Spotlights ────────────────────────────────────────────── */
+.spotlights {
+    padding: 0;
+}
+.spotlights h2 {
+    color: var(--site-name-color);
+}
+.spotlights-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.spotlight-card {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    column-gap: 1rem;
+    align-items: start;
+    background-color: var(--card-background-color);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 0.75rem;
+    color: var(--card-color);
+    box-shadow: var(--generic-box-shadow);
+}
+.spotlight-card img {
+    grid-row: 1 / 6;
+    width: 100px;
+    height: auto;
+    border-radius: 4px;
+}
+.spotlight-card h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1rem;
+}
+.spotlight-card p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+.spotlight-card a {
+    color: var(--navigation-a-color);
+    word-break: break-all;
+}
+.spotlight-level {
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: max-content;
+    padding: 5px;
+    border-radius: 8px;
+    margin: 8px;
+    box-shadow: var(--generic-box-shadow);
+}
+.level-2 {    
+color: #010101;
+    background-color: #a9dcff;
+}
+.level-3 {    
+    color: #ffe8ae;
+    background-color: blue;
+}
+
 
 /* ----------------------------------------------------------- */
 /*                      D I R E C T O R Y                      */
@@ -422,3 +613,19 @@ section mark,
     border: 0;
 }
 
+/*-------------------------------------\
+|          Dots Entertainment         */
+.loading-dots::after {
+  content: '';
+  animation: dots 1.5s infinite steps(4);
+}
+
+@keyframes dots {
+  0%   { content: ''; }
+  25%  { content: '.'; }
+  50%  { content: '..'; }
+  75%  { content: '...'; }
+  100% { content: '....'; }
+}
+/*          Dots Entertainment          |
+\-------------------------------------*/
