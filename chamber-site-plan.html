@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jayser Pilapil">
+    <meta name="description" content="Chamber of Commerce Site Plan for the Point Nemo Chamber of Commerce WDD 231 project — purpose, goals, personas, SEO plan, design brief, site map, and wireframes.">
+    <meta name="keywords" content="Point Nemo, Chamber of Commerce, site plan, WDD 231, web frontend development, Jayser Pilapil">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chamber Site Plan | WDD 231 – Web Frontend Development I – Jayser Pilapil</title>
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        media="print" onload="this.media='all'">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/chamber-site-plan.css">
+    <link rel="stylesheet" href="styles/chamber-site-plan-large.css" media="(min-width: 640px)">
+
+    <link rel="preload" href="data/nav.json" as="fetch" crossorigin>
+
+    <script src="scripts/theme-toggle.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/nav-burger.js" defer></script>
+    <script src="scripts/hydrate-v6.js" data-file="data/nav.json" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="brand-link">
+            <img src="images/logo.svg" alt="site logo" class="brand-logo" width="24" height="24">
+            <span class="brand-name">Jayser Pilapil</span>
+        </a>
+        <button type="button" id="menu" aria-label="Menu"></button>
+        <nav>
+            <ul id="navigation">
+                <li class="loading-dots">Loading navigation</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="sp-main">
+        <h1>Chamber of Commerce Site Plan</h1>
+
+        <!-- SITE NAME -->
+        <section class="sp-section" id="site-name">
+            <h2>Site Name</h2>
+            <p>Point Nemo Chamber of Commerce</p>
+            <p class="sp-note">Point Nemo is the oceanic pole of inaccessibility — the point in the ocean farthest from any land. The name evokes a remote but tight-knit community that relies on its members to thrive, where every business connection counts.</p>
+        </section>
+
+        <!-- SITE PURPOSE -->
+        <section class="sp-section" id="site-purpose">
+            <h2>Site Purpose</h2>
+            <p>This website will serve as the central resource hub for businesses in and around Point Nemo. It will provide access to local events and networking opportunities, host a directory of member businesses, and encourage community commerce. The site aims to promote economic growth, support local entrepreneurs, and build a sense of community among businesses operating at the edge of the world.</p>
+        </section>
+
+        <!-- TARGET MARKET -->
+        <section class="sp-section" id="target-market">
+            <h2>Target Market</h2>
+            <p>Business owners, entrepreneurs, and community patrons in and around Point Nemo, as well as curious visitors and potential investors interested in the unique commercial landscape at the most remote location on Earth.</p>
+        </section>
+
+        <!-- SITE GOALS -->
+        <section class="sp-section" id="site-goals">
+            <h2>Site Goals</h2>
+            <ol class="sp-list">
+                <li>Improve member engagement by providing valuable resources, event listings, and networking opportunities.</li>
+                <li>Attract new businesses and encourage economic development in the community.</li>
+                <li>Improve the visibility and reputation of the chamber as the trusted authority for local business in Point Nemo.</li>
+            </ol>
+        </section>
+
+        <!-- USER PERSONAS -->
+        <section class="sp-section" id="user-personas">
+            <h2>User Personas</h2>
+            <div class="persona-grid">
+                <article class="persona-card">
+                    <h3>Small Business Owner — Mira</h3>
+                    <p>Mira is a 32-year-old entrepreneur who runs a deep-sea artifact salvage shop. She is looking for networking opportunities, marketing resources, and ways to reach a broader audience beyond Point Nemo's small resident population.</p>
+                </article>
+                <article class="persona-card">
+                    <h3>Maritime Logistics Executive — Dex</h3>
+                    <p>Dex is a 50-year-old operations director at a shipping company that routes cargo past Point Nemo. He wants to identify local partners for resupply contracts, economic development opportunities, and reliable business contacts in the region.</p>
+                </article>
+                <article class="persona-card">
+                    <h3>The New Resident — Lena</h3>
+                    <p>Lena recently relocated to Point Nemo and is exploring what services and businesses are available. She needs a business directory, upcoming events, and community information to get established quickly.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SCENARIOS -->
+        <section class="sp-section" id="scenarios">
+            <h2>Scenarios</h2>
+            <ul class="sp-list">
+                <li>A business owner wants to join the chamber to gain exposure and network with other members. They visit the site to review membership levels, benefits, and the application process.</li>
+                <li>A community member is looking for upcoming events and workshops. They browse the events section and register for activities they find relevant.</li>
+                <li>A visitor considering opening a business in Point Nemo researches the local commercial environment. They explore the directory and review the chamber's goals and community support resources.</li>
+            </ul>
+        </section>
+
+        <!-- SEO PLAN -->
+        <section class="sp-section" id="seo-plan">
+            <h2>SEO Plan</h2>
+            <ul class="sp-list">
+                <li>Use relevant keywords in page titles, headings, descriptions, and content (e.g., "Point Nemo business directory", "remote commerce", "oceanic trade community").</li>
+                <li>Verify the site on Google's Business Profile to improve local search visibility.</li>
+                <li>Pursue inbound links from all member businesses' websites to build domain authority.</li>
+                <li>Add Open Graph meta tags on every page for better social media sharing previews.</li>
+            </ul>
+        </section>
+
+        <!-- DESIGN BRIEF -->
+        <section class="sp-section" id="design-brief">
+            <h2>Design Brief</h2>
+            <div class="color-palette">
+                <div class="color-swatch">
+                    <div class="swatch-block" style="background-color:#cbe78a;"></div>
+                    <p class="swatch-label">Primary<br><code>#cbe78a</code></p>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-block" style="background-color:#f5de13;"></div>
+                    <p class="swatch-label">Secondary<br><code>#f5de13</code></p>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-block" style="background-color:#d4e7e1;"></div>
+                    <p class="swatch-label">Background<br><code>#d4e7e1</code></p>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-block" style="background-color:#3D405B;"></div>
+                    <p class="swatch-label">Text<br><code>#3D405B</code></p>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-block" style="background-color:#E07A5F;"></div>
+                    <p class="swatch-label">Accent<br><code>#E07A5F</code></p>
+                </div>
+            </div>
+            <p><strong>Font Family:</strong> Ubuntu (Google Fonts) — a humanist sans-serif chosen for its clarity and friendly character at all weights.</p>
+        </section>
+
+        <!-- SITE MAP -->
+        <section class="sp-section" id="site-map">
+            <h2>Site Map</h2>
+            <div class="sitemap">
+                <div class="sitemap-root">
+                    <div class="sm-node root-node">Point Nemo Chamber of Commerce</div>
+                </div>
+                <div class="sitemap-branches">
+                    <div class="sm-branch">
+                        <div class="sm-node">Home</div>
+                        <ul class="sm-children">
+                            <li>Hero + Call to Action</li>
+                            <li>Current Events</li>
+                            <li>Weather</li>
+                            <li>Member Spotlights</li>
+                        </ul>
+                    </div>
+                    <div class="sm-branch">
+                        <div class="sm-node">Discover</div>
+                        <ul class="sm-children">
+                            <li>Locale History</li>
+                            <li>Demographics</li>
+                            <li>Current Events</li>
+                            <li>Image Montage</li>
+                        </ul>
+                    </div>
+                    <div class="sm-branch">
+                        <div class="sm-node">Directory</div>
+                        <ul class="sm-children">
+                            <li>Member Cards (Grid)</li>
+                            <li>Member List (Table)</li>
+                            <li>Live Search</li>
+                        </ul>
+                    </div>
+                    <div class="sm-branch">
+                        <div class="sm-node">Join</div>
+                        <ul class="sm-children">
+                            <li>Membership Benefits</li>
+                            <li>Membership Levels</li>
+                            <li>Application Form</li>
+                            <li>Thank You Page</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WIREFRAMES -->
+        <section class="sp-section" id="wireframes">
+            <h2>Wireframes</h2>
+
+            <h3>Desktop</h3>
+            <figure class="wireframe-figure">
+                <div class="wireframe wireframe-desktop">
+                    <div class="wf-header">
+                        <div class="wf-logo"></div>
+                        <div class="wf-site-name">Point Nemo's Chamber of Commerce</div>
+                        <nav class="wf-nav" aria-label="Wireframe desktop nav example">Home | Discover | Directory | Join</nav>
+                    </div>
+                    <div class="wf-hero">
+                        <div class="wf-hero-img">Hero Image</div>
+                        <div class="wf-hero-cta">
+                            <p>Welcome to Point Nemo</p>
+                            <div class="wf-btn">Become a Member</div>
+                        </div>
+                    </div>
+                    <div class="wf-three-col">
+                        <div class="wf-col">
+                            <div class="wf-col-title">Current Events</div>
+                            <div class="wf-block"></div>
+                            <div class="wf-block"></div>
+                        </div>
+                        <div class="wf-col">
+                            <div class="wf-col-title">Weather</div>
+                            <div class="wf-block wf-weather"></div>
+                        </div>
+                        <div class="wf-col">
+                            <div class="wf-col-title">Member Spotlights</div>
+                            <div class="wf-block"></div>
+                            <div class="wf-block"></div>
+                        </div>
+                    </div>
+                    <div class="wf-footer">
+                        <div class="wf-footer-col">Address &amp; Contact</div>
+                        <div class="wf-footer-col">Social Icons</div>
+                        <div class="wf-footer-col">Copyright &amp; Modified</div>
+                    </div>
+                </div>
+                <figcaption>Desktop — three-column section below the hero</figcaption>
+            </figure>
+
+            <h3>Mobile</h3>
+            <figure class="wireframe-figure">
+                <div class="wireframe wireframe-mobile">
+                    <div class="wf-mobile-header">
+                        <div class="wf-logo-sm"></div>
+                        <div class="wf-site-name-sm">Point Nemo's CoC</div>
+                        <div class="wf-ham">&#9776;</div>
+                    </div>
+                    <div class="wf-hero wf-hero-sm">
+                        <div class="wf-hero-img-sm">Hero Image</div>
+                        <div class="wf-hero-cta-sm">
+                            <p>Welcome to Point Nemo</p>
+                            <div class="wf-btn-sm">Become a Member</div>
+                        </div>
+                    </div>
+                    <div class="wf-one-col">
+                        <div class="wf-col-title">Current Events</div>
+                        <div class="wf-block"></div>
+                        <div class="wf-block"></div>
+                        <div class="wf-col-title">Weather</div>
+                        <div class="wf-block wf-weather"></div>
+                        <div class="wf-col-title">Member Spotlights</div>
+                        <div class="wf-block"></div>
+                        <div class="wf-block"></div>
+                    </div>
+                    <div class="wf-footer-sm">
+                        <div>Social Icons</div>
+                        <div>Address</div>
+                        <div>&copy; Info</div>
+                    </div>
+                </div>
+                <figcaption>Mobile — single-column stacked sections</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/supercoolfire" target="_blank" rel="noopener noreferrer">
+                <img src="images/github.svg" alt="GitHub profile" width="36" height="36">
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/linkedin.svg" alt="LinkedIn profile" width="36" height="36">
+            </a>
+        </div>
+        <p>&copy;<span id="currentyear"></span> | Jayser Pilapil | Philippines</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
+

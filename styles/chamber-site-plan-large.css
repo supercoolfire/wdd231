@@ -1,0 +1,15 @@
+/* ==========================================================================
+   chamber-site-plan-large.css — loaded at min-width: 640px
+   Author: Jayser Pilapil
+   Date: 2026-11-14
+   ========================================================================== */
+
+@media only screen and (min-width: 640px) {
+    .persona-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .sitemap-branches {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
