@@ -69,8 +69,8 @@ style.type = 'text/css';
 style.innerHTML = `
 .theme-toggle {
 	position: fixed;
-	top: 20px;
-	right: 15px;
+	top: 8px;
+	right: 10px;
 	z-index: 100;
 
     padding: 8px 8px;
