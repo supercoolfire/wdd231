@@ -180,7 +180,7 @@ h1 {
 .cta-btn {
     display: inline-block;
     padding: 0.5rem 1.2rem;
-    background-color: var(--icon-hover);
+    background-color: #20208F;
     color: #ffffff;
     text-decoration: none;
     border-radius: 6px;
@@ -334,7 +334,7 @@ h1 {
     box-shadow: var(--generic-box-shadow);
 }
 .level-2 {    
-color: #010101;
+    color: #010101;
     background-color: #a9dcff;
 }
 .level-3 {    
