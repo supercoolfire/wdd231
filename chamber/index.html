@@ -22,7 +22,7 @@
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-        media="print" onload="this.media='all'">
+        media="print">
 
     <!-- Style Sheets Here -->
     <link rel="stylesheet" href="styles/normalize.css">
@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="styles/larger.css">
     <link rel="stylesheet" href="styles/modal-click-origin.css">
 
+    <link rel="preload" href="data/nav.json" as="fetch" crossorigin>
+    <link rel="preload" href="data/hero.json" as="fetch" crossorigin>
+    <script src="scripts/hydrate-v6.js" data-file="data/nav.json data/hero.json" defer></script>
     <script src="scripts/date.js" defer></script>
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/modal-click-origin.js" defer></script>
@@ -48,10 +51,7 @@
             <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" aria-expanded="false"></button>
             <nav id="nav-bar" class="navigation">
                 <ul>
-                    <li class="current"><a href="index.html" aria-current="page">Home</a></li>
-                    <li><a class="rickster-egg" href="#">Discover</a></li>
-                    <li><a href="directory.html">Business Directory</a></li>
-                    <li><a class="rickster-egg" href="#">Join</a></li>
+                    <li class="current loading-dots"><a href="index.html" aria-current="page">Loading menu...</a></li>
                 </ul>
             </nav>
         </div>
@@ -64,10 +64,9 @@
                 <source media="(min-width: 1000px)" srcset="images/hero/hero-light-large.webp">
                 <source media="(min-width: 500px)" srcset="images/hero/hero-light-medium.webp">
                 <img src="images/hero/hero-light-small.webp"
-                     alt="Point Nemo — the most remote ocean point on Earth, populated by diversity"
-                     width="500" height="281"
-                     fetchpriority="high">
+                    alt="Point Nemo — the most remote ocean point on Earth, populated by diversity" width="500" height="281" fetchpriority="high">
             </picture>
+
             <div class="hero-content">
                 <h2>Welcome to Point Nemo</h2>
                 <p>The most populated place on Earth by repatriated debris</p>
@@ -78,43 +77,43 @@
         <!-- 2–4. Info columns -->
         <div class="home-grid">
 
-        <!-- 2. Current Events -->
-        <section class="events">
-            <h2>Current Events</h2>
-            <article>
-                <h3>Annual Flotsam &amp; Jetsam Expo</h3>
-                <p><time datetime="2025-08-15">August 15, 2025</time></p>
-                <p>The Pacific's premier showcase of washed-up innovation. Meet vendors, see exhibits, and place bids on the finest maritime debris.</p>
-            </article>
-            <article>
-                <h3>Chamber Networking Luncheon</h3>
-                <p><time datetime="2025-07-20">July 20, 2025</time></p>
-                <p>Monthly luncheon for all silver and gold members. This month's theme: "Business at the Edge of the World."</p>
-            </article>
-            <article>
-                <h3>Satellite Reentry Watch Party</h3>
-                <p><time datetime="2025-09-03">September 3, 2025</time></p>
-                <p>Point Nemo's favorite annual tradition. Blankets, binoculars, and complimentary hard hats provided.</p>
-            </article>
-        </section>
+            <!-- 2. Current Events -->
+            <section class="events">
+                <h2>Current Events</h2>
+                <article>
+                    <h3>Annual Flotsam &amp; Jetsam Expo</h3>
+                    <p><time datetime="2025-08-15">August 15, 2025</time></p>
+                    <p>The Pacific's premier showcase of washed-up innovation. Meet vendors, see exhibits, and place bids on the finest maritime debris.</p>
+                </article>
+                <article>
+                    <h3>Chamber Networking Luncheon</h3>
+                    <p><time datetime="2025-07-20">July 20, 2025</time></p>
+                    <p>Monthly luncheon for all silver and gold members. This month's theme: "Business at the Edge of the World."</p>
+                </article>
+                <article>
+                    <h3>Satellite Reentry Watch Party</h3>
+                    <p><time datetime="2025-09-03">September 3, 2025</time></p>
+                    <p>Point Nemo's favorite annual tradition. Blankets, binoculars, and complimentary hard hats provided.</p>
+                </article>
+            </section>
 
-        <!-- 3. Weather -->
-        <section class="weather">
-            <h2>Current Weather</h2>
-            <div class="weather-current">
-                <img id="weather-icon" src="" alt="" width="100" height="100">
-                <p id="weather-desc"><span class="loading-dots">Loading Weather</span></p>
-                <p class="weather-temp"><span id="weather-temp-f"></span> | <span id="weather-temp-c"></span></p>
-            </div>
-            <h3>3-Day Forecast</h3>
-            <div id="weather-forecast" class="weather-forecast"></div>
-        </section>
+            <!-- 3. Weather -->
+            <section class="weather">
+                <h2>Current Weather</h2>
+                <div class="weather-current">
+                    <img id="weather-icon" src="#" alt="weather" width="100" height="100">
+                    <p id="weather-desc"><span class="loading-dots">Loading Weather</span></p>
+                    <p class="weather-temp"><span id="weather-temp-f"></span> | <span id="weather-temp-c"></span></p>
+                </div>
+                <h3>3-Day Forecast</h3>
+                <div id="weather-forecast" class="weather-forecast"><span class="loading-dots">Loading Forecast</span></div>
+            </section>
 
-        <!-- 4. Spotlights -->
-        <section class="spotlights">
-            <h2>Member Spotlights</h2>
-            <div id="spotlights-container" class="spotlights-container"><span class="loading-dots">Loading Spotlights</span></div>
-        </section>
+            <!-- 4. Spotlights -->
+            <section class="spotlights">
+                <h2>Member Spotlights</h2>
+                <div id="spotlights-container" class="spotlights-container"><span class="loading-dots">Loading Spotlights</span></div>
+            </section>
 
         </div><!-- end .home-grid -->
     </main>
@@ -132,29 +131,30 @@
             <div class="social">
                 <a href="https://youtube.com" aria-label="YouTube">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="12" cy="12" r="12" class="bg" fill="currentColor"/>
-                    <rect x="5" y="7.5" width="14" height="9" rx="2.6" class="glyph" fill="currentColor"/>
-                    <path d="M10.5 10.2v3.6l3.2-1.8z" class="bg" fill="currentColor"/>
+                        <circle cx="12" cy="12" r="12" class="bg" fill="currentColor" />
+                        <rect x="5" y="7.5" width="14" height="9" rx="2.6" class="glyph" fill="currentColor" />
+                        <path d="M10.5 10.2v3.6l3.2-1.8z" class="bg" fill="currentColor" />
                     </svg>
                 </a>
 
                 <a href="https://twitter.com" aria-label="Twitter">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="12" cy="12" r="12" class="bg" fill="currentColor"/>
-                    <path class="glyph" fill="currentColor" transform="translate(5.2 5.4) scale(0.6)"
-                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                        <circle cx="12" cy="12" r="12" class="bg" fill="currentColor" />
+                        <path class="glyph" fill="currentColor" transform="translate(5.2 5.4) scale(0.6)"
+                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
                     </svg>
                 </a>
 
                 <a href="https://linkedin.com" aria-label="LinkedIn">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="12" cy="12" r="12" class="bg" fill="currentColor"/>
-                    <rect x="6.9" y="10" width="2.3" height="7" class="glyph" fill="currentColor"/>
-                    <circle cx="8.05" cy="7.7" r="1.35" class="glyph" fill="currentColor"/>
-                    <path class="glyph" fill="currentColor" d="M11 10h2.1v1c.4-.7 1.2-1.2 2.3-1.2 2 0 2.6 1.3 2.6 3.1V17h-2.2v-3.5c0-.9-.2-1.6-1.2-1.6s-1.4.7-1.4 1.6V17H11z"/>
+                        <circle cx="12" cy="12" r="12" class="bg" fill="currentColor" />
+                        <rect x="6.9" y="10" width="2.3" height="7" class="glyph" fill="currentColor" />
+                        <circle cx="8.05" cy="7.7" r="1.35" class="glyph" fill="currentColor" />
+                        <path class="glyph" fill="currentColor"
+                            d="M11 10h2.1v1c.4-.7 1.2-1.2 2.3-1.2 2 0 2.6 1.3 2.6 3.1V17h-2.2v-3.5c0-.9-.2-1.6-1.2-1.6s-1.4.7-1.4 1.6V17H11z" />
                     </svg>
                 </a>
-                </div>
+            </div>
             <div class="foot-right">
                 <p>WDD231 Class Project</p>
                 <p>&copy;<span id="currentyear"></span> Point Nemo Chamber of Commerce</p>
