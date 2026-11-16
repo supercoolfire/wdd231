@@ -1,0 +1,27 @@
+{"bayani": {
+    "querySelector": "main .hero picture",
+    "insertion": "replace",
+    "items": [
+      {"tag": "picture", "class": "light", "items": [
+        {"tag": "source", "media": "(min-width: 1000px)", "srcset": "images/hero/hero-light-large.webp"},
+        {"tag": "source", "media": "(min-width: 500px)", "srcset": "images/hero/hero-light-medium.webp"},
+        {"tag": "img",
+          "src": "images/hero/hero-light-small.webp",
+          "alt": "Point Nemo — the most remote ocean point on Earth, populated by diversity",
+          "width": "500",
+          "height": "281",
+          "fetchpriority": "high"}
+      ]},
+      {"tag": "picture", "class": "dark", "items": [
+        {"tag": "source", "media": "(min-width: 1000px)", "srcset": "images/hero/hero2-dark-large.webp"},
+        {"tag": "source", "media": "(min-width: 500px)", "srcset": "images/hero/hero2-dark-medium.webp"},
+        {"tag": "img",
+          "src": "images/hero/hero2-dark-small.webp",
+          "alt": "Point Nemo — the most remote ocean point on Earth, populated by diversity",
+          "width": "500",
+          "height": "281",
+          "fetchpriority": "high"}
+      ]}
+    ]
+  }
+}
