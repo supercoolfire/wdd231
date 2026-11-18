@@ -181,7 +181,6 @@ header {
     transition: background-color 0.2s ease;
     background: none;
     color: var(--btn-color);
-    border: none;
 }
 #menu:hover {
     opacity: 0.85;
@@ -539,6 +538,39 @@ html[data-theme="dark"]  .dark  { display: block; }
     font-style: normal;
 }
 
+
+/* ==========================================================================
+   Submenu — mobile (toggled open by navigation.js)
+   ========================================================================== */
+nav ul li.has-submenu {
+    position: relative;
+}
+
+/* "Others ▾" toggle link */
+nav ul li.has-submenu > a.submenu-toggle::after {
+    content: " \25be"; /* ▾ */
+    font-size: 0.75em;
+}
+
+/* Submenu hidden by default on mobile */
+nav ul li.has-submenu > ul.submenu {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--nav-active-bg);
+}
+
+/* Open state toggled by JS */
+nav ul li.has-submenu.open > ul.submenu {
+    display: block;
+}
+
+/* Indent submenu items */
+nav ul li.has-submenu > ul.submenu li a {
+    padding-left: 2rem;
+    font-size: 0.95rem;
+}
 
 /*-------------------------------------\
 |          Dots Entertainment         */
