@@ -18,6 +18,7 @@ const renderSpotlights = (members) => {
         card.setAttribute('class', 'spotlight-card');
 
         const logo = document.createElement('img');
+        logo.setAttribute('class', 'modal-click-origin')
         logo.setAttribute('src', member.image);
         logo.setAttribute('alt', member.name + ' logo');
         logo.setAttribute('loading', 'lazy');

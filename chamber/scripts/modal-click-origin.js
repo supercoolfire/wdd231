@@ -13,7 +13,7 @@
  * - Developer-friendly console warnings when an image lacks a valid container
  * - Graceful error handling with actionable console messages
  * CSS Dependency:
- * - Requires 'modal-click-origin.css' (styles #img-modal and #modal-content)
+ * - None. Styles are injected automatically by this script.
  * 
  * Usage: 
  * <link rel="stylesheet" href="styles/modal-click-origin.css">
@@ -53,6 +53,43 @@
  * - #modal-content    -> the <img> inside the modal
  * - .active           -> class toggled on #img-modal to trigger the CSS transition
  */
+
+// Inject modal styles once
+(function injectModalStyles() {
+    if (document.getElementById('modal-click-origin-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'modal-click-origin-styles';
+    style.textContent = `
+#img-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #00000000;
+    transition: background 0.5s ease;
+    z-index: 9999;
+    cursor: pointer;
+}
+#img-modal.active {
+    background: #000000d9;
+    color: #e4bd76;
+}
+#modal-content {
+    position: fixed;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    object-fit: contain;
+    z-index: 10000;
+}
+#img-modal.active #modal-content {
+    top: 2.5vh !important;
+    left: 2.5vw !important;
+    width: 95vw !important;
+    height: 95vh !important;
+}`;
+    document.head.appendChild(style);
+})();
 
 // Handle dynamic cursor styles for zoomable images
 document.addEventListener('mouseover', (e) => {
