@@ -96,7 +96,7 @@ const displayMembers = (members) => {
         logo.setAttribute('loading', 'lazy');
         logo.setAttribute('width', '100');
         logo.setAttribute('height', '100');
-        logo.setAttribute('class', 'logo-card');
+        logo.setAttribute('class', 'logo-card modal-click-origin');
 
         email.innerHTML = `<span class="card-label">EMAIL:</span> ${highlight(member.email, query)}`;
         email.setAttribute('class', 'email');
