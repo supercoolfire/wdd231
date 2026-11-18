@@ -1,0 +1,182 @@
+/* ── Theme tokens ─────────────────────────────────────────── */
+:root, [data-theme="light"] {
+    --toggle-btn-bg:      #2a2a2a;
+    --toggle-text-color:  #f0f0f0;
+    --body-bg-color:      #f5f5f5;
+    --body-text-color:    #1a1a1a;
+    --header-bg-color:    #94cbff;
+    --header-color:       #000000;
+    --site-name-color:    #000000;
+    --main-bg-color:      #ffffff;
+    --footer-bg-color:    #94cbff;
+    --footer-color:       #000000;
+    --nav-link-color:     #000000;
+    --nav-hover-bg:       #d0e8ff;
+    --nav-current-bg:     #b0d4f1;
+    --page-border-bottom: #ccc;
+}
+
+[data-theme="dark"] {
+    --toggle-btn-bg:      #f0f0f0;
+    --toggle-text-color:  #2a2a2a;
+    --body-bg-color:      #121212;
+    --body-text-color:    #f5f5f5;
+    --header-bg-color:    #021629;
+    --header-color:       #ebd531;
+    --site-name-color:    #ebd531;
+    --main-bg-color:      #1e1e1e;
+    --footer-bg-color:    #021629;
+    --footer-color:       #ffffff;
+    --nav-link-color:     #b9ebff;
+    --nav-hover-bg:       #0a2a40;
+    --nav-current-bg:     #0d3550;
+    --page-border-bottom: #333;
+}
+
+[data-theme="light"] .dark  { display: none; }
+[data-theme="dark"]  .light { display: none; }
+
+/* ── Base ─────────────────────────────────────────────────── */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Ubuntu", Arial, sans-serif;
+    background-color: var(--body-bg-color);
+    color: var(--body-text-color);
+}
+
+a {
+    color: var(--nav-link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+header {
+    background-color: var(--header-bg-color);
+    color: var(--header-color);
+}
+
+.page {
+    display: grid;
+    grid-template-columns: 24px 1fr 44px;
+    align-items: center;
+    padding: 5px 55px 5px 10px;
+    column-gap: 8px;
+    border-bottom: 1px solid var(--page-border-bottom);
+}
+
+header img {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+header span {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* ── Hamburger ────────────────────────────────────────────── */
+.hamburger {
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--site-name-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger::after {
+    content: "\2630";
+    font-size: 2rem;
+}
+
+.hamburger.show::after {
+    content: "\00D7";
+    font-size: 2rem;
+    font-family: Verdana, sans-serif;
+}
+
+/* ── Navigation ───────────────────────────────────────────── */
+.navigation {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+.navigation.show {
+    grid-template-rows: 1fr;
+}
+
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navigation a {
+    display: block;
+    padding: 0.75rem 10px;
+    color: var(--nav-link-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--page-border-bottom);
+}
+
+.navigation li.current {
+    background-color: var(--nav-current-bg);
+}
+
+.navigation li:hover {
+    background-color: var(--nav-hover-bg);
+}
+
+/* ── Main ─────────────────────────────────────────────────── */
+main {
+    padding: 1rem;
+    background-color: var(--main-bg-color);
+}
+
+main a {
+    text-decoration: underline;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-color);
+    text-align: center;
+    padding: 1rem;
+}
+
+footer * {
+    color: var(--footer-color);
+}
+
+/*-------------------------------------\
+|          Dots Entertainment         */
+.loading-dots::after {
+    content: '';
+    animation: dots 1.5s infinite steps(4);
+}
+
+@keyframes dots {
+    0%   { content: ''; }
+    25%  { content: '.'; }
+    50%  { content: '..'; }
+    75%  { content: '...'; }
+    100% { content: '....'; }
+}
+/*          Dots Entertainment          |
+\-------------------------------------*/

@@ -1,0 +1,37 @@
+@media (min-width: 320px) {
+
+    /* ── Max width + centering ── */
+    .page, main, footer {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    /* ── Hide hamburger, show nav inline ── */
+    #ham-btn {
+        display: none;
+    }
+
+    .navigation {
+        display: block;
+        grid-column: unset;
+    }
+
+    .navigation ul {
+        display: flex;
+        gap: 0.25rem;
+        overflow: visible;
+    }
+
+    .navigation a {
+        border-bottom: none;
+        padding: 0.5rem 0.75rem;
+        border-radius: 4px;
+    }
+
+    /* ── Header grid: logo | name | nav ── */
+    .page {
+        grid-template-columns: 24px 1fr auto;
+        align-items: center;
+    }
+
+}
