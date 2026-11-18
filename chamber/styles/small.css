@@ -194,10 +194,13 @@ h1 {
 /* ── Events ────────────────────────────────────────────────── */
 .home-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(338px, 1fr));
     gap: 1rem;
-    padding: 1rem;
+    margin: 1rem 0;
     align-items: start;
+}
+.home-grid > section {
+    min-width: 338px;
 }
 .events {
     padding: 0;
@@ -264,9 +267,8 @@ h1 {
     color: var(--card-color);
 }
 .forecast-label {
-    font-weight: 700;
-    min-width: 7rem;
     margin: 0;
+    font-size: 0.9rem;
 }
 .forecast-desc {
     flex: 1;
