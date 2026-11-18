@@ -4,7 +4,7 @@
  * Date: 2026-11-14
  * Description: Just-In-Time Universal Hydrator v6.0
  *              Extends v5.1.2 with multi-file support.
- *              Fully backward compatible — single-file usage works exactly as before.
+ *              Fully backward compatible ï¿½ single-file usage works exactly as before.
  * Version: 6.0
  *
  * Features:
@@ -22,15 +22,16 @@ document.addEventListener("hydrationComplete", function() {
     myFunction();
 });
  *
- * Usage — single file (v5.1 compatible):
+<link rel="preload" href="data/page.json" as="fetch" crossorigin>
+ * Usage ï¿½ single file (v5.1 compatible):
 <script src="scripts/hydrate-v6.js" data-file="data/page.json" defer></script>
  *
- * Usage — multiple files (v6 feature):
+ * Usage ï¿½ multiple files (v6 feature):
 <script src="scripts/hydrate-v6.js" data-file="data/nav.json data/page.json" defer></script>
  *   or comma-separated:
 <script src="scripts/hydrate-v6.js" data-file="data/nav.json, data/page.json" defer></script>
  *
- * Usage — production / placeholder toggle (v5 compatible):
+ * Usage ï¿½ production / placeholder toggle (v5 compatible):
 <script src="scripts/hydrate-v6.js"
         data-production="true"
         data-production-file="data/production.json"
@@ -99,7 +100,7 @@ document.addEventListener("hydrationComplete", function() {
     }
 }
  *
- * v6 Multi-file Merge Example — nav.json merged with page.json:
+ * v6 Multi-file Merge Example ï¿½ nav.json merged with page.json:
 nav.json:
 {
     "#navigation": {

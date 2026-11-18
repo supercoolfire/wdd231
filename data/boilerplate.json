@@ -1,10 +1,12 @@
 {
   "rickster-egg": { "tag": "title", "insertion": "after", "items": [{ "tag": "script", "src": "scripts/rickster-egg-v2.js", "defer": "true" }] },
-    "#navigation": {
-    "tag": "ul", "id": "navigation",
+  "#nav-bar": {
+    "querySelector": "#nav-bar",
+    "insertion": "replace",
+    "tag": "ul",
     "items": [
-      { "tag": "li", "items": [{ "tag": "a", "href": "#", "textContent": "Home", "title": "Home", "rel": "noopener" }] },
-      { "tag": "li", "items": [{ "tag": "a", "href": "#", "textContent": "House", "title": "House", "rel": "noopener" }] }
+      { "tag": "li", "items": [{ "tag": "a", "href": "index.html",    "textContent": "Home",    "title": "Home",    "rel": "noopener" }] },
+      { "tag": "li", "items": [{ "tag": "a", "href": "#",            "textContent": "Page 2",  "title": "Page 2",  "rel": "noopener" }] }
     ]
   }
 }

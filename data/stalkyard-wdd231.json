@@ -1,0 +1,32 @@
+[
+    { "link": "https://github.com/{username}/wdd231/", "text": "{username}'s Repository" },
+    { "link": "https://{username}.github.io/wdd231/week01/code-along-header/index.html", "text": "W01 Learning Activity: Header & Navigation" },
+    { "link": "https://{username}.github.io/wdd231/code-along-header/index.html", "text": "W01 Learning Activity: Header & Navigation" },
+    { "link": "https://{username}.github.io/wdd231/index.html", "text": "W01 Assignment: Course Home Page" },
+
+    { "link": "https://{username}.github.io/wdd231/week02/learning-activity/prophets.html", "text": "W02 Learning Activity: Latter-day Prophets" },
+    { "link": "https://{username}.github.io/wdd231/prophets.html", "text": "W02 Learning Activity: Latter-day Prophets" },
+    { "link": "https://{username}.github.io/wdd231/chamber-site-plan.html", "text": "W02 Site Plan: Chamber of Commerce" },
+    { "link": "https://{username}.github.io/wdd231/chamber/directory.html", "text": "W02 Assignment: Chamber Directory" },
+    
+    { "link": "https://{username}.github.io/wdd231/week3/modules.html", "text": "W03 Learning Activity: ES Modules" },
+    { "link": "https://{username}.github.io/wdd231/week3/weather/index.html", "text": "W03 Learning Activity: Consuming a Weather API" },
+    { "link": "https://{username}.github.io/wdd231/chamber/index.html", "text": "W03 Assignment: Chamber Home Page" },
+
+    { "link": "https://{username}.github.io/wdd231/week04/startHere/startHere/index.html", "text": "W04 Learning Activity: Temple Appointment Form" },
+    { "link": "https://{username}.github.io/wdd231/startHere/startHere/index.html", "text": "W04 Learning Activity: Temple Appointment Form" },
+    { "link": "https://{username}.github.io/wdd231/week04/startHere/startHere/thanks.html", "text": "W04 Learning Activity: Temple Appointment Details" },
+    { "link": "https://{username}.github.io/wdd231/startHere/startHere/thanks.html", "text": "W04 Learning Activity: Temple Appointment Details" },
+    { "link": "https://{username}.github.io/wdd231/week04/startLab/startLab/index.html", "text": "W04 Learning Activity: Modal Dialog Lab" },
+    { "link": "https://{username}.github.io/wdd231/startLab/startLab/index.html", "text": "W04 Learning Activity: Modal Dialog Lab" },
+    { "link": "https://{username}.github.io/wdd231/week04/startLabTemple/startLabTemple/index.html", "text": "W04 Learning Activity: Modal Dialog Temple Lab" },
+    { "link": "https://{username}.github.io/wdd231/startLabTemple/startLabTemple/index.html", "text": "W04 Learning Activity: Modal Dialog Temple Lab" },
+    { "link": "https://{username}.github.io/wdd231/chamber/join.html", "text": "W04 Assignment: Chamber Join Page" },
+    { "link": "https://{username}.github.io/wdd231/chamber/thankyou.html", "text": "W04 Assignment: Chamber Thank You Page" },
+
+    { "link": "https://{username}.github.io/wdd231/siteplan.html", "text": "W05 Site Plan: Final Project" },
+    { "link": "https://{username}.github.io/wdd231/chamber/discover.html", "text": "W05 Assignment: Chamber Discover Page" },
+
+    { "link": "https://{username}.github.io/wdd231/final/index.html", "text": "W06 Final Project" },
+    { "link": "https://{username}.github.io/wdd231/finalproject/index.html", "text": "W06 Final Project" }
+]

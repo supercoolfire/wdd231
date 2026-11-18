@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    larger.css — responsive overrides for wider screens
    WDD 231 | Jayser Pilapil
    ========================================================================== */
@@ -62,4 +62,54 @@
         gap: 0.75rem;
         justify-content: center;
     }
+
+    /* Submenu — desktop hover dropdown */
+
+    /* Reset mobile overflow:hidden so the absolute submenu is not clipped */
+    nav ul {
+        overflow: visible;
+    }
+
+    nav ul li.has-submenu {
+        position: relative;
+    }
+
+    nav ul li.has-submenu > ul.submenu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 160px;
+        background-color: var(--nav-bg-color);
+        border-radius: 0 0 6px 6px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+        z-index: 100;
+    }
+
+    nav ul li.has-submenu:hover > ul.submenu,
+    nav ul li.has-submenu:focus-within > ul.submenu {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    nav ul li.has-submenu > ul.submenu li a {
+        display: block;
+        padding: 0.6rem 1rem;
+        font-size: 0.95rem;
+        min-height: unset;
+        border-bottom: 1px solid var(--nav-hover-bg);
+        white-space: nowrap;
+    }
+
+    nav ul li.has-submenu > ul.submenu li:last-child a {
+        border-bottom: none;
+    }
+
 }

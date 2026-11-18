@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="light">
 
 <head>
@@ -31,22 +31,23 @@
 
     <!-- Preload JSON -->
     <link rel="preload" href="data/nav.json" as="fetch" crossorigin>
-    <link rel="preload" href="data/portfolio.json" as="fetch" crossorigin>
 
     <!-- Scripts -->
+    <script src="scripts/hydrate-v6.js" data-file="data/nav.json" defer></script>
     <script src="scripts/theme-toggle.js" defer></script>
     <script src="scripts/date.js" defer></script>
     <script src="scripts/nav-burger.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
     <script src="scripts/modal-click-origin.js" defer></script>
     <script src="scripts/rickster-egg-v2.js" defer></script>
     <script src="scripts/preview-card.js" defer></script>
-    <script src="scripts/hydrate-v6.js" data-file="data/nav.json data/portfolio.json" defer></script>
+    <script src="scripts/portfolio.js" defer></script>
 </head>
 
 <body>
     <header>
         <a href="index.html" class="brand-link">
-            <img src="images/logo.svg" alt="site logo" class="brand-logo" width="24" height="24">
+            <img src="images/logo.svg" alt="site" class="brand-logo" width="24" height="24">
             <span class="brand-name">Jayser Pilapil</span>
         </a>
         <button type="button" id="menu" aria-label="Menu"></button>

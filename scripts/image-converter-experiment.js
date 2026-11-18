@@ -32,13 +32,16 @@ const __dirname = path.dirname(__filename);
 const CONFIG = {
     // Comma-separated paths to source folders or individual explicit files
     // Example: './raw-assets/temples, ./backups/old-photo.jpg'
-    sources: ['../parody_company_logo_webp_100x100'],
-    outputFolder: '../parody_company_logo_webp_200x200',
+
+    // sources: ['../hero-raw'],
+    // outputFolder: 'images/hero',
+    sources: ['data/people-img'],
+    outputFolder: 'data/people-webp',
     
     // Base maximum quality ceiling (used as the highest bound for dynamicQuality scaling)
     // When dynamicQualityScaling is true, this value is the maximum quality for the largest crops
     // When dynamicQualityScaling is false, this value is used as the fixed quality for all output images
-    baseQuality: 100, // Optimized to balance visual quality and file size for market competitiveness
+    baseQuality: 50, // Optimized to balance visual quality and file size for market competitiveness
     // If dynamicQualityScaling is on, baseQuality becomes the maximum quality ceiling, and quality scales proportionally to crop size down to 30
     // baseQuality is only used as a static global quality if dynamicQualityScaling is set to false
     dynamicQualityScaling: true,
@@ -53,13 +56,17 @@ const CONFIG = {
     // Example portrait: 9:16, 3:4, 4:3, 1:1
     // Default is 16:9
 
-    // hero
+    // single image
     aspectRatio: 1/1,
-    crop: [
-        {fileSuffix: "-small", width: 500},
-        {fileSuffix: "-medium", width: 1000},
-        {fileSuffix: "-large", width: 1500}
-    ],
+    crop: [{fileSuffix: "", width: 256 }],
+
+    // hero
+    // aspectRatio: 16/9,
+    // crop: [
+    //     {fileSuffix: "-small", width: 500},
+    //     {fileSuffix: "-medium", width: 1000},
+    //     {fileSuffix: "-large", width: 1500}
+    // ],
 
     // not hero
     // aspectRatio: 4/3,
@@ -101,8 +108,8 @@ async function runImageConverter() {
         configErrors.push("CONFIG.crop must be a non-empty array of crop configurations");
     } else {
         CONFIG.crop.forEach((crop, index) => {
-            if (typeof crop.fileSuffix !== 'string' || crop.fileSuffix.trim().length === 0) {
-                configErrors.push(`Crop config at index ${index} has invalid fileSuffix (must be non-empty string)`);
+            if (typeof crop.fileSuffix !== 'string') {
+                configErrors.push(`Crop config at index ${index} has invalid fileSuffix (must be a string, use "" for no suffix)`);
             }
             // MODIFIED: Only validate width here since height is now dynamically driven by aspectRatio
             if (typeof crop.width !== 'number' || crop.width < 1) {

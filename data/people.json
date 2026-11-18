@@ -1,0 +1,997 @@
+﻿[
+  {
+    "username": "kelvin206-MOBY",
+    "id": "136827",
+    "name": "Kelvin  Abubakar",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/7861971/XITRmetqP7qlL6fm3VSgeXWjta9LqVWX1M8T5e0U",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/136827"
+  },
+  {
+    "username": "",
+    "id": "119711",
+    "name": "John Adeoye",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/4251412/Zsv90Ihqc5PdDLdTaY1Aspy9QSLWYNTrhoS5bAOd",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/119711"
+  },
+  {
+    "username": "toniecee",
+    "id": "141475",
+    "name": "Anthony Agbonoga",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/5149471/MIyCKIxYUpXW57zaGLIEc18s29FGW8xjHzhFS2LG",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/141475"
+  },
+  {
+    "username": "blesyn101",
+    "id": "135531",
+    "name": "Iyonawan Blessing Agharese",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/5148425/jf9mhN56OSCFSsTKZV8n4HpOJkYD662v3OgKC0VM",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/135531"
+  },
+  {
+    "username": "saviour-agodzo",
+    "id": "135151",
+    "name": "SAVIOUR  AGODZO",
+    "avatar": "https://byupw.instructure.com/files/6317280/download?download_frd=1&verifier=3xvGtTTDG4Gfg8q2JaKWTKoz6kX9vMcQYp0GpQeM",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/135151"
+  },
+  {
+    "username": "",
+    "id": "153608",
+    "name": "John Antoni Agramonte Peralta",
+    "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/153608"
+  },
+  {
+    "username": "",
+    "id": "84366",
+    "name": "Damilare Samuel Ajayi",
+    "avatar": "https://byupw.instructure.com/files/1711683/download?download_frd=1&verifier=RNRTwSU5f5s0RLj5JU7nLq90jrLl6hf7CnOc0fYf",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/84366"
+  },
+  {
+    "username": "",
+    "id": "110036",
+    "name": "Opeyemi Ajayi",
+    "avatar": "https://byupw.instructure.com/files/7867960/download?download_frd=1&verifier=nXTswBZacLEbF97DQceAA5D7hMOqimFh6BMqtUZr",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/110036"
+  },
+  {
+    "username": "caseyallen386",
+    "id": "139058",
+    "name": "Casey Allen",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/5129962/fNxEIrfQhp9YVLMp5R8TfADctXfZ9g7kNWejROLB",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/139058"
+  },
+  {
+    "username": "",
+    "id": "118468",
+    "name": "Divinei Ameh",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/6667332/QWIk5OhxTIDMtKCXRbj2V68aqK5KNopW0VELFSdj",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/118468"
+  },
+  {
+    "username": "",
+    "id": "68957",
+    "name": "Samuel Amorim Maciel",
+    "avatar": "https://byupw.instructure.com/files/6932291/download?download_frd=1&verifier=m643lOlCCJBt2xynraSzeC43gSvfdLIoJdzA9P0r",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/68957"
+  },
+  {
+    "username": "",
+    "id": "57367",
+    "name": "Imanol Jarde Aranda Yauri",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/8796630/606eb0f0-6318-4f70-b2aa-893771ae9131",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/57367"
+  },
+  {
+    "username": "",
+    "id": "75089",
+    "name": "Mike Asiabaka",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/5569513/CTIqHLjSKAbMsrSs3yc1FKDJSff9YUwhNvIy1H6b",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/75089"
+  },
+  {
+    "username": "",
+    "id": "75117",
+    "name": "Nsikak Bassey Asuquo",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/816504/1psS8wOyrEFrl9ov9lbYS5BbTYmMCdQ18zu0681R",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/75117"
+  },
+  {
+    "username": "AyahAyitey",
+    "id": "127620",
+    "name": "Ayah Kodjo  AYITEY",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/4294450/9BVYPQkMXxojGKKRiC7DWT2pZlFIx8w2XsWcCyeY",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/127620"
+  },
+  {
+    "username": "",
+    "id": "44259",
+    "name": "Adeoye Ayodeji",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/255171/hlu5tHSNQnA1EntR3DydgjWuHZ3fQv8qAcjEpobL",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/44259"
+  },
+  {
+    "username": "",
+    "id": "52722",
+    "name": "Paulo Barroso",
+    "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/52722"
+  },
+  {
+    "username": "Sydneytamunotonye",
+    "id": "139786",
+    "name": "Tamunotonye Boma Sydney",
+    "avatar": "https://byupw.instructure.com/files/5129707/download?download_frd=1&verifier=x8fxu5VZq3CEmi1M83Gto5aQwJEKUpkOIhkinaY5",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/139786"
+  },
+  {
+    "username": "",
+    "id": "137387",
+    "name": "Luis Miguel Chaves Espinosa",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/5124129/bpaFp7E8THWXlbHr1PBZ40gd3iIxt41zUepAy0O7",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/137387"
+  },
+  {
+    "username": "",
+    "id": "490",
+    "name": "Paul Cheney",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/62900/tCfU7TA1DLV4CCcwPeZaAH8vAs5hPE5OPvSmw7I1",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Teacher",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/490"
+  },
+  {
+    "username": "kmiloandrey",
+    "id": "131803",
+    "name": "Camilo Chinchilla Valdivieso",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/5495534/2U1G5aBznyWfliaYIfr9HCO1bR40ZEyx7DZuu5aM",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/131803"
+  },
+  {
+    "username": "",
+    "id": "106261",
+    "name": "Marcos Chinga",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/3353578/F9TDvVGRWzf1FJ2EBEeAOHpMwYTNtqRFRIaSsr6b",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/106261"
+  },
+  {
+    "username": "cmcharles3",
+    "id": "121838",
+    "name": "Munyaradzi Charles Chiparo",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/4283965/4IntvCpgMFXKgzVu9ZDK2OI4c8ZLuI66bz6yrEGk",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/121838"
+  },
+  {
+    "username": "",
+    "id": "137515",
+    "name": "Rufaro Chirume",
+    "avatar": "https://byupw.instructure.com/files/5179038/download?download_frd=1&verifier=3mOFxzsg2yK5iYb5fq7gQJox7jW5jFtNTsMMM07L",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/137515"
+  },
+  {
+    "username": "",
+    "id": "108997",
+    "name": "Humphrey  Darko",
+    "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/108997"
+  },
+  {
+    "username": "MarcioBelucci",
+    "id": "131696",
+    "name": "Marcio Augusto De Carvalho Belucci",
+    "avatar": "https://byupw.instructure.com/files/5122950/download?download_frd=1&verifier=DJky3WuBB57hFipPvddSFJIZ8Y3ASA4FCnokxGZ6",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/131696"
+  },
+  {
+    "username": "",
+    "id": "137175",
+    "name": "victor De Oliveira Madeiro Santo",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/5156263/iD7nYDBMJqj5A35OdE4oSmGNPzdZDc9cpicMGvO0",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/137175"
+  },
+  {
+    "username": "nkosana101",
+    "id": "76218",
+    "name": "Nkosana Artharnecious Dlamini",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/9783716/fe2d999c-5119-4ae7-bef1-f1a4dc77b7b0",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/76218"
+  },
+  {
+    "username": "donatus-875",
+    "id": "76365",
+    "name": "AHULE  DONATUS",
+    "avatar": "https://byupw.instructure.com/files/3342858/download?download_frd=1&verifier=4J7WYLNF1kbiaxUxLWeyocKC9wt2Fcvy8iAO7K47",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/76365"
+  },
+  {
+    "username": "",
+    "id": "111605",
+    "name": "pemphero douglass",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/6051703/FpBDd6IKqqVYPFDNpRuXeVTsdLl6scZP1vTAMYCU",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/111605"
+  },
+  {
+    "username": "",
+    "id": "60644",
+    "name": "Mfonobong Ekong",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/1743016/mIXgcjm1veFblOJxBc2gMLB9rTrswkUffPDQHJWV",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/60644"
+  },
+  {
+    "username": "",
+    "id": "87998",
+    "name": "Eze Oluebube Miracle Emmanuel",
+    "avatar": "https://byupw.instructure.com/files/3311428/download?download_frd=1&verifier=hjAxbylUcstjNISlq2I4vphNIIY27ZODsGJnt8oI",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/87998"
+  },
+  {
+    "username": "",
+    "id": "64722",
+    "name": "Olukayode Esther Temidayo",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/6359354/KbnS0foM4dCAGbuaMaBEbOEd5jXNfgo2HbLZlPuV",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/64722"
+  },
+  {
+    "username": "",
+    "id": "138706",
+    "name": "Setelina Wendy Falekihefau",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/8583955/15cc86dc-a6b9-4203-bf9b-29a797f1763b",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/138706"
+  },
+  {
+    "username": "",
+    "id": "138712",
+    "name": "Thelmo Louise Faaoa Faoa",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/6514056/Hj1lSLXR3bdjS6hlft8GtIZp4imqckQGHXCL0yWh",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/138712"
+  },
+  {
+    "username": "stevenfermin",
+    "id": "123856",
+    "name": "Cesar Steven Fermin Cabrera",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/6091139/DqOifnFKgUW7drrYrU52XR2jshk9I42uwnnoznGj",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/123856",
+    "other_links": [
+      {
+        "link": "https://stevenfermin.github.io/wdd231/learningActivityW01.html",
+        "text": "W01 Learning Activity: Header & Navigation"
+      },
+      {
+        "link": "https://stevenfermin.github.io/wdd231/prophets.html",
+        "text": "W02 Learning Activity: Latter-day Prophets"
+      },
+      {
+        "link": "https://stevenfermin.github.io/wdd231/weatherapi.html",
+        "text": "W03 Learning Activity: Consuming a Weather API"
+      },
+      {
+        "link": "https://stevenfermin.github.io/wdd231/startHere/startHere/index.html",
+        "text": "W04 Learning Activity: Temple Appointment Form"
+      },
+      {
+        "link": "https://stevenfermin.github.io/wdd231/startHere/startHere/thanks.html",
+        "text": "W04 Learning Activity: Temple Appointment Details"
+      }
+    ]
+  },
+  {
+    "username": "vitorsfernandes-br",
+    "id": "159767",
+    "name": "Vitor Soares Fernandes",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/7014460/g97VEtVOtRM5tTu0POwMckmmuJEfqHJQGZ4kx2n5",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/159767"
+  },
+  {
+    "username": "",
+    "id": "132434",
+    "name": "Victor Omar Fontes Delgado",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/9747477/5348d8d0-7590-484d-9b89-bce242100701",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/132434"
+  },
+  {
+    "username": "cowzack",
+    "id": "90680",
+    "name": "Lex Jared Gagatam",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/1683419/oKi4iPVKMONolNeDtIeNLml2mNvB99Ll3Zrdj6QO",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/90680"
+  },
+  {
+    "username": "",
+    "id": "122140",
+    "name": "Francisco Lautaro Gandiola",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/5257974/ExVdxAYwAk8eqL9F5oVBqlGXcKd9veUAbgfrmgon",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/122140"
+  },
+  {
+    "username": "LehiBuilds",
+    "id": "51835",
+    "name": "Lehi Ontoria Gomez",
+    "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/51835"
+  },
+  {
+    "username": "",
+    "id": "33110",
+    "name": "Diego Andres Granados",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/131017/3gpkpFemQ6lSAVTQ3xfs0PGg0CKjAH9JpqzqNwUt",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/33110"
+  },
+  {
+    "username": "madgaster5678",
+    "id": "123938",
+    "name": "Ammon Griner",
+    "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/123938"
+  },
+  {
+    "username": "",
+    "id": "143527",
+    "name": "Christian Guevara Landaverde",
+    "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Grader",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/143527"
+  },
+  {
+    "username": "",
+    "id": "54837",
+    "name": "Devin James Hale",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/4317039/mzHgcz9wLpDIrsoPWfPvz2fTN8fBQ7rH7ETyUETv",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/54837"
+  },
+  {
+    "username": "",
+    "id": "107210",
+    "name": "Merrill Hansen",
+    "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/107210"
+  },
+  {
+    "username": "helooselassie",
+    "id": "139403",
+    "name": "Selassie Kwabla Heloo",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/6004094/EVzW3QKOahJg2K2WxWX0eRHILiAVrnjBdBiIVYCy",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/139403"
+  },
+  {
+    "username": "",
+    "id": "199030",
+    "name": "Emanuel Herrera",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/8741334/ecdd14a2-4d3b-4c7e-baa9-5b8c6f86d3d6",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/199030"
+  },
+  {
+    "username": "",
+    "id": "49054",
+    "name": "Samuel Motey Howard",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/846529/mx89smSZKBTjqWVAOcd8pzxPbXYmfvonWym6u0VI",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/49054"
+  },
+  {
+    "username": "divineigbaji10-blip",
+    "id": "138954",
+    "name": "Prosper Divine Igbaji",
+    "avatar": "https://byupw.instructure.com/files/5131984/download?download_frd=1&verifier=xj6Cct87yUEFdePaXRqBUtpB2Up8wdKom4w3UkAx",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/138954"
+  },
+  {
+    "username": "",
+    "id": "136448",
+    "name": "Atukunda Jacob",
+    "avatar": "https://byupw.instructure.com/files/5251198/download?download_frd=1&verifier=04WUAj2xKXsdNB0riBGuIRRzVIJGYmzfUot4v1FP",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/136448"
+  },
+  {
+    "username": "",
+    "id": "27608",
+    "name": "Ignacio Damián Jofre Alonso",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/1782167/D9YuXmK4diwN4An7ajj9wtlaYeMN7zABm5u9hTHO",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/27608"
+  },
+  {
+    "username": "aerosub7",
+    "id": "111168",
+    "name": "Eric Johnson",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/3334940/vq2V30VBKkB7DKdkcYd7opZrS3VwYLnKU48iWC55",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/111168",
+    "other_links": [
+      {
+        "link": "https://aerosub7.github.io/wdd231/prophets.html",
+        "text": "W02 Learning Activity: Latter-day Prophets"
+      },
+      {
+        "link": "https://aerosub7.github.io/wdd231/weather.html",
+        "text": "W03 Learning Activity: Consuming a Weather API"
+      }
+    ]
+  },
+  {
+    "username": "alfredreeves86",
+    "id": "152445",
+    "name": "Alfred Reeves Kamisese",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/6046852/qnmlX0t170v04sB5R9GKgkkR7a3dsqbT4bDDUUmw",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/152445",
+    "other_links": [
+      {
+        "link": "https://alfredreeves86.github.io/wdd231/Week_01_Learning_Activities/Site_Navigation/index.html",
+        "text": "W01 Learning Activity: Header & Navigation"
+      },
+      {
+        "link": "https://alfredreeves86.github.io/wdd231/Week_02_Learning_Activities/prophets.html",
+        "text": "W02 Learning Activity: Latter-day Prophets"
+      },
+      {
+        "link": "https://alfredreeves86.github.io/wdd231/weather.html",
+        "text": "W03 Learning Activity: Consuming a Weather API"
+      },
+      {
+        "link": "https://alfredreeves86.github.io/wdd231/modules.html",
+        "text": "W03 Learning Activity: ES Modules"
+      }
+    ]
+  },
+  {
+    "username": "",
+    "id": "33912",
+    "name": "MARIAMA TEJAN KELLA",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/247101/bCGJbq3FdppaNc0RGugCkriihSMV6JtqnLOS5hBh",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/33912"
+  },
+  {
+    "username": "korku-selorm",
+    "id": "74524",
+    "name": "Selorm Ladzekpo",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/928836/jfZKp8HhEt1jpkMR2dRmsR1l79WrkDEIs9hkg1NH",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/74524"
+  },
+  {
+    "username": "",
+    "id": "136057",
+    "name": "Jared Lee",
+    "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/136057"
+  },
+  {
+    "username": "",
+    "id": "94584",
+    "name": "Abraham Oswaldo Lopez Perez",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/9736684/eb262942-c47d-4ed0-8519-9c1dac92f90a",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/94584"
+  },
+  {
+    "username": "ismaelmarin2010",
+    "id": "115542",
+    "name": "Ismael Marin",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/4281797/3ifMu3rk7blFLJnxVxBrPdODIpP53CnCLcgxvLNv",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/115542"
+  },
+  {
+    "username": "Krel05",
+    "id": "137346",
+    "name": "Jorge Gabriel Mena Santes",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/5142607/nuACq9CWr8SGkRDgTH4WuOmPxHGVBymvqcwHoWeS",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/137346",
+    "other_links": [
+      {
+        "link": "https://krel05.github.io/wdd231/prophets.html",
+        "text": "W02 Learning Activity: Latter-day Prophets"
+      },
+      {
+        "link": "https://krel05.github.io/wdd231/weather.html",
+        "text": "W03 Learning Activity: Consuming a Weather API"
+      }
+    ]
+  },
+  {
+    "username": "",
+    "id": "110084",
+    "name": "Debela Mendara",
+    "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/110084"
+  },
+  {
+    "username": "",
+    "id": "91641",
+    "name": "Paul Ethan Mirah",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/1742806/PA0btw6yOUlsHGfuwFcsiCVaoZmwmgAknteJ7fQ4",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/91641"
+  },
+  {
+    "username": "rowleks",
+    "id": "55768",
+    "name": "Rowland Momoh",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/131306/Xp6ZWC1Bu5kcSF2uX1lkbu4ZzOPF6iU2vvfG1AGh",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Grader",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/55768"
+  },
+  {
+    "username": "PauloMonroyC",
+    "id": "108552",
+    "name": "Paulo Andre Monroy Cotrina",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/3309860/WpBW7Zh5fMnp3cOIG5301DwjoyGRjgGC4XQENi3O",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/108552"
+  },
+  {
+    "username": "",
+    "id": "96754",
+    "name": "Aaron Morris",
+    "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/96754"
+  },
+  {
+    "username": "",
+    "id": "115086",
+    "name": "JAMES NANTHURU",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/3359097/XFNBwxkrVNdFU16LX31aCAODB4CPiIR1BEFCtmJb",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/115086"
+  },
+  {
+    "username": "",
+    "id": "180939",
+    "name": "Matheus Dos Santos Nascimento",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/7985810/akBDFSgiMLgBfIfH572DqofkO7jnyL0hkjnW5T4B",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/180939"
+  },
+  {
+    "username": "",
+    "id": "160804",
+    "name": "Ronald Odongkara",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/7906646/n4ay7tHjzxIHDwIB8UwrP9Vql3b6heZ41VKYspbo",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/160804"
+  },
+  {
+    "username": "",
+    "id": "122044",
+    "name": "Lanre Ojo",
+    "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/122044"
+  },
+  {
+    "username": "",
+    "id": "50195",
+    "name": "Boma Richards Ojugba",
+    "avatar": "https://byupw.instructure.com/files/131571/download?download_frd=1&verifier=69skAZh4r23f0tZAZwfR1jwVLvaVaCJFK61GeOOJ",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/50195"
+  },
+  {
+    "username": "",
+    "id": "32134",
+    "name": "Ashely Okaka",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/5116545/MOdpaaQTcPhHztZKKVDEIRR6JYKB9eLnnbjo8LvX",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/32134"
+  },
+  {
+    "username": "",
+    "id": "55981",
+    "name": "Rawin Anthony Rafael Olivera Torbello",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/179067/DQzV1K606F0N3Ntbh5dmzgkoClpfVZYbo9kWXr1f",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Grader",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/55981"
+  },
+  {
+    "username": "",
+    "id": "138284",
+    "name": "Chisom Omeja",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/5125912/5OOtiIX6Y8nONrhHWVwJZMxzqGXSYMpMSCcx5prz",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/138284"
+  },
+  {
+    "username": "icaroepl",
+    "id": "110593",
+    "name": "Icaro Emanuel Pereira Lima",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/6278133/0AQCwjBSY6xMx9mZ4muZa6YW3N6m2bXWkMald3UX",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/110593"
+  },
+  {
+    "username": "silvagustta",
+    "id": "142777",
+    "name": "Gustavo da Silva Pereira",
+    "avatar": "https://byupw.instructure.com/files/6162159/download?download_frd=1&verifier=3xOVG1xuenuPlS51tMBZkNp17pymv9FKXddwGo1c",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/142777"
+  },
+  {
+    "username": "supercoolfire",
+    "id": "39333",
+    "name": "Jayser Aldave Pilapil",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/191763/neJMg8lxAhvS7kGvhIi1AgpJTqBrGo1dGgEbN9L4",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/39333",
+    "other_links": [
+      {
+        "link": "https://supercoolfire.github.io/wdd231/portfolio.html",
+        "text": "WDD231 Course Portfolio"
+      }
+    ]
+  },
+  {
+    "username": "reeta-maker",
+    "id": "132559",
+    "name": "Reeta Pun",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/6399417/iOspFgFZMAx6wJhnjMpa0kYnVonl9yKb1DoCikF3",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/132559"
+  },
+  {
+    "username": "",
+    "id": "52472",
+    "name": "Harry Quimbay",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/2496645/hSbbuEYOj0VLVgV6cGGjCNuajo2NFIBIsYhffG1T",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/52472"
+  },
+  {
+    "username": "raskoproggramer",
+    "id": "118136",
+    "name": "Mpho Rakgope",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/5147663/8nw2AhWXwRIFJfIJmqAmsFJvBnYNdDti7BemQW76",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/118136"
+  },
+  {
+    "username": "",
+    "id": "132323",
+    "name": "SAMUEL ROWLEY",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/5152656/DdPsyJer5mQel9MsVgTBNeqrbVqz15g9Rj9shZiL",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/132323"
+  },
+  {
+    "username": "",
+    "id": "141198",
+    "name": "Jeshurun Salami",
+    "avatar": "https://byupw.instructure.com/files/5163472/download?download_frd=1&verifier=tIC3NSRm5L2SrjUUM2ZGIX5ewzzzNWSlCq0b748M",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/141198"
+  },
+  {
+    "username": "",
+    "id": "201672",
+    "name": "Christian Flavio Sandoya Suarez",
+    "avatar": "https://byupw.instructure.com/files/8763149/download?download_frd=1&verifier=fa48914a-4c6f-474f-b291-5a46cffea825",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/201672"
+  },
+  {
+    "username": "",
+    "id": "73952",
+    "name": "Leticia de Lima Santana",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/863711/CP0hPLGAEK6FnH3AJvihub1nlZzt0OcSxqcui9Dj",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/73952"
+  },
+  {
+    "username": "",
+    "id": "26436",
+    "name": "Amanda Cristina Schneider Migliorini",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/141226/Ocl5haUKdFcT9qtPr9p1cPRNPO3shrtolPt03u6l",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Grader",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/26436"
+  },
+  {
+    "username": "ws8637282-art",
+    "id": "132114",
+    "name": "Whitney Carleen Snyder",
+    "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/132114"
+  },
+  {
+    "username": "",
+    "id": "45875",
+    "name": "Charles Sparrow",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/3044848/NlkvU3xQjudWjHICojGEjscml9jcCiEmuNDmS2D7",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/45875"
+  },
+  {
+    "username": "devansstreeter-rgb",
+    "id": "123687",
+    "name": "Daniel Evans Streeter",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/4295384/bvmRXqLBoEadUpcWK7o6AYdXQcdzzkZDGtH6YojT",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/123687"
+  },
+  {
+    "username": "",
+    "id": "124713",
+    "name": "Miguel Subero",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/4295298/wnTqDduIkljNObR0VChFOAB6VMV7Ymdo9tbG3VXp",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/124713"
+  },
+  {
+    "username": "",
+    "id": "132142",
+    "name": "Lawren Talamaivao",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/5729400/OKXi83cG7qP7R09IoJK1eJDvofl3Sb77t4w7pFpk",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/132142"
+  },
+  {
+    "username": "KaylieT2025",
+    "id": "42865",
+    "name": "Kaylie Anne Tapia",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/873342/0TyrI0D5QYEbAhvlsBa1dmj1ybIMpv5PG97TreKP",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/42865"
+  },
+  {
+    "username": "",
+    "id": "33309",
+    "name": "Oyinpreye Tawariowei",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/7951708/NLHi61TmfGRrFnGFGlCxxRAO2A501dvC0kSdP4Lb",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/33309"
+  },
+  {
+    "username": "SnakeLover23",
+    "id": "31852",
+    "name": "Gage Thorup",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/858867/S8qlKQvIQzrQuWUBjSfweCwCHLoUkF00lrYYi1d1",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/31852",
+    "other_links": [
+      {
+        "link": "https://snakelover23.github.io/wdd231/w01-learning-activities/index.html",
+        "text": "W01 Learning Activity: Header & Navigation"
+      },
+      {
+        "link": "https://snakelover23.github.io/wdd231/w02-learning-activities/prophets.html",
+        "text": "W02 Learning Activity: Latter-day Prophets"
+      },
+      {
+        "link": "https://snakelover23.github.io/wdd231/w03-learning-activities/modules.html",
+        "text": "W03 Learning Activity: ES Modules"
+      }
+    ]
+  },
+  {
+    "username": "",
+    "id": "133356",
+    "name": "Lea Mei Vaka Tuipulotu",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/5169439/CVM36aNtgRqwvq4NTh4Xdoi6uU9Lvtp2LKSqziwf",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/133356"
+  },
+  {
+    "username": "roland-udensi",
+    "id": "142573",
+    "name": "Roland Ezenna Udensi",
+    "avatar": "https://byupw.instructure.com/files/9910461/download?download_frd=1&verifier=f21a037d-f84b-4d10-bc02-e33815bbcd00",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/142573"
+  },
+  {
+    "username": "Kamaludumullahele",
+    "id": "178488",
+    "name": "Kamal Udumulla Hele",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/7902554/4Etz0Xp0IWRoVN8ZDPKeNu8EQQOrXvd2LgMUCTFH",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/178488",
+    "other_links": [
+      {
+        "link": "https://kamaludumullahele.github.io/wdd231/prophets.html",
+        "text": "W02 Learning Activity: Latter-day Prophets"
+      }
+    ]
+  },
+  {
+    "username": "Sommy200",
+    "id": "110831",
+    "name": "Somtochukwu  Unachukwu",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/3310857/LwuloBOTUgTdWqAvE1X15q2Qj9wC9uU1dRMBdvWB",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/110831"
+  },
+  {
+    "username": "ruriona19",
+    "id": "218034",
+    "name": "Roberto Jose Uriona Sejas",
+    "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/218034"
+  },
+  {
+    "username": "",
+    "id": "107883",
+    "name": "Rebecca Vallezi Cunha e Silva",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/6206576/0vJdcf7Tn3jRd99Ma1K4jikhyG8LEp3norGVxFXR",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/107883"
+  },
+  {
+    "username": "",
+    "id": "47136",
+    "name": "Roosvelth Arturo Vazquez Bautista",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/9719972/183896e6-f51e-45e1-9fdb-d3274da9df07",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/47136"
+  },
+  {
+    "username": "",
+    "id": "114723",
+    "name": "Daniel Zavala",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/3322696/L6RwgkfLP90yKKHQWvpXyYQztznGvt8lBL4HJ9T2",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/114723"
+  },
+  {
+    "username": "",
+    "id": "123102",
+    "name": "Collins Zivanai",
+    "avatar": "https://byupw.instructure.com/images/thumbnails/4361316/PdronvRGDQlsTl7DZLam9tbJ0PZB3i6FA9UGnyRS",
+    "section": "WDD231.001 - Web Frontend Development I",
+    "role": "Student",
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/123102"
+  }
+]

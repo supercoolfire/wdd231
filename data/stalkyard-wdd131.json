@@ -1,0 +1,23 @@
+[
+    { "link": "https://github.com/{username}/wdd131/", "text": "{username}'s Repository" },
+    { "link": "https://{username}.github.io/wdd131/week01/basic-layout.html", "text": "W01 Learning Activity: HTML and CSS Review" },
+    { "link": "https://{username}.github.io/wdd131/index.html", "text": "W01 Assignment: Home Page" },
+    { "link": "https://{username}.github.io/wdd131/week02/media-query.html", "text": "W02 Learning Activity: CSS Media Queries" },
+    { "link": "https://{username}.github.io/wdd131/temples.html", "text": "W02 Assignment: Picture Album" },
+    { "link": "https://{username}.github.io/wdd131/week03/design.html", "text": "W03 Learning Activity: Design Principles" },
+    { "link": "https://{username}.github.io/wdd131/week03/pseudo.html", "text": "W03 Learning Activity: CSS Pseudo-Selectors" },
+    { "link": "https://{username}.github.io/wdd131/week03/responsive-images.html", "text": "W03 Learning Activity: Responsive Images" },
+    { "link": "https://{username}.github.io/wdd131/place.html", "text": "W03 Assignment: Country Page" },
+    { "link": "https://{username}.github.io/wdd131/week04/lazyload.html", "text": "W04 Learning Activity: Lazyloading Images" },
+    { "link": "https://{username}.github.io/wdd131/filtered-temples.html", "text": "W04 Assignment: Picture Album Enhancement" },
+    { "link": "https://{username}.github.io/wdd131/project/siteplan.html", "text": "W05 Project: Website Planning Document" },
+    { "link": "https://{username}.github.io/wdd131/week05/Form-start/index.html", "text": "W05 Learning Activity: Building a Web Form" },
+    { "link": "https://{username}.github.io/wdd131/week05/form.html", "text": "W05 Learning Activity: Building a Web Form" },
+    { "link": "https://{username}.github.io/wdd131/bom.html", "text": "W05 Learning Activity: BOM" },
+    { "link": "https://{username}.github.io/wdd131/week05/bom.html", "text": "W05 Learning Activity: BOM" },
+    { "link": "https://{username}.github.io/wdd131/week05/book_of_mormon.html", "text": "W05 Learning Activity: Book of Mormon" },
+    { "link": "https://{username}.github.io/wdd131/book_of_mormon.html", "text": "W05 Learning Activity: Book of Mormon" },
+    { "link": "https://{username}.github.io/wdd131/form.html", "text": "W05 Assignment: Product Review Form" },
+    { "link": "https://{username}.github.io/wdd131/review.html", "text": "W05 Assignment: Product Review Form" },
+    { "link": "https://{username}.github.io/wdd131/project/index.html", "text": "Final Project" }
+]
