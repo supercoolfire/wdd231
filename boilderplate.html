@@ -38,7 +38,7 @@
     <script src="scripts/hydrate-v6.js" data-file="data/nav.json data/boilerplate.json" defer></script>
     <script src="scripts/date.js" defer></script>
     <script src="scripts/theme-toggle.js" defer></script>
-    <script src="scripts/nav-burger.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
     <script src="scripts/modal-click-origin.js" defer></script>
     <script src="scripts/rickster-egg-v2.js" defer></script>
     <script src="scripts/boilerplate.js" defer></script>
@@ -46,16 +46,16 @@
 
 <body>
     <header>
-        <a href="index.html" class="brand-link">
-            <img src="images/logo.svg" alt="site logo" class="brand-logo" width="24" height="24">
-            <span class="brand-name">Jayser Pilapil</span>
-        </a>
-        <button type="button" id="menu" aria-label="Menu"></button>
-        <nav>
-            <ul id="navigation">
-                <li class="loading-dots rickster-egg">Loading navigation</li>
-            </ul>
-        </nav>
+        <div class="page">
+            <a href="index.html"><img src="images/logo.svg" alt="site logo" width="24" height="24"></a>
+            <span>Jayser Pilapil</span>
+            <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" aria-expanded="false"></button>
+            <nav id="nav-bar" class="navigation">
+                <ul>
+                    <li class="loading-dots"><a href="index.html" aria-current="page">Loading menu...</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
