@@ -120,8 +120,30 @@ function renderCourseDropdown(stalkmate, onCourseChange) {
             onCourseChange(select.value);
         });
 
+        const hideLabel = document.createElement('label');
+        hideLabel.htmlFor = 'hide-fallbacks-toggle';
+        hideLabel.textContent = 'Hide no-activity';
+
+        const hideCheckbox = document.createElement('input');
+        hideCheckbox.type = 'checkbox';
+        hideCheckbox.id = 'hide-fallbacks-toggle';
+
+        // Restore saved state
+        // Default: hide no-activity cards; only an explicit 'false' in storage shows them
+        const hideSaved = localStorage.getItem('stalkyard-hide-fallbacks') !== 'false';
+        hideCheckbox.checked = hideSaved;
+        if (hideSaved) stalkmate.classList.add('hide-fallbacks');
+
+        hideCheckbox.addEventListener('change', () => {
+            const hide = hideCheckbox.checked;
+            localStorage.setItem('stalkyard-hide-fallbacks', hide);
+            stalkmate.classList.toggle('hide-fallbacks', hide);
+        });
+
         wrapper.appendChild(label);
         wrapper.appendChild(select);
+        wrapper.appendChild(hideCheckbox);
+        wrapper.appendChild(hideLabel);
         stalkmate.prepend(wrapper);
     }
 
@@ -257,11 +279,14 @@ async function generateStalkmate() {
         for (const item of uniqueItems) {
             const username = item.username ? item.username.trim().replace(/\s+/g, '') : '';
             const name = item.name;
-            const links = applyUsername(linkDefs, username);
+            const rawLinks = applyUsername(linkDefs, username);
 
             if (item.other_links && Array.isArray(item.other_links)) {
-                links.push(...item.other_links);
+                rawLinks.push(...item.other_links);
             }
+
+            // Group links by label text so duplicate-path pairs can be collapsed after fetching
+            const groupedLinks = groupLinksByText(rawLinks);
 
             const userDiv = document.createElement('div');
             userDiv.className = 'users';
@@ -276,12 +301,12 @@ async function generateStalkmate() {
             cardsDiv.className = 'cards';
             userDiv.appendChild(cardsDiv);
 
-            links.forEach((link, index) => {
+            groupedLinks.forEach(({ link, groupId, isDuplicate, groupSize }, index) => {
                 const cardDiv = document.createElement('div');
                 cardDiv.className = 'card';
 
                 const uniqueId = `preview-${username}-${index}`;
-                
+
                 cardDiv.innerHTML = `
                     <a class="anchor" href="${link.link}" target="_blank" rel="noopener">
                         <div id="${uniqueId}" class="preview" data-href="${link.link}">
@@ -296,16 +321,45 @@ async function generateStalkmate() {
                 cardsDiv.appendChild(cardDiv);
 
                 const previewContainer = cardDiv.querySelector(`#${uniqueId}`);
-                
-                // Track dynamic task context for Phase 2 processing step
-                pendingSeoTasks.push({ element: previewContainer, url: link.link });
+
+                // Tag duplicate cards with a registryKey for post-fetch collapsing
+                if (isDuplicate) {
+                    const registryKey = username + ':' + groupId;
+                    pendingSeoTasks.push({ element: previewContainer, url: link.link, isDuplicate: true, registryKey, cardWrapper: cardDiv });
+                } else {
+                    pendingSeoTasks.push({ element: previewContainer, url: link.link, isDuplicate: false });
+                }
             });
         }
 
         // --- PHASE 2: Load Meta SEO Content Asynchronously in Background ---
+        // Fire all fetches concurrently; after each group fully settles, collapse duplicates
+        const groupPromises = new Map();
+        const groupWrappers = new Map();
+
         pendingSeoTasks.forEach(task => {
-            fetchAndRenderSEO(task.element, task.url, cache);
+            const promise = fetchAndRenderSEO(task.element, task.url, cache);
+            if (task.isDuplicate) {
+                const key = task.registryKey;
+                if (!groupPromises.has(key)) { groupPromises.set(key, []); groupWrappers.set(key, []); }
+                groupPromises.get(key).push(promise);
+                groupWrappers.get(key).push(task.cardWrapper);
+            }
         });
+
+        // Collapse each duplicate group once all its fetches have settled
+        for (const [key, promises] of groupPromises) {
+            const wrappers = groupWrappers.get(key);
+            Promise.allSettled(promises).then(results => {
+                const flags = results.map(r => r.status === 'fulfilled' && r.value === true);
+                const wins  = flags.filter(Boolean).length;
+                if (wins === 1) {
+                    flags.forEach((ok, i) => { if (!ok) wrappers[i]?.remove(); });
+                } else if (wins === 0) {
+                    wrappers.slice(1).forEach(w => w?.remove());
+                }
+            });
+        }
 
     } catch (err) {
         console.error(`❌ Script configuration break: ${err.message}`);
@@ -333,11 +387,62 @@ async function getValidLinks(urlArray) {
 }
 
 /**
+ * Duplicate-Text Link Grouping
+ * Groups a flat links array into logical groups by label text.
+ * Links with unique text get a single-item group (no deduplication needed).
+ * Links sharing the same text are candidates for post-fetch collapsing.
+ */
+function groupLinksByText(links) {
+    const byText = new Map();
+    for (const link of links) {
+        if (!byText.has(link.text)) byText.set(link.text, []);
+        byText.get(link.text).push(link);
+    }
+    const groups = [];
+    let groupId = 0;
+    for (const [, candidates] of byText) {
+        const id = groupId++;
+        const isDuplicate = candidates.length > 1;
+        for (const link of candidates) {
+            groups.push({ link, groupId: id, isDuplicate, groupSize: candidates.length });
+        }
+    }
+    return groups;
+}
+
+/**
+ * Post-fetch Group Collapse
+ * Called once every card in a duplicate group has settled (success or fallback).
+ * Applies the deduplication rule:
+ *   - Exactly 1 succeeded → remove the failed card wrappers
+ *   - 0 succeeded        → remove all but the first card wrapper (keep one fallback)
+ *   - 2+ succeeded       → keep all (genuinely different pages)
+ */
+function collapseGroup(groupEntries) {
+    const succeeded = groupEntries.filter(e => e.resolved);
+    const failed    = groupEntries.filter(e => !e.resolved);
+
+    if (succeeded.length === 1) {
+        for (const entry of failed) {
+            entry.cardWrapper?.remove();
+        }
+    } else if (succeeded.length === 0) {
+        // Keep only the first; remove the rest
+        const [, ...extras] = groupEntries;
+        for (const entry of extras) {
+            entry.cardWrapper?.remove();
+        }
+    }
+    // 2+ succeeded: keep all — do nothing
+}
+
+/**
  * Fetches dynamic parameters out of external target documents
  */
 async function fetchAndRenderSEO(cardElement, url, cache) {
     if (!cardElement) return;
     const contentWrapper = cardElement.querySelector('.preview-content');
+
 
     try {
         let seoData;
@@ -348,7 +453,7 @@ async function fetchAndRenderSEO(cardElement, url, cache) {
             const response = await fetch(url);
             if (!response.ok) {
                 renderFallback(contentWrapper);
-                return;
+                return false;
             }
 
             const htmlText = await response.text();
@@ -360,7 +465,7 @@ async function fetchAndRenderSEO(cardElement, url, cache) {
 
             if (!metadataTitle && !metadataDesc) {
                 renderFallback(contentWrapper);
-                return;
+                return false;
             }
 
             seoData = {
@@ -386,9 +491,11 @@ async function fetchAndRenderSEO(cardElement, url, cache) {
         cardElement.addEventListener('mouseenter', () => {
             handleFrameCompilation(cardElement, url, seoData.fullHtml);
         });
+        return true;
 
     } catch (err) {
         renderFallback(contentWrapper);
+        return false;
     }
 }
 
@@ -467,6 +574,7 @@ function injectPreviewStyles() {
         div.card { margin-bottom: 15px; display: inline-block; vertical-align: top; }
         div.card > a { text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; gap: 6px; }
         .link-label { max-width: 200px; text-align: center; font-size: 12px; padding: 0 4px; }
+        #stalkmate.hide-fallbacks .card:has(.preview-fallback) { display: none; }
     `;
     document.head.appendChild(style);
 }
