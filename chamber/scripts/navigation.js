@@ -17,6 +17,7 @@ const setActiveNavLink = () => {
         const href = link.getAttribute('href').replace(/^\.\//, '');
         if (pathname.endsWith('/' + href)) {
             link.parentElement.classList.add('current');
+            link.setAttribute('aria-current', 'page');
         }
     });
 };
