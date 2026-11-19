@@ -1,4 +1,4 @@
-/**
+﻿/**
  * * Course Cards v3.0
  * Author: Jayser Pilapil
  * Date: 2026-11-13
@@ -17,6 +17,8 @@
  * <script src="scripts/course.js" defer></script>
  * Requires .web-cert-courses section with .filter-buttons container in the HTML.
  */
+
+import { displayCourseDetails } from './displayCourseDetails.mjs';
 
 /* ─── Official Course List Array (W01 Assignment) ────────────────────────── */
 
@@ -135,7 +137,7 @@ function renderCourses(list) {
     grid.classList.add('course-cards-grid');
 
     list.forEach(course => {
-        const card = document.createElement('div');
+        const card = document.createElement('button');
         card.classList.add('course-card');
         if (course.completed) card.classList.add('completed');
 
@@ -145,6 +147,8 @@ function renderCourses(list) {
             <p class="course-credits">${course.credits} credits</p>
             ${course.completed ? '<span class="badge-complete">&#10003; Completed</span>' : ''}
         `;
+        card.type = 'button';
+        card.addEventListener('click', () => displayCourseDetails(course));
         grid.appendChild(card);
     });
 

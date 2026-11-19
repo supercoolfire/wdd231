@@ -1,2 +1,92 @@
-*{box-sizing: border-box;}
+﻿* {
+box-sizing: border-box;
+width: 90%;
+}
 
+#mydialog div {
+display: grid;
+grid-template-columns: auto 44px;
+background-color: #ddd;
+padding: 5px;
+border-bottom: #aaa 1px solid;
+}
+
+#mydialog h2 {
+margin: 0;
+color: #275690;
+}
+
+#mydialog button {
+margin: 0;
+border: 1px solid rgba(0, 0, 0, 0.3);
+border-radius: 5px;
+box-shadow: 0 0 10px #aaa;
+}
+
+#mydialog p {
+padding: 10px;
+color: #375170;
+}
+
+::backdrop {
+background-color: rgba(252, 252, 252, 0.75);
+}
+
+/* ==========================================================================
+   Temple images — layout
+   ========================================================================== */
+#showHere {
+display: flex;
+flex-wrap: wrap;
+gap: 0.75rem;
+padding: 1rem 0;
+}
+
+#showHere img {
+width: 200px;
+height: 125px;
+object-fit: cover;
+border-radius: 4px;
+cursor: pointer;
+/* Transition for hover scale — runs on state change only */
+transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* ==========================================================================
+   Keyframe — fade in and slide up on page load
+   ========================================================================== */
+@keyframes fadeSlideUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+#showHere img {
+animation: fadeSlideUp 0.5s ease-out forwards;
+}
+
+/* Stagger each image slightly using :nth-child */
+#showHere img:nth-child(1)  { animation-delay: 0.00s; }
+#showHere img:nth-child(2)  { animation-delay: 0.05s; }
+#showHere img:nth-child(3)  { animation-delay: 0.10s; }
+#showHere img:nth-child(4)  { animation-delay: 0.15s; }
+#showHere img:nth-child(5)  { animation-delay: 0.20s; }
+#showHere img:nth-child(6)  { animation-delay: 0.25s; }
+#showHere img:nth-child(7)  { animation-delay: 0.30s; }
+#showHere img:nth-child(8)  { animation-delay: 0.35s; }
+#showHere img:nth-child(9)  { animation-delay: 0.40s; }
+#showHere img:nth-child(10) { animation-delay: 0.45s; }
+#showHere img:nth-child(n+11) { animation-delay: 0.50s; }
+
+/* Hover — scale up (transition, not animation) */
+#showHere img:hover {
+transform: scale(1.08);
+box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+}

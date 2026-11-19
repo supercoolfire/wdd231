@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="author" content="Jayser Pilapil">
+    <meta name="description" content="Your personal stock watchlist — saved locally. Track your picks and see live price changes.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Watchlist | Stock Exchange Tracker</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../../images/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="My Watchlist — Stock Exchange Tracker">
+    <meta property="og:description" content="Your personal stock watchlist saved locally in the browser.">
+    <meta property="og:image" content="../../images/logo.svg">
+    <meta property="og:url" content="https://supercoolfire.github.io/wdd231/finalproject/stock-exchange/watchlist.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        media="print" onload="this.media='all'">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- Scripts -->
+    <script src="../../scripts/date.js" defer></script>
+    <script src="../../scripts/theme-toggle.js" defer></script>
+    <link rel="preload" href="data/nav.json" as="fetch" crossorigin>
+    <script src="../../scripts/navigation.js" defer></script>
+    <script src="../../scripts/hydrate-v6.js" data-file="data/nav.json" defer></script>
+    <script src="scripts/watchlist.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <a class="brand-link" href="index.html">
+            <img class="brand-logo" src="../../images/logo.svg" alt="Stock Exchange Tracker logo" width="24" height="24">
+            <span class="brand-name">Stock Tracker</span>
+        </a>
+        <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" aria-expanded="false"></button>
+        <nav id="nav-bar" class="navigation">
+            <ul id="navigation"><li class="loading-dots"><a href="#">Loading menu�</a></li></ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>My Watchlist</h1>
+
+        <p class="watchlist-hint">Add stocks from the <a href="stocks.html">Stocks page</a>. Your watchlist is saved in your browser.</p>
+
+        <div id="watchlist-cards" class="stock-grid">
+            <p class="empty-state">Your watchlist is empty. <a href="stocks.html">Browse stocks</a> to add some.</p>
+        </div>
+
+        <div class="watchlist-actions" id="watchlist-actions" hidden>
+            <button id="clear-watchlist" class="btn-danger">Clear Watchlist</button>
+        </div>
+
+        <section class="last-visit-section">
+            <h2>Last Visit</h2>
+            <p id="last-visit-msg"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy;<span id="currentyear"></span> | Jayser Pilapil | Stock Exchange Tracker | WDD 231</p>
+        <p id="lastModified"></p>
+        <p class="disclaimer">Data provided by Finnhub. For educational use only — not financial advice.</p>
+    </footer>
+</body>
+
+</html>

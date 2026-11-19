@@ -7,7 +7,7 @@
             { "tag": "li", "items": [{ "tag": "a", "href": "index.html",  "textContent": "Home", "title": "Home", "rel": "noopener" }] },
             { "tag": "li", "items": [{ "tag": "a", "href": "#", "textContent": "Discover", "title": "Discover", "rel": "noopener" }] },
             { "tag": "li", "items": [{ "tag": "a", "href": "directory.html", "textContent": "Directory", "title": "Directory", "rel": "noopener" }] },
-            { "tag": "li", "items": [{ "tag": "a", "href": "#", "textContent": "Join", "title": "Join", "rel": "noopener" }] }
+            { "tag": "li", "items": [{ "tag": "a", "href": "join.html", "textContent": "Join", "title": "Join", "rel": "noopener" }] }
         ]
     }
 }

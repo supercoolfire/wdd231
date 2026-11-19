@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "username": "kelvin206-MOBY",
     "id": "136827",
@@ -9,7 +9,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/136827"
   },
   {
-    "username": "",
+    "username": "adeoyej1",
     "id": "119711",
     "name": "John Adeoye",
     "avatar": "https://byupw.instructure.com/images/thumbnails/4251412/Zsv90Ihqc5PdDLdTaY1Aspy9QSLWYNTrhoS5bAOd",
@@ -45,7 +45,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/135151"
   },
   {
-    "username": "",
+    "username": "jagramonteperalta-prog",
     "id": "153608",
     "name": "John Antoni Agramonte Peralta",
     "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
@@ -81,7 +81,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/139058"
   },
   {
-    "username": "",
+    "username": "abrahamdivine",
     "id": "118468",
     "name": "Divinei Ameh",
     "avatar": "https://byupw.instructure.com/images/thumbnails/6667332/QWIk5OhxTIDMtKCXRbj2V68aqK5KNopW0VELFSdj",
@@ -90,7 +90,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/118468"
   },
   {
-    "username": "",
+    "username": "samuelmaciel015",
     "id": "68957",
     "name": "Samuel Amorim Maciel",
     "avatar": "https://byupw.instructure.com/files/6932291/download?download_frd=1&verifier=m643lOlCCJBt2xynraSzeC43gSvfdLIoJdzA9P0r",
@@ -144,7 +144,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/44259"
   },
   {
-    "username": "",
+    "username": "pablopy10",
     "id": "52722",
     "name": "Paulo Barroso",
     "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
@@ -171,7 +171,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/137387"
   },
   {
-    "username": "",
+    "username": "paulcheney",
     "id": "490",
     "name": "Paul Cheney",
     "avatar": "https://byupw.instructure.com/images/thumbnails/62900/tCfU7TA1DLV4CCcwPeZaAH8vAs5hPE5OPvSmw7I1",
@@ -207,7 +207,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/121838"
   },
   {
-    "username": "",
+    "username": "ruffych594",
     "id": "137515",
     "name": "Rufaro Chirume",
     "avatar": "https://byupw.instructure.com/files/5179038/download?download_frd=1&verifier=3mOFxzsg2yK5iYb5fq7gQJox7jW5jFtNTsMMM07L",
@@ -279,16 +279,22 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/60644"
   },
   {
-    "username": "",
+    "username": "eze99olue-ux",
     "id": "87998",
     "name": "Eze Oluebube Miracle Emmanuel",
     "avatar": "https://byupw.instructure.com/files/3311428/download?download_frd=1&verifier=hjAxbylUcstjNISlq2I4vphNIIY27ZODsGJnt8oI",
     "section": "WDD231.001 - Web Frontend Development I",
     "role": "Student",
-    "profile_link": "https://byupw.instructure.com/courses/64185/users/87998"
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/87998",
+    "other_links": [
+      {
+        "link": "https://eze99olue-ux.github.io/wdd131/filtered-temples.html",
+        "text": ""
+      }
+    ]
   },
   {
-    "username": "",
+    "username": "EstherTemidayo",
     "id": "64722",
     "name": "Olukayode Esther Temidayo",
     "avatar": "https://byupw.instructure.com/images/thumbnails/6359354/KbnS0foM4dCAGbuaMaBEbOEd5jXNfgo2HbLZlPuV",
@@ -328,20 +334,8 @@
         "text": "W01 Learning Activity: Header & Navigation"
       },
       {
-        "link": "https://stevenfermin.github.io/wdd231/prophets.html",
-        "text": "W02 Learning Activity: Latter-day Prophets"
-      },
-      {
         "link": "https://stevenfermin.github.io/wdd231/weatherapi.html",
         "text": "W03 Learning Activity: Consuming a Weather API"
-      },
-      {
-        "link": "https://stevenfermin.github.io/wdd231/startHere/startHere/index.html",
-        "text": "W04 Learning Activity: Temple Appointment Form"
-      },
-      {
-        "link": "https://stevenfermin.github.io/wdd231/startHere/startHere/thanks.html",
-        "text": "W04 Learning Activity: Temple Appointment Details"
       }
     ]
   },
@@ -391,7 +385,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/51835"
   },
   {
-    "username": "",
+    "username": "diegogranados-10",
     "id": "33110",
     "name": "Diego Andres Granados",
     "avatar": "https://byupw.instructure.com/images/thumbnails/131017/3gpkpFemQ6lSAVTQ3xfs0PGg0CKjAH9JpqzqNwUt",
@@ -481,7 +475,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/136448"
   },
   {
-    "username": "",
+    "username": "ijofre02",
     "id": "27608",
     "name": "Ignacio Damián Jofre Alonso",
     "avatar": "https://byupw.instructure.com/images/thumbnails/1782167/D9YuXmK4diwN4An7ajj9wtlaYeMN7zABm5u9hTHO",
@@ -496,17 +490,7 @@
     "avatar": "https://byupw.instructure.com/images/thumbnails/3334940/vq2V30VBKkB7DKdkcYd7opZrS3VwYLnKU48iWC55",
     "section": "WDD231.001 - Web Frontend Development I",
     "role": "Student",
-    "profile_link": "https://byupw.instructure.com/courses/64185/users/111168",
-    "other_links": [
-      {
-        "link": "https://aerosub7.github.io/wdd231/prophets.html",
-        "text": "W02 Learning Activity: Latter-day Prophets"
-      },
-      {
-        "link": "https://aerosub7.github.io/wdd231/weather.html",
-        "text": "W03 Learning Activity: Consuming a Weather API"
-      }
-    ]
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/111168"
   },
   {
     "username": "alfredreeves86",
@@ -524,10 +508,6 @@
       {
         "link": "https://alfredreeves86.github.io/wdd231/Week_02_Learning_Activities/prophets.html",
         "text": "W02 Learning Activity: Latter-day Prophets"
-      },
-      {
-        "link": "https://alfredreeves86.github.io/wdd231/weather.html",
-        "text": "W03 Learning Activity: Consuming a Weather API"
       },
       {
         "link": "https://alfredreeves86.github.io/wdd231/modules.html",
@@ -592,10 +572,6 @@
       {
         "link": "https://krel05.github.io/wdd231/prophets.html",
         "text": "W02 Learning Activity: Latter-day Prophets"
-      },
-      {
-        "link": "https://krel05.github.io/wdd231/weather.html",
-        "text": "W03 Learning Activity: Consuming a Weather API"
       }
     ]
   },
@@ -663,7 +639,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/180939"
   },
   {
-    "username": "",
+    "username": "odongkara-tech",
     "id": "160804",
     "name": "Ronald Odongkara",
     "avatar": "https://byupw.instructure.com/images/thumbnails/7906646/n4ay7tHjzxIHDwIB8UwrP9Vql3b6heZ41VKYspbo",
@@ -777,7 +753,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/118136"
   },
   {
-    "username": "",
+    "username": "sam-ro-27",
     "id": "132323",
     "name": "SAMUEL ROWLEY",
     "avatar": "https://byupw.instructure.com/images/thumbnails/5152656/DdPsyJer5mQel9MsVgTBNeqrbVqz15g9Rj9shZiL",
@@ -831,7 +807,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/132114"
   },
   {
-    "username": "",
+    "username": "CharlieLSparrow",
     "id": "45875",
     "name": "Charles Sparrow",
     "avatar": "https://byupw.instructure.com/images/thumbnails/3044848/NlkvU3xQjudWjHICojGEjscml9jcCiEmuNDmS2D7",
@@ -858,7 +834,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/124713"
   },
   {
-    "username": "",
+    "username": "lawrencode",
     "id": "132142",
     "name": "Lawren Talamaivao",
     "avatar": "https://byupw.instructure.com/images/thumbnails/5729400/OKXi83cG7qP7R09IoJK1eJDvofl3Sb77t4w7pFpk",

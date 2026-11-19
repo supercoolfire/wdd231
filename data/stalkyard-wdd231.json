@@ -10,7 +10,9 @@
     { "link": "https://{username}.github.io/wdd231/chamber/directory.html", "text": "W02 Assignment: Chamber Directory" },
     
     { "link": "https://{username}.github.io/wdd231/week3/modules.html", "text": "W03 Learning Activity: ES Modules" },
+    { "link": "https://{username}.github.io/wdd231/modules.html", "text": "W03 Learning Activity: ES Modules" },
     { "link": "https://{username}.github.io/wdd231/week3/weather/index.html", "text": "W03 Learning Activity: Consuming a Weather API" },
+    { "link": "https://{username}.github.io/wdd231/weather.html", "text": "W03 Learning Activity: Consuming a Weather API" },
     { "link": "https://{username}.github.io/wdd231/chamber/index.html", "text": "W03 Assignment: Chamber Home Page" },
 
     { "link": "https://{username}.github.io/wdd231/week04/startHere/startHere/index.html", "text": "W04 Learning Activity: Temple Appointment Form" },

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jayser Pilapil">
+    <meta name="description" content="Join the Point Nemo Chamber of Commerce. Apply for membership and choose a level that fits your organization — NP, Bronze, Silver, or Gold.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Join | Point Nemo Chamber of Commerce">
+    <meta property="og:description" content="Apply for membership in the Point Nemo Chamber of Commerce. Choose from NP, Bronze, Silver, or Gold membership levels.">
+    <meta property="og:image" content="https://supercoolfire.github.io/wdd231/chamber/images/hero/hero-light-medium.webp">
+    <meta property="og:url" content="https://supercoolfire.github.io/wdd231/chamber/join.html">
+
+    <title>Point Nemo Chamber of Commerce | Join</title>
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        media="print">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/theme-toggle.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="page">
+            <img src="images/logo.svg" alt="Site Logo" width="24" height="29">
+            <span>Point Nemo's Chamber of Commerce</span>
+            <button id="ham-btn" class="hamburger" aria-label="Toggle navigation" aria-expanded="false"></button>
+            <nav id="nav-bar" class="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Discover</a></li>
+                    <li><a href="directory.html">Business Directory</a></li>
+                    <li class="current"><a href="join.html" aria-current="page">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Join the Chamber</h1>
+
+        <div class="join-layout">
+
+            <!-- Application Form -->
+            <section class="join-form-section">
+                <h2>Membership Application</h2>
+                <form method="get" action="thankyou.html">
+
+                    <label>
+                        First Name *
+                        <input type="text" name="firstName" id="firstName"
+                            required aria-required="true"
+                            title="Enter your first name"
+                            autocomplete="given-name">
+                    </label>
+
+                    <label>
+                        Last Name *
+                        <input type="text" name="lastName" id="lastName"
+                            required aria-required="true"
+                            title="Enter your last name"
+                            autocomplete="family-name">
+                    </label>
+
+                    <label>
+                        Organizational Title
+                        <input type="text" name="orgTitle" id="orgTitle"
+                            title="Organization title: letters, hyphens, and spaces, minimum 7 characters"
+                            autocomplete="organization-title"
+                            pattern="[A-Za-z\- ]{7,}">
+                    </label>
+
+                    <label>
+                        Email Address *
+                        <input type="email" name="email" id="email"
+                            required aria-required="true"
+                            title="Enter a valid email address"
+                            autocomplete="email"
+                            placeholder="you@example.com">
+                    </label>
+
+                    <label>
+                        Mobile Phone *
+                        <input type="tel" name="phone" id="phone"
+                            required aria-required="true"
+                            title="Enter your mobile phone number"
+                            autocomplete="tel">
+                    </label>
+
+                    <label>
+                        Business / Organization Name *
+                        <input type="text" name="businessName" id="businessName"
+                            required aria-required="true"
+                            title="Enter your business or organization name"
+                            autocomplete="organization">
+                    </label>
+
+                    <label>
+                        Membership Level *
+                        <select name="membershipLevel" id="membershipLevel"
+                            required aria-required="true"
+                            title="Select a membership level">
+                            <option value="">— Select a level —</option>
+                            <option value="np">NP Membership — Non-profit (no fee)</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Business Description
+                        <textarea name="description" id="description"
+                            title="Briefly describe your business or organization"
+                            rows="4"></textarea>
+                    </label>
+
+                    <input type="hidden" name="timestamp" id="timestamp">
+
+                    <input type="submit" value="Apply for Membership">
+
+                </form>
+            </section>
+
+            <!-- Membership Level Cards -->
+            <section class="membership-cards-section" aria-label="Membership levels">
+                <h2>Membership Levels</h2>
+                <div class="membership-cards">
+
+                    <div class="membership-card">
+                        <h3>NP Membership</h3>
+                        <p class="membership-price">No fee</p>
+                        <p>For non-profit organizations committed to growing the community.</p>
+                        <button class="open-modal-btn" data-modal="np-modal" aria-label="Learn more about NP Membership">Learn More</button>
+                    </div>
+
+                    <div class="membership-card">
+                        <h3>Bronze Membership</h3>
+                        <p class="membership-price">$50 / year</p>
+                        <p>Entry-level membership with directory listing and event access.</p>
+                        <button class="open-modal-btn" data-modal="bronze-modal" aria-label="Learn more about Bronze Membership">Learn More</button>
+                    </div>
+
+                    <div class="membership-card">
+                        <h3>Silver Membership</h3>
+                        <p class="membership-price">$150 / year</p>
+                        <p>Includes Bronze benefits plus publications and luncheon invitations.</p>
+                        <button class="open-modal-btn" data-modal="silver-modal" aria-label="Learn more about Silver Membership">Learn More</button>
+                    </div>
+
+                    <div class="membership-card">
+                        <h3>Gold Membership</h3>
+                        <p class="membership-price">$300 / year</p>
+                        <p>Full access: spotlight advertising, sponsorships, and social media features.</p>
+                        <button class="open-modal-btn" data-modal="gold-modal" aria-label="Learn more about Gold Membership">Learn More</button>
+                    </div>
+
+                </div>
+            </section>
+
+        </div><!-- end .join-layout -->
+    </main>
+
+    <!-- Modals — one per membership level -->
+    <dialog id="np-modal" aria-labelledby="np-modal-title">
+        <button class="close-modal-btn" aria-label="Close NP Membership dialog">Close</button>
+        <h2 id="np-modal-title">NP Membership Benefits</h2>
+        <ul>
+            <li>Chamber directory listing</li>
+            <li>Access to all public chamber events</li>
+            <li>Monthly chamber newsletter</li>
+            <li>Community networking opportunities</li>
+        </ul>
+        <p><strong>Fee:</strong> No charge for non-profit organizations.</p>
+    </dialog>
+
+    <dialog id="bronze-modal" aria-labelledby="bronze-modal-title">
+        <button class="close-modal-btn" aria-label="Close Bronze Membership dialog">Close</button>
+        <h2 id="bronze-modal-title">Bronze Membership Benefits</h2>
+        <ul>
+            <li>Chamber directory listing with website link</li>
+            <li>Access to all public chamber events</li>
+            <li>Monthly chamber newsletter</li>
+            <li>Discounted tickets to chamber luncheons</li>
+            <li>Community networking opportunities</li>
+        </ul>
+        <p><strong>Fee:</strong> $50 / year</p>
+    </dialog>
+
+    <dialog id="silver-modal" aria-labelledby="silver-modal-title">
+        <button class="close-modal-btn" aria-label="Close Silver Membership dialog">Close</button>
+        <h2 id="silver-modal-title">Silver Membership Benefits</h2>
+        <ul>
+            <li>All Bronze benefits</li>
+            <li>Featured in monthly chamber publications</li>
+            <li>Complimentary luncheon seats (2 per year)</li>
+            <li>Access to member-only training workshops</li>
+            <li>Social media mentions on chamber accounts</li>
+        </ul>
+        <p><strong>Fee:</strong> $150 / year</p>
+    </dialog>
+
+    <dialog id="gold-modal" aria-labelledby="gold-modal-title">
+        <button class="close-modal-btn" aria-label="Close Gold Membership dialog">Close</button>
+        <h2 id="gold-modal-title">Gold Membership Benefits</h2>
+        <ul>
+            <li>All Silver benefits</li>
+            <li>Spotlight advertising on the chamber home page</li>
+            <li>Event sponsorship opportunities</li>
+            <li>Priority placement in chamber directory</li>
+            <li>Dedicated social media feature posts</li>
+            <li>Complimentary luncheon seats (4 per year)</li>
+        </ul>
+        <p><strong>Fee:</strong> $300 / year</p>
+    </dialog>
+
+    <footer>
+        <div class="footer-page">
+            <div class="foot-left">
+                <address>
+                    <strong>Point Nemo's Chamber of Commerce</strong><br>
+                    1 Pun Intended Plaza<br>
+                    Wordplay Heights, WP 10101<br>
+                    info@pncc.com<br>
+                    (800) 555-0100
+                </address>
+            </div>
+            <div class="social">
+                <a href="https://youtube.com" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="12" class="bg" fill="currentColor"/>
+                        <rect x="5" y="7.5" width="14" height="9" rx="2.6" class="glyph" fill="currentColor"/>
+                        <path d="M10.5 10.2v3.6l3.2-1.8z" class="bg" fill="currentColor"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com" aria-label="Twitter">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="12" class="bg" fill="currentColor"/>
+                        <path class="glyph" fill="currentColor" transform="translate(5.2 5.4) scale(0.6)"
+                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="12" class="bg" fill="currentColor"/>
+                        <rect x="6.9" y="10" width="2.3" height="7" class="glyph" fill="currentColor"/>
+                        <circle cx="8.05" cy="7.7" r="1.35" class="glyph" fill="currentColor"/>
+                        <path class="glyph" fill="currentColor"
+                            d="M11 10h2.1v1c.4-.7 1.2-1.2 2.3-1.2 2 0 2.6 1.3 2.6 3.1V17h-2.2v-3.5c0-.9-.2-1.6-1.2-1.6s-1.4.7-1.4 1.6V17H11z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="foot-right">
+                <p>WDD231 Class Project</p>
+                <p>&copy;<span id="currentyear"></span> Point Nemo Chamber of Commerce</p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
