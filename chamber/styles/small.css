@@ -28,6 +28,8 @@
     --required: #d70000;
     --required-complied: #20208F;
     --phone-label-color: #555555;
+    --input-filled-bg: #ffffff;
+    --input-filled-color: #000000;
 }
 
 [data-theme="dark"] {
@@ -60,6 +62,8 @@
     --required: #ff6b6b;
     --required-complied: #64D2FF;
     --phone-label-color: #aaaaaa;
+    --input-filled-bg: #2C2C2E;
+    --input-filled-color: #EBEBF5;
 }
 
 [data-theme="light"] .dark  { display: none; }
@@ -728,15 +732,15 @@ input:focus {
 }
 input:required { border-left: 5px solid var(--required); }
 input:required:valid { border-left: 5px solid var(--required-complied); }
-/* White background when any input/select/textarea has content */
+/* White background + readable text when input/textarea has content */
 input:not(:placeholder-shown),
 textarea:not(:placeholder-shown) {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--input-filled-bg);
+    color: var(--input-filled-color);
 }
 select:valid:not([value=""]) {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--input-filled-bg);
+    color: var(--input-filled-color);
 }
 input::placeholder,
 textarea::placeholder {
