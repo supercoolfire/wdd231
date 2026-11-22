@@ -1,4 +1,4 @@
-:root, [data-theme="light"] {
+ï»¿:root, [data-theme="light"] {
     --toggle-btn-bg: #2a2a2a;
     --toggle-text-color: #f0f0f0;
     --body-text-color:   #000000;
@@ -27,7 +27,6 @@
     --generic-box-shadow: 0 10px 15px -3px #0000008d;
     --required: #d70000;
     --required-complied: #20208F;
-    --phone-label-color: #555555;
     --input-filled-bg: #ffffff;
     --input-filled-color: #000000;
 }
@@ -61,7 +60,6 @@
     --generic-box-shadow: 0 10px 15px -3px #ffffff4d;
     --required: #ff6b6b;
     --required-complied: #64D2FF;
-    --phone-label-color: #aaaaaa;
     --input-filled-bg: #2C2C2E;
     --input-filled-color: #EBEBF5;
 }
@@ -538,8 +536,9 @@ h2 {
 .membership-cards-section {
     position: relative;
     padding: 1rem;
+    height: max-content;
 }
-/* Animated outline — travels section?card, stays behind cards */
+/* Animated outline ? travels section?card, stays behind cards */
 .membership-cards-section::before {
     content: '';
     position: absolute;
@@ -547,7 +546,7 @@ h2 {
     left:   0;
     right:  0;
     bottom: 0;
-    border: 2px solid var(--required);
+    border: 5px solid var(--required);
     border-radius: 12px;
     transition: top    0.4s ease,
                 left   0.4s ease,
@@ -555,14 +554,14 @@ h2 {
                 bottom 0.4s ease,
                 border-radius 0.4s ease,
                 border-color  0.4s ease;
-    z-index: -1;
+    z-index: var(--outline-z, -1);
 }
 /* Shrink to selected card, bleed 3px outside it so ::before is visible at z-index: -1 */
 .membership-cards-section.has-selection::before {
-    top:    calc(var(--outline-top,    0px) - 3px);
-    left:   calc(var(--outline-left,   0px) - 3px);
-    right:  calc(var(--outline-right,  0px) - 3px);
-    bottom: calc(var(--outline-bottom, 0px) - 3px);
+    top:    calc(var(--outline-top,    0px) - 6px);
+    left:   calc(var(--outline-left,   0px) - 6px);
+    right:  calc(var(--outline-right,  0px) - 6px);
+    bottom: calc(var(--outline-bottom, 0px) - 6px);
     border-radius: 13px;
     border-color: var(--required-complied);
 }
@@ -583,105 +582,19 @@ h2 {
 .membership-card h3 {
     margin: 0 0 0.25rem;
     color: var(--site-name-color);
+    font-size: 1.12rem;
 }
 .membership-card .membership-price {
-    font-weight: 700;
+    font-weight: 600;
     margin: 0 0 0.5rem;
+    font-size: 1rem;
+}
+.membership-card p {
+    margin: 5px auto;
+    font-size: .8rem;
 }
 
-/* -- Phone field: Code box + Phone number box -- */
-.phone-field {
-    display: flex;
-    gap: 0.75rem;
-    align-items: stretch;
-}
-.phone-code-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 1px solid var(--card-border);
-    border-radius: 10px;
-    background-color: var(--card-background-color);
-    padding: 0.4rem 0.6rem 0.3rem;
-    flex-shrink: 0;
-    min-width: 90px;
-    cursor: pointer;
-}
-.phone-code-label {
-    font-size: 0.7rem;
-    color: var(--phone-label-color);
-    margin: 0 0 0.2rem;
-}
-.phone-code-inner {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-.phone-code-inner img {
-    width: 28px;
-    height: auto;
-    display: block;
-    border-radius: 2px;
-    flex-shrink: 0;
-}
-.phone-code-inner span {
-    font-size: 1rem;
-    color: var(--card-color);
-    font-weight: 500;
-}
-/* Invisible select overlays the entire code box — parent selector beats generic form rules */
-.phone-code-box select {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    padding: 0;
-    margin: 0;
-    border: none;
-    border-radius: 10px;
-    background: none;
-    box-shadow: none;
-    cursor: pointer;
-}
-.phone-number-box {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 1px solid var(--card-border);
-    border-radius: 10px;
-    background-color: var(--card-background-color);
-    padding: 0.4rem 0.75rem 0.3rem;
-}
-.phone-number-label {
-    font-size: 0.7rem;
-    color: var(--phone-label-color);
-    margin: 0 0 0.2rem;
-}
-/* Reset generic form styles on the tel input inside the box — specificity via parent selector */
-.phone-number-box input[type="tel"] {
-    border: none;
-    background: none;
-    padding: 0;
-    width: 100%;
-    font-size: 1rem;
-    color: var(--card-color);
-    border-radius: 0;
-    box-shadow: none;
-}
-.phone-number-box input[type="tel"]:focus {
-    outline: none;
-    box-shadow: none;
-    border: none;
-}
-/* Focus ring on the outer boxes instead */
-.phone-field:focus-within .phone-code-box,
-.phone-field:focus-within .phone-number-box {
-    border-color: var(--header-page-background-color);
-    box-shadow: 0 0 0 2px var(--header-page-background-color);
-}
+
 ::backdrop {
     background-color: rgba(116, 115, 115, 0.75);
 }
@@ -711,7 +624,7 @@ section {
 }
     input[type=text],
     input[type=search],
-    input[type=tel],
+    .phone-number-box:has(input[type=tel]),
     input[type=date],
     input[type=email],
     select, textarea {
@@ -725,28 +638,143 @@ section {
     color: var(--card-color);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-input:focus {
+
+input[type="tel"]:not(:placeholder-shown):invalid {
+    background-color: var(--required-complied);
+}
+
+input:focus,
+.phone-number-box:has(input:focus) {
     outline: none;
     border-color: var(--filter-button-color);
     box-shadow: 0 0 0 2px var(--header-page-background-color);
 }
-input:required { border-left: 5px solid var(--required); }
-input:required:valid { border-left: 5px solid var(--required-complied); }
-/* White background + readable text when input/textarea has content */
-input:not(:placeholder-shown),
-textarea:not(:placeholder-shown) {
-    background-color: var(--input-filled-bg);
-    color: var(--input-filled-color);
+input:required, 
+.phone-number-box:has(input:required) { 
+    border-left: 10px solid var(--required); 
 }
-select:valid:not([value=""]) {
-    background-color: var(--input-filled-bg);
-    color: var(--input-filled-color);
+
+input:required:valid, 
+.phone-number-box:has(input:required:valid) { 
+    border-left: 5px solid var(--required-complied); 
+}
+
+input:not(:placeholder-shown),
+.phone-number-box:has(input:not(:placeholder-shown)),
+.phone-number-box:has(input:not(:placeholder-shown)) > .phone-number-label,
+textarea:not(:placeholder-shown) {
+    background-color: var(--required-complied);
+    color: var(--body-background-color);
+}
+
+select:has(option:checked:not([value=""])) {
+    background-color: var(--required-complied);
+    color: var(--body-background-color);
 }
 input::placeholder,
 textarea::placeholder {
     color: var(--card-border);
     opacity: 1;
 }
+
+/* -- Phone field: Code box + Phone number box -- */
+.phone-field {
+    display: flex;
+    gap: 0.75rem;
+    align-items: stretch;
+}
+.phone-code-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    background-color: var(--card-background-color);
+    padding: 0.4rem 0.6rem 0.3rem;
+    flex-shrink: 0;
+    min-width: 90px;
+    cursor: pointer;
+}
+.phone-code-label {
+    font-size: 0.7rem;
+    color: var(--body-text-color);
+    margin: 0 0 0.2rem;
+}
+.phone-code-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.phone-code-inner img {
+    width: 28px;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+.phone-code-inner span {
+    font-size: 1rem;
+    color: var(--card-color);
+    font-weight: 500;
+}
+/* Invisible select overlays the entire code box ? parent selector beats generic form rules */
+.phone-code-box select {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 10px;
+    background: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+.phone-number-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid var(--card-border); */
+    border-radius: 10px;
+    /* background-color: var(--card-background-color); */
+    padding: 0.4rem 0.75rem 0.3rem;
+}
+.phone-number-label {
+    font-size: 0.7rem;
+    color: var(--body-text-color);
+    margin: 0 0 0.2rem;
+}
+.phone-number-box input[type="tel"] {
+    border: none;
+    background: none;
+    padding: 0;
+    width: 100%;
+    font-size: 1rem;
+    /* color: var(--card-color); */
+    border-radius: 0;
+    box-shadow: none;
+}
+.phone-number-box input[type="tel"]:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+/* Phone number box: show filled bg on the container when input has content */
+/* .phone-number-box:has(input[type="tel"]:not(:placeholder-shown)) {
+    background-color: #ffffff;
+    color: #000000;
+} */
+/* Focus ring on the outer boxes instead */
+/* .phone-field:focus-within .phone-code-box,
+.phone-field:focus-within .phone-number-box {
+    border-color: var(--header-page-background-color);
+    box-shadow: 0 0 0 2px var(--header-page-background-color);
+} */
+
 input[type="submit"],
 button {
     padding: 0.5rem 1rem;
@@ -754,8 +782,11 @@ button {
     border-radius: 10px;
     color: var(--site-name-color);
     background-color: var(--filter-button-background-color);
+    cursor: pointer;
 }
 input[type="submit"]:hover,
+
+
 button:hover {
     background-color: var(--filter-button-hover-background-color);
 }

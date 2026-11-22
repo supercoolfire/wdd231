@@ -1,4 +1,4 @@
-/*
+ï»¿/*
  * join.js
  * Author: Jayser Pilapil
  * Description: Handles the W04 Chamber Join page.
@@ -61,7 +61,7 @@ if (countrySelect && countryFlag) {
 const membershipSelect = document.querySelector('#membershipLevel');
 const membershipSection = document.querySelector('.membership-cards-section');
 
-// Hide the easter egg card on load — JS owns this state
+// Hide the easter egg card on load ï¿½ JS owns this state
 const eggCard = document.querySelector('#egg-card');
 if (eggCard) eggCard.style.display = 'none';
 
@@ -74,6 +74,10 @@ if (membershipSelect && membershipSection) {
             membershipSection.classList.remove('has-selection');
             return;
         }
+
+        // Sink BEFORE animation (travels under cards)
+        membershipSection.style.setProperty('--outline-z', '2');
+        // console.log('float');
 
         const target = document.querySelector(`.membership-card[data-level="${chosen}"]`);
         if (!target) return;
@@ -93,9 +97,15 @@ if (membershipSelect && membershipSection) {
 
         // Add class AFTER setting vars so transition runs correctly
         membershipSection.classList.add('has-selection');
+
+        // Float AFTER 400ms (transition done)
+        setTimeout(() => {
+            membershipSection.style.setProperty('--outline-z', '-1');
+        }, 400);
+        // console.log('sink');
     });
 }
-// Format digits as 555 555 5555 (spaces, no country code — that's in the select)
+// Format digits as 555 555 5555 (spaces, no country code ï¿½ that's in the select)
 if (phoneInput) {
     phoneInput.addEventListener('input', () => {
         const digits = phoneInput.value.replace(/\D/g, '').slice(0, 10);
