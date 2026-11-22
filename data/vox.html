@@ -167,7 +167,23 @@
       border-radius: 20px;
       background-color: #f5f5f5;
       color: #999999;
-      width: max-content;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .user-pushed {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background-color: #fff3e0;
+      color: #e65100;
+      display: inline;
+      cursor: default;
     }
 
     /* Green badge for Teachers/Ta's, blue for students */
@@ -202,6 +218,21 @@
       padding: 40px;
       color: #ffffff;
     }
+
+    .checkbox-filter {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #333;
+      background: #fff;
+      padding: 10px 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .checkbox-filter input { cursor: pointer; width: 16px; height: 16px; }
   </style>
   <!-- <link rel="stylesheet" href="../styles/modal-click-origin.css"> -->
   <script src="../scripts/modal-click-origin.js" defer></script>
@@ -227,6 +258,11 @@
         <option value="has-username">Has Username</option>
         <option value="no-username">Missing Username Only</option>
       </select>
+
+      <label class="checkbox-filter">
+        <input type="checkbox" id="noPictureFilter">
+        No picture only
+      </label>
     </div>
 
     <div id="rosterGrid" class="roster-grid">
@@ -422,12 +458,12 @@
         const isTeacher = user.role && user.role.toLowerCase() !== 'student';
         const badgeClass = isTeacher ? 'role-badge teacher' : 'role-badge';
 
-        let avatarSrc = '../images/Spinner@1x-1.0s-200px-200px.gif';
-        if (user.id) {
-          // avatarSrc = `people-webp/${user.id}.webp`;
+        let avatarSrc = '../images/spinner.gif';
+        const webpPath = `people-webp/${user.id}.webp`;
+        if (user.avatar && !user.avatar.includes('avatar-50.png')) {
           avatarSrc = user.avatar;
-        } else if (user.avatar) {
-          avatarSrc = user.avatar;
+        } else if (user.id) {
+          avatarSrc = webpPath;
         } else if (user.profile_link) {
           avatarSrc = user.profile_link;
         }
@@ -435,19 +471,48 @@
         const cardHtml = `
         <div class="card">
           <div class="avatar-container">
-            <img class="avatar" src="${avatarSrc}" alt="${user.name || 'User avatar'}" onerror="this.src='${user.profile_link || 'https://via.placeholder.com/90?text=No+Image'}'">
+            <img class="avatar" src="${avatarSrc}" alt="${user.name || 'User avatar'}" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='https://byupw.instructure.com/images/messages/avatar-50.png';}">
           </div>
           <div class="info-container">
             <div class="name">${user.name || 'Unknown User'}</div>
             <div class="username">${user.username ? `<a href="http://github.com/${user.username}" target="_blank">@${user.username}</a>` : '<i>No Username</i>'}</div>
-            <span class="${badgeClass}">${user.role || 'Student'}</span>
-            <span class="user-id">ID: ${user.id || ''}</span>
+            <div class="badges">
+              <span class="${badgeClass}">${user.role || 'Student'}</span>
+              <span class="user-id">ID: ${user.id || ''}</span><span class="user-pushed" data-username="${user.username || ''}">${user.username ? `Last push: ...` : ''}</span>
+            </div>
             <div class="section-info">${user.section || 'No Section Listed'}</div>
             ${user.profile_link ? `<div class="profile-link-wrapper"><a href="${user.profile_link}" target="_blank" class="profile-btn">View Profile →</a></div>` : ''}
-          </div>
         </div>
       `;
         grid.insertAdjacentHTML('beforeend', cardHtml);
+
+        // Hover-triggered GitHub last-push fetch (1h localStorage cache)
+        if (user.username) {
+          const allCards = grid.querySelectorAll(".card");
+          const thisCard = allCards[allCards.length - 1];
+          const pushedSpan = thisCard.querySelector(".user-pushed[data-username]");
+          let fetched = false;
+          thisCard.addEventListener("mouseenter", async () => {
+            if (fetched) return;
+            fetched = true;
+            const cacheKey = "gh_push_" + user.username;
+            const cached = JSON.parse(localStorage.getItem(cacheKey) || "null");
+            const now = Date.now();
+            if (cached && (now - cached.ts) < 3600000) {
+              pushedSpan.textContent = cached.text;
+              return;
+            }
+            try {
+              const res = await fetch("https://api.github.com/repos/" + user.username + "/wdd231");
+              if (!res.ok) { pushedSpan.textContent = "Last push: N/A"; return; }
+              const repo = await res.json();
+              const d = new Date(repo.pushed_at);
+              const text = "Last push: " + d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+              pushedSpan.textContent = text;
+              localStorage.setItem(cacheKey, JSON.stringify({ text: text, ts: now }));
+            } catch (e) { pushedSpan.textContent = "Last push: error"; }
+          });
+        }
       });
     }
 
@@ -478,6 +543,10 @@
         const hasUsername = user.username && user.username.trim() !== '';
         if (selectedUsernameFilter === 'has-username') matchesUsernameCondition = hasUsername;
         if (selectedUsernameFilter === 'no-username') matchesUsernameCondition = !hasUsername;
+        const noPictureOnly = document.getElementById('noPictureFilter').checked;
+        const hasNoPicture = !user.avatar || user.avatar.includes('avatar-50.png');
+        if (noPictureOnly && !hasNoPicture) return false;
+
 
         return matchesSearch && matchesRole && matchesUsernameCondition;
       });
@@ -506,6 +575,7 @@
     });
     document.getElementById('roleFilter').addEventListener('change', filterData);
     document.getElementById('usernameFilter').addEventListener('change', filterData);
+    document.getElementById('noPictureFilter').addEventListener('change', filterData);
 
     // Initialize page
     loadRoster();

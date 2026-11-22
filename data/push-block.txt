@@ -1,0 +1,27 @@
+﻿// Attach hover-triggered GitHub last-push fetch to this card
+        if (user.username) {
+          const allCards = grid.querySelectorAll(".card");
+          const thisCard = allCards[allCards.length - 1];
+          const pushedSpan = thisCard.querySelector(".user-pushed[data-username]");
+          let fetched = false;
+          thisCard.addEventListener("mouseenter", async () => {
+            if (fetched) return;
+            fetched = true;
+            const cacheKey = `gh_push_${user.username}`;
+            const cached = JSON.parse(localStorage.getItem(cacheKey) || "null");
+            const now = Date.now();
+            if (cached && (now - cached.ts) < 3600000) {
+              pushedSpan.textContent = cached.text;
+              return;
+            }
+            try {
+              const res = await fetch(`https://api.github.com/repos/${user.username}/wdd231`);
+              if (!res.ok) { pushedSpan.textContent = "Last push: N/A"; return; }
+              const repo = await res.json();
+              const d = new Date(repo.pushed_at);
+              const text = `Last push: ${d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`;
+              pushedSpan.textContent = text;
+              localStorage.setItem(cacheKey, JSON.stringify({ text, ts: now }));
+            } catch (e) { pushedSpan.textContent = "Last push: error"; }
+          });
+        }

@@ -54,13 +54,19 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/153608"
   },
   {
-    "username": "",
+    "username": "damie-aj95",
     "id": "84366",
     "name": "Damilare Samuel Ajayi",
     "avatar": "https://byupw.instructure.com/files/1711683/download?download_frd=1&verifier=RNRTwSU5f5s0RLj5JU7nLq90jrLl6hf7CnOc0fYf",
     "section": "WDD231.001 - Web Frontend Development I",
     "role": "Student",
-    "profile_link": "https://byupw.instructure.com/courses/64185/users/84366"
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/84366",
+    "other_links": [
+      {
+        "link": "https://damie-aj95.github.io/wdd231/code-along-wk1/index.html",
+        "text": "Code Along Wk1 Index"
+      }
+    ]
   },
   {
     "username": "",
@@ -135,7 +141,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/127620"
   },
   {
-    "username": "",
+    "username": "Shugar-ban",
     "id": "44259",
     "name": "Adeoye Ayodeji",
     "avatar": "https://byupw.instructure.com/images/thumbnails/255171/hlu5tHSNQnA1EntR3DydgjWuHZ3fQv8qAcjEpobL",
@@ -216,7 +222,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/137515"
   },
   {
-    "username": "",
+    "username": "Legesly",
     "id": "108997",
     "name": "Humphrey  Darko",
     "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
@@ -261,7 +267,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/76365"
   },
   {
-    "username": "",
+    "username": "pempherodouglass",
     "id": "111605",
     "name": "pemphero douglass",
     "avatar": "https://byupw.instructure.com/images/thumbnails/6051703/FpBDd6IKqqVYPFDNpRuXeVTsdLl6scZP1vTAMYCU",
@@ -412,7 +418,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/143527"
   },
   {
-    "username": "",
+    "username": "xylthien",
     "id": "54837",
     "name": "Devin James Hale",
     "avatar": "https://byupw.instructure.com/images/thumbnails/4317039/mzHgcz9wLpDIrsoPWfPvz2fTN8fBQ7rH7ETyUETv",
@@ -448,7 +454,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/199030"
   },
   {
-    "username": "",
+    "username": "samCodeIthub",
     "id": "49054",
     "name": "Samuel Motey Howard",
     "avatar": "https://byupw.instructure.com/images/thumbnails/846529/mx89smSZKBTjqWVAOcd8pzxPbXYmfvonWym6u0VI",
@@ -534,13 +540,19 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/74524"
   },
   {
-    "username": "",
+    "username": "mrlee1234567",
     "id": "136057",
     "name": "Jared Lee",
     "avatar": "https://byupw.instructure.com/images/messages/avatar-50.png",
     "section": "WDD231.001 - Web Frontend Development I",
     "role": "Student",
-    "profile_link": "https://byupw.instructure.com/courses/64185/users/136057"
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/136057",
+    "other_links": [
+      {
+        "link": "https://mrlee1234567.github.io/wdd231/speen.html",
+        "text": "Speen"
+      }
+    ]
   },
   {
     "username": "",
@@ -684,13 +696,43 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/55981"
   },
   {
-    "username": "",
+    "username": "miraclechisomomeja-lgtm",
     "id": "138284",
     "name": "Chisom Omeja",
     "avatar": "https://byupw.instructure.com/images/thumbnails/5125912/5OOtiIX6Y8nONrhHWVwJZMxzqGXSYMpMSCcx5prz",
     "section": "WDD231.001 - Web Frontend Development I",
     "role": "Student",
-    "profile_link": "https://byupw.instructure.com/courses/64185/users/138284"
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/138284",
+    "other_links": [
+      {
+        "link": "https://miraclechisomomeja-lgtm.github.io/wdd231/Practice project/index.html",
+        "text": "Practice Project Index"
+      },
+      {
+        "link": "https://miraclechisomomeja-lgtm.github.io/wdd231/chamber/discovery.html",
+        "text": "Chamber Discovery"
+      },
+      {
+        "link": "https://miraclechisomomeja-lgtm.github.io/wdd231/scripts/index.html",
+        "text": "Scripts Index"
+      },
+      {
+        "link": "https://miraclechisomomeja-lgtm.github.io/wdd231/startHere/index.html",
+        "text": "StartHere Index"
+      },
+      {
+        "link": "https://miraclechisomomeja-lgtm.github.io/wdd231/startHere/thanks.html",
+        "text": "StartHere Thanks"
+      },
+      {
+        "link": "https://miraclechisomomeja-lgtm.github.io/wdd231/week01/images/index.html",
+        "text": "Week01 Images Index"
+      },
+      {
+        "link": "https://miraclechisomomeja-lgtm.github.io/wdd231/week03/module.html",
+        "text": "Week03 Module"
+      }
+    ]
   },
   {
     "username": "icaroepl",
@@ -825,7 +867,7 @@
     "profile_link": "https://byupw.instructure.com/courses/64185/users/123687"
   },
   {
-    "username": "",
+    "username": "versionxv",
     "id": "124713",
     "name": "Miguel Subero",
     "avatar": "https://byupw.instructure.com/images/thumbnails/4295298/wnTqDduIkljNObR0VChFOAB6VMV7Ymdo9tbG3VXp",
@@ -908,13 +950,7 @@
     "avatar": "https://byupw.instructure.com/images/thumbnails/7902554/4Etz0Xp0IWRoVN8ZDPKeNu8EQQOrXvd2LgMUCTFH",
     "section": "WDD231.001 - Web Frontend Development I",
     "role": "Student",
-    "profile_link": "https://byupw.instructure.com/courses/64185/users/178488",
-    "other_links": [
-      {
-        "link": "https://kamaludumullahele.github.io/wdd231/prophets.html",
-        "text": "W02 Learning Activity: Latter-day Prophets"
-      }
-    ]
+    "profile_link": "https://byupw.instructure.com/courses/64185/users/178488"
   },
   {
     "username": "Sommy200",

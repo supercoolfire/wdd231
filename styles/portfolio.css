@@ -234,18 +234,22 @@ h2 {
    ========================================================================== */
 .weeks {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start; /* week boxes don't stretch to match tallest sibling */
 }
 
 .week {
-    padding: 1rem;
+    padding: 0.75rem;
     border: 1px solid var(--week-border);
     border-radius: 8px;
     background-color: var(--card-bg);
     box-shadow:
          4px  4px 10px var(--card-shadow-dark),
         -4px -4px 10px var(--card-shadow-light);
+    /* shrink to fit cards — no forced full-width stretch */
+    display: inline-flex;
+    flex-direction: column;
 }
 
 /* ==========================================================================

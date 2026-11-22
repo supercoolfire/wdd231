@@ -12,7 +12,7 @@
     <meta property="og:image" content="https://supercoolfire.github.io/wdd231/chamber/images/hero/hero-light-medium.webp">
     <meta property="og:url" content="https://supercoolfire.github.io/wdd231/chamber/join.html">
 
-    <title>Point Nemo Chamber of Commerce | Join</title>
+    <title>Join | Point Nemo Chamber of Commerce</title>
 
     <link rel="icon" href="images/favicon.ico">
 
@@ -31,7 +31,7 @@
     <script src="scripts/date.js" defer></script>
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/theme-toggle.js" defer></script>
-    <script src="scripts/join.js" defer></script>
+    <script src="scripts/join.js" type="module"></script>
 </head>
 
 <body>
@@ -66,6 +66,7 @@
                         <input type="text" name="firstName" id="firstName"
                             required aria-required="true"
                             title="Enter your first name"
+                            placeholder="Monkey"
                             autocomplete="given-name">
                     </label>
 
@@ -74,6 +75,7 @@
                         <input type="text" name="lastName" id="lastName"
                             required aria-required="true"
                             title="Enter your last name"
+                            placeholder="Primate"
                             autocomplete="family-name">
                     </label>
 
@@ -82,7 +84,8 @@
                         <input type="text" name="orgTitle" id="orgTitle"
                             title="Organization title: letters, hyphens, and spaces, minimum 7 characters"
                             autocomplete="organization-title"
-                            pattern="[A-Za-z\- ]{7,}">
+                            pattern="[A-Za-z\- ]{7,}"
+                            placeholder="Banana Guy">
                     </label>
 
                     <label>
@@ -96,10 +99,36 @@
 
                     <label>
                         Mobile Phone *
-                        <input type="tel" name="phone" id="phone"
-                            required aria-required="true"
-                            title="Enter your mobile phone number"
-                            autocomplete="tel">
+                        <div class="phone-field">
+                            <!-- Code box: flag + dial code shown visually; invisible select handles interaction -->
+                            <div class="phone-code-box">
+                                <span class="phone-code-label">Code</span>
+                                <div class="phone-code-inner">
+                                    <img id="country-flag"
+                                        src=""
+                                        alt=""
+                                        width="28"
+                                        height="20"
+                                        aria-hidden="true">
+                                    <span id="dial-code-display" class="loading-dots"></span>
+                                </div>
+                                <select id="country-code"
+                                    name="countryCode"
+                                    aria-label="Country dial code"
+                                    title="Select your country dial code">
+                                    <option value="">Loading…</option>
+                                </select>
+                            </div>
+                            <!-- Phone number box -->
+                            <div class="phone-number-box">
+                                <span class="phone-number-label">Phone number</span>
+                                <input type="tel" name="phone" id="phone"
+                                    required aria-required="true"
+                                    title="Enter your mobile phone number"
+                                    autocomplete="tel"
+                                    placeholder="555 555 5555">
+                            </div>
+                        </div>
                     </label>
 
                     <label>
@@ -107,7 +136,8 @@
                         <input type="text" name="businessName" id="businessName"
                             required aria-required="true"
                             title="Enter your business or organization name"
-                            autocomplete="organization">
+                            autocomplete="organization-title"
+                            placeholder="Monkey Business">
                     </label>
 
                     <label>
@@ -142,28 +172,28 @@
                 <h2>Membership Levels</h2>
                 <div class="membership-cards">
 
-                    <div class="membership-card">
+                    <div class="membership-card" data-level="np">
                         <h3>NP Membership</h3>
                         <p class="membership-price">No fee</p>
                         <p>For non-profit organizations committed to growing the community.</p>
                         <button class="open-modal-btn" data-modal="np-modal" aria-label="Learn more about NP Membership">Learn More</button>
                     </div>
 
-                    <div class="membership-card">
+                    <div class="membership-card" data-level="bronze">
                         <h3>Bronze Membership</h3>
                         <p class="membership-price">$50 / year</p>
                         <p>Entry-level membership with directory listing and event access.</p>
                         <button class="open-modal-btn" data-modal="bronze-modal" aria-label="Learn more about Bronze Membership">Learn More</button>
                     </div>
 
-                    <div class="membership-card">
+                    <div class="membership-card" data-level="silver">
                         <h3>Silver Membership</h3>
                         <p class="membership-price">$150 / year</p>
                         <p>Includes Bronze benefits plus publications and luncheon invitations.</p>
                         <button class="open-modal-btn" data-modal="silver-modal" aria-label="Learn more about Silver Membership">Learn More</button>
                     </div>
 
-                    <div class="membership-card">
+                    <div class="membership-card" data-level="gold">
                         <h3>Gold Membership</h3>
                         <p class="membership-price">$300 / year</p>
                         <p>Full access: spotlight advertising, sponsorships, and social media features.</p>

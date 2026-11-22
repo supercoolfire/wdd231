@@ -1,0 +1,84 @@
+
+<div class="phone-field">
+  <label for="country">Country code</label>
+  <select id="country">
+    <option>Loading countries...</option>
+  </select>
+
+  <label for="phone">Phone number</label>
+  <input
+    id="phone"
+    type="tel"
+    placeholder="5555 555 555"
+  />
+</div>
+
+<script>
+
+const API_KEY = "YOUR_API_KEY";
+
+async function loadCountries() {
+  const countries = [];
+
+  // Fetch all pages (the free plan allows 100 per page).
+  for (let offset = 0; ; offset += 100) {
+    const url = new URL(
+      "https://api.restcountries.com/countries/v5"
+    );
+
+    url.searchParams.set("limit", "100");
+    url.searchParams.set("offset", offset);
+    url.searchParams.set(
+      "response_fields",
+      "names.common,codes.alpha_2,flag.emoji,calling_codes"
+    );
+
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status}`);
+    }
+
+    const result = await response.json();
+    const page = result.data.objects;
+
+    countries.push(...page);
+
+    if (!result.data.meta.more) break;
+  }
+
+  countries.sort((a, b) =>
+    a.names.common.localeCompare(b.names.common)
+  );
+
+  countrySelect.innerHTML = "";
+
+  countries.forEach(country => {
+    const option = document.createElement("option");
+
+    option.value = country.codes.alpha_2;
+
+    const dialingCodes = country.calling_codes
+      .map(code => `+${code}`)
+      .join(", ");
+
+    option.textContent =
+      `${country.flag.emoji} ${country.names.common} (${dialingCodes})`;
+
+    if (country.codes.alpha_2 === "PH") {
+      option.selected = true;
+    }
+
+    countrySelect.appendChild(option);
+  });
+}
+
+loadCountries().catch(error => {
+  console.error("Failed to load countries:", error);
+});
+
+</script>

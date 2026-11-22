@@ -290,6 +290,7 @@ async function generateStalkmate() {
 
             const userDiv = document.createElement('div');
             userDiv.className = 'users';
+            userDiv.dataset.username = username;
             stalkmate.appendChild(userDiv);
 
             const userDivh2 = document.createElement('h2');
@@ -325,41 +326,65 @@ async function generateStalkmate() {
                 // Tag duplicate cards with a registryKey for post-fetch collapsing
                 if (isDuplicate) {
                     const registryKey = username + ':' + groupId;
-                    pendingSeoTasks.push({ element: previewContainer, url: link.link, isDuplicate: true, registryKey, cardWrapper: cardDiv });
+                    pendingSeoTasks.push({ element: previewContainer, url: link.link, isDuplicate: true, registryKey, cardWrapper: cardDiv, username });
                 } else {
-                    pendingSeoTasks.push({ element: previewContainer, url: link.link, isDuplicate: false });
+                    pendingSeoTasks.push({ element: previewContainer, url: link.link, isDuplicate: false, username });
                 }
             });
         }
 
-        // --- PHASE 2: Load Meta SEO Content Asynchronously in Background ---
-        // Fire all fetches concurrently; after each group fully settles, collapse duplicates
-        const groupPromises = new Map();
-        const groupWrappers = new Map();
+        // --- PHASE 2: Lazy-load per user via IntersectionObserver ---
+        // Group tasks by username so each .users section loads only when scrolled into view
+        const tasksByUser = new Map();
+        for (const task of pendingSeoTasks) {
+            if (!tasksByUser.has(task.username)) tasksByUser.set(task.username, []);
+            tasksByUser.get(task.username).push(task);
+        }
 
-        pendingSeoTasks.forEach(task => {
-            const promise = fetchAndRenderSEO(task.element, task.url, cache);
-            if (task.isDuplicate) {
-                const key = task.registryKey;
-                if (!groupPromises.has(key)) { groupPromises.set(key, []); groupWrappers.set(key, []); }
-                groupPromises.get(key).push(promise);
-                groupWrappers.get(key).push(task.cardWrapper);
+        // Runs all SEO fetches for one user, then collapses duplicate groups
+        function runUserTasks(tasks) {
+            const groupPromises = new Map();
+            const groupWrappers = new Map();
+
+            tasks.forEach(task => {
+                const promise = fetchAndRenderSEO(task.element, task.url, cache);
+                if (task.isDuplicate) {
+                    const key = task.registryKey;
+                    if (!groupPromises.has(key)) { groupPromises.set(key, []); groupWrappers.set(key, []); }
+                    groupPromises.get(key).push(promise);
+                    groupWrappers.get(key).push(task.cardWrapper);
+                }
+            });
+
+            for (const [key, promises] of groupPromises) {
+                const wrappers = groupWrappers.get(key);
+                Promise.allSettled(promises).then(results => {
+                    const flags = results.map(r => r.status === 'fulfilled' && r.value === true);
+                    const wins  = flags.filter(Boolean).length;
+                    if (wins === 1) {
+                        flags.forEach((ok, i) => { if (!ok) wrappers[i]?.remove(); });
+                    } else if (wins === 0) {
+                        wrappers.slice(1).forEach(w => w?.remove());
+                    }
+                });
             }
-        });
-
-        // Collapse each duplicate group once all its fetches have settled
-        for (const [key, promises] of groupPromises) {
-            const wrappers = groupWrappers.get(key);
-            Promise.allSettled(promises).then(results => {
-                const flags = results.map(r => r.status === 'fulfilled' && r.value === true);
-                const wins  = flags.filter(Boolean).length;
-                if (wins === 1) {
-                    flags.forEach((ok, i) => { if (!ok) wrappers[i]?.remove(); });
-                } else if (wins === 0) {
-                    wrappers.slice(1).forEach(w => w?.remove());
-                }
-            });
         }
+
+        // Observe each .users div; fire once when it enters the viewport (200px ahead)
+        const userObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                obs.unobserve(entry.target);
+                const uname = entry.target.dataset.username;
+                const tasks = tasksByUser.get(uname);
+                if (tasks) runUserTasks(tasks);
+            });
+        }, { rootMargin: '200px' });
+
+        // Attach data-username and start observing each .users div
+        stalkmate.querySelectorAll('.users').forEach(div => {
+            userObserver.observe(div);
+        });
 
     } catch (err) {
         console.error(`❌ Script configuration break: ${err.message}`);

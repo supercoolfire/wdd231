@@ -1,7 +1,7 @@
 :root, [data-theme="light"] {
     --toggle-btn-bg: #2a2a2a;
     --toggle-text-color: #f0f0f0;
-    --body-text-color:   #333333;
+    --body-text-color:   #000000;
     --body-background-color: #d4e7e1;
     --header-background-color: #cbe78a;
     --header-page-background-color: #f5de13;
@@ -25,12 +25,15 @@
     --icon-hover: #E07A5F;
 
     --generic-box-shadow: 0 10px 15px -3px #0000008d;
+    --required: #d70000;
+    --required-complied: #20208F;
+    --phone-label-color: #555555;
 }
 
 [data-theme="dark"] {
     --toggle-btn-bg: #EBEBF5;
     --toggle-text-color: #1C1C1E;
-    --body-text-color:   #EBEBF5;
+    --body-text-color:   #ffffff;
     --body-background-color: #000000;
     --header-background-color: #1C1C1E;
     --header-page-background-color: #2C2C2E;
@@ -54,6 +57,9 @@
     --icon-hover: #FF453A;
 
     --generic-box-shadow: 0 10px 15px -3px #ffffff4d;
+    --required: #ff6b6b;
+    --required-complied: #64D2FF;
+    --phone-label-color: #aaaaaa;
 }
 
 [data-theme="light"] .dark  { display: none; }
@@ -68,6 +74,7 @@
 
 body {
     background-color: var(--body-background-color);
+    color: var(--body-text-color);
 }
 
 /* **************** HEADER *****************/
@@ -146,7 +153,9 @@ h1 {
     margin-left: 10px;
     color: var(--site-name-color);
 }
-
+h2 {
+    color: var(--body-text-color);
+}
 /* ----------------------------------------------------------- */
 /*                           H O M E                           */
 /* ----------------------------------------------------------- */
@@ -358,16 +367,6 @@ h1 {
     margin: 1rem auto;
     justify-content: center;
 }
-.menu button {
-    padding: 0.5rem 1rem;
-    font-weight: 700;
-    border-radius: 10px;
-    color: var(--site-name-color);
-    background-color: var(--filter-button-background-color);
-}
-.menu button:hover {
-    background-color: var(--filter-button-hover-background-color);
-}
 
 /* **************** GRID VIEW (cards) *****************/
 #cards.grid {
@@ -380,6 +379,7 @@ h1 {
     justify-content: end;
     background-color: var(--cards-grid-background-color);
 }
+/* <section> */
 .directory-card {
     display: grid;
     grid-template-areas:
@@ -394,7 +394,7 @@ h1 {
     background-color: var(--card-background-color);
     border: 1px solid var(--card-border);
     box-shadow: var(--generic-box-shadow);
-    padding: 0.5rem;
+    
     width: 350px;
     height: auto;
     border-radius: 8px;
@@ -516,17 +516,232 @@ h1 {
     .member-table td:nth-of-type(4) { margin-inline-start: 3rem; }
 }
 
-/* **************** FOOTER *****************/
+/* ----------------------------------------------------------- */
+/*                           JOIN                            */
+/* ----------------------------------------------------------- */
+.join-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(338px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+    align-items: inherit;
+}
+
+/* ── Membership cards section outline ── */
+.membership-cards-section {
+    position: relative;
+    border: none;
+    border-radius: 12px;
+    padding: 1rem;
+}
+/* Single red box that physically moves from section → selected card */
+.membership-cards-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--required);
+    border-radius: 12px;
+    transition: top    0.4s ease,
+                left   0.4s ease,
+                right  0.4s ease,
+                bottom 0.4s ease,
+                border-radius 0.4s ease,
+                border-color  0.4s ease;
+    z-index: 1;
+}
+/* When a card is selected — box shrinks to card AND turns blue */
+.membership-cards-section.has-selection::before {
+    top:    var(--outline-top,    0px);
+    left:   var(--outline-left,   0px);
+    right:  var(--outline-right,  0px);
+    bottom: var(--outline-bottom, 0px);
+    border-radius: 10px;
+    border-color: var(--required-complied);
+}
+.membership-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.membership-card {
+    background-color: var(--card-background-color);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 1rem;
+    color: var(--card-color);
+}
+.membership-card h3 {
+    margin: 0 0 0.25rem;
+    color: var(--site-name-color);
+}
+.membership-card .membership-price {
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+}
+
+/* ── Phone field: Code box + Phone number box ── */
+.phone-field {
+    display: flex;
+    gap: 0.75rem;
+    align-items: stretch;
+}
+.phone-code-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    background-color: var(--card-background-color);
+    padding: 0.4rem 0.6rem 0.3rem;
+    flex-shrink: 0;
+    min-width: 90px;
+    cursor: pointer;
+}
+.phone-code-label {
+    font-size: 0.7rem;
+    color: var(--phone-label-color);
+    margin: 0 0 0.2rem;
+}
+.phone-code-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.phone-code-inner img {
+    width: 28px;
+    height: 20px;
+    display: block;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+.phone-code-inner span {
+    font-size: 1rem;
+    color: var(--card-color);
+    font-weight: 500;
+}
+/* Invisible <select> overlays the whole Code box — reset all generic form styles */
+.phone-code-box select {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    background: none !important;
+    cursor: pointer;
+}
+/* Phone number box */
+.phone-number-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    background-color: var(--card-background-color);
+    padding: 0.4rem 0.75rem 0.3rem;
+}
+.phone-number-label {
+    font-size: 0.7rem;
+    color: var(--phone-label-color);
+    margin: 0 0 0.2rem;
+}
+/* Reset generic form styles on the tel input inside the box */
+.phone-number-box input[type="tel"] {
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
+    width: 100% !important;
+    font-size: 1rem;
+    color: var(--card-color);
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+.phone-number-box input[type="tel"]:focus {
+    outline: none;
+    box-shadow: none !important;
+    border: none !important;
+}
+/* Focus ring on the outer boxes instead */
+.phone-field:focus-within .phone-code-box,
+.phone-field:focus-within .phone-number-box {
+    border-color: var(--header-page-background-color);
+    box-shadow: 0 0 0 2px var(--header-page-background-color);
+}
+/* ----------------------------------------------------------- */
+/*                           FORMS                             */
+/* ----------------------------------------------------------- */
+formm {
+    margin: 1rem 2%;
+}
+input, label {
+    display: block;
+    padding: 5px;
+    margin: 0px;
+    color: var(--body-text-color);
+}
+input, select, textarea {
+    margin: 0;
+}
+section {
+    padding: 1px;
+    padding: 0.5rem;
+}
+    input[type=text],
+    input[type=search],
+    input[type=tel],
+    input[type=date],
+    input[type=email],
+    select, textarea {
+    width: 100%;
+    border-radius: 10px;
+    padding: 0.9rem 0.75rem;
+    background-color: var(--card-background-color);
+    border: 1px solid var(--card-border);
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--card-color);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+input:focus {
+    outline: none;
+    border-color: var(--filter-button-color);
+    box-shadow: 0 0 0 2px var(--header-page-background-color);
+}
+input:required { border-left: 5px solid var(--required); }
+input:required:valid { border-left: 5px solid var(--required-complied); }
+input::placeholder,
+textarea::placeholder {
+    color: var(--card-border);
+    opacity: 1;
+}
+input[type="submit"],
+button {
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    color: var(--site-name-color);
+    background-color: var(--filter-button-background-color);
+}
+input[type="submit"]:hover,
+button:hover {
+    background-color: var(--filter-button-hover-background-color);
+}
+/* ----------------------------------------------------------- */
+/*                           FOOTER                            */
+/* ----------------------------------------------------------- */
 footer {
     text-align: center;
     padding: 0;
     margin: 0;
+    color: var(--body-text-color);
 }
 footer .footer-page p {
     margin: 0;
-}
-footer * {
-    color: var(--site-name-color);
 }
 .foot-left, .foot-right {
     text-align: left;
@@ -561,25 +776,7 @@ footer * {
     flex: 1;
     min-width: 160px;
 }
-.member-search {
-    width: 100%;
-    padding: 0.4rem 0.75rem;
-    border: 1px solid var(--card-border);
-    border-radius: 10px;
-    font-family: inherit;
-    font-size: 0.9rem;
-    background-color: var(--card-background-color);
-    color: var(--card-color);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-.member-search:focus {
-    outline: none;
-    border-color: var(--filter-button-color);
-    box-shadow: 0 0 0 2px var(--cards-grid-background-color);
-}
-.member-search::placeholder {
-    opacity: 0.6;
-}
+
 .member-empty {
     text-align: center;
     opacity: 0.65;

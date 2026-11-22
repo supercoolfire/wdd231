@@ -93,9 +93,9 @@
         width: 210px;
     }
 
-    /* ── Weeks: two-column grid on wide screens ── */
+    /* ── Weeks: tighter gap on wider screens ── */
     .weeks {
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
 }
@@ -103,10 +103,7 @@
 @media (min-width: 900px) {
 
     .weeks {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
-        gap: 1.5rem;
-        align-items: start;
+        gap: 1.25rem;
     }
 
 }

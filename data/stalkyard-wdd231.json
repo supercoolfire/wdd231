@@ -1,17 +1,22 @@
 [
     { "link": "https://github.com/{username}/wdd231/", "text": "{username}'s Repository" },
     { "link": "https://{username}.github.io/wdd231/week01/code-along-header/index.html", "text": "W01 Learning Activity: Header & Navigation" },
+    { "link": "https://{username}.github.io/wdd231/w01/index.html", "text": "W01 Learning Activity: Header & Navigation" },
     { "link": "https://{username}.github.io/wdd231/code-along-header/index.html", "text": "W01 Learning Activity: Header & Navigation" },
     { "link": "https://{username}.github.io/wdd231/index.html", "text": "W01 Assignment: Course Home Page" },
 
     { "link": "https://{username}.github.io/wdd231/week02/learning-activity/prophets.html", "text": "W02 Learning Activity: Latter-day Prophets" },
     { "link": "https://{username}.github.io/wdd231/prophets.html", "text": "W02 Learning Activity: Latter-day Prophets" },
+    { "link": "https://{username}.github.io/wdd231/W02/prophets.html", "text": "W02 Learning Activity: Latter-day Prophets" },
     { "link": "https://{username}.github.io/wdd231/chamber-site-plan.html", "text": "W02 Site Plan: Chamber of Commerce" },
     { "link": "https://{username}.github.io/wdd231/chamber/directory.html", "text": "W02 Assignment: Chamber Directory" },
     
     { "link": "https://{username}.github.io/wdd231/week3/modules.html", "text": "W03 Learning Activity: ES Modules" },
+    { "link": "https://{username}.github.io/wdd231/week03/modules.html", "text": "W03 Learning Activity: ES Modules" },
+    { "link": "https://{username}.github.io/wdd231/W03/modules.html", "text": "W03 Learning Activity: ES Modules" },
     { "link": "https://{username}.github.io/wdd231/modules.html", "text": "W03 Learning Activity: ES Modules" },
     { "link": "https://{username}.github.io/wdd231/week3/weather/index.html", "text": "W03 Learning Activity: Consuming a Weather API" },
+    { "link": "https://{username}.github.io/wdd231/W03/weather/index.html", "text": "W03 Learning Activity: Consuming a Weather API" },
     { "link": "https://{username}.github.io/wdd231/weather.html", "text": "W03 Learning Activity: Consuming a Weather API" },
     { "link": "https://{username}.github.io/wdd231/chamber/index.html", "text": "W03 Assignment: Chamber Home Page" },
 
@@ -27,6 +32,7 @@
     { "link": "https://{username}.github.io/wdd231/chamber/thankyou.html", "text": "W04 Assignment: Chamber Thank You Page" },
 
     { "link": "https://{username}.github.io/wdd231/siteplan.html", "text": "W05 Site Plan: Final Project" },
+    { "link": "https://{username}.github.io/wdd231/final/siteplan.html", "text": "W05 Site Plan: Final Project" },
     { "link": "https://{username}.github.io/wdd231/chamber/discover.html", "text": "W05 Assignment: Chamber Discover Page" },
 
     { "link": "https://{username}.github.io/wdd231/final/index.html", "text": "W06 Final Project" },
