@@ -1,4 +1,4 @@
-﻿/*
+/*
  * join.js
  * Author: Jayser Pilapil
  * Description: Handles the W04 Chamber Join page.
@@ -6,16 +6,16 @@
  *   - Opens and closes the four membership-level <dialog> modals
  */
 
-// ── Imports ─────────────────────────────────────────────────
+// -- Imports -------------------------------------------------
 import { detectAndLoadDialCodes } from "./detectAndLoadDialCodes.mjs"
 detectAndLoadDialCodes();
-// ── Timestamp ─────────────────────────────────────────────────
+// -- Timestamp -------------------------------------------------
 const timestampField = document.querySelector('#timestamp');
 if (timestampField) {
     timestampField.value = new Date().toLocaleDateString();
 }
 
-// ── Modals ────────────────────────────────────────────────────
+// -- Modals ----------------------------------------------------
 // Each .open-modal-btn carries data-modal="<dialog-id>"
 document.querySelectorAll('.open-modal-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -39,7 +39,7 @@ document.querySelectorAll('dialog').forEach(dialog => {
     });
 });
 
-// ── Phone auto-format (spaces: 555 555 5555) ──────────────────
+// -- Phone auto-format (spaces: 555 555 5555) ------------------
 const phoneInput = document.querySelector('#phone');
 const countrySelect = document.querySelector('#country-code');
 const countryFlag = document.querySelector('#country-flag');
@@ -57,9 +57,13 @@ if (countrySelect && countryFlag) {
     });
 }
 
-// ── Membership card selection animation ───────────────────────
+// -- Membership card selection animation -----------------------
 const membershipSelect = document.querySelector('#membershipLevel');
 const membershipSection = document.querySelector('.membership-cards-section');
+
+// Hide the easter egg card on load � JS owns this state
+const eggCard = document.querySelector('#egg-card');
+if (eggCard) eggCard.style.display = 'none';
 
 if (membershipSelect && membershipSection) {
     membershipSelect.addEventListener('change', () => {
@@ -75,7 +79,7 @@ if (membershipSelect && membershipSection) {
         if (!target) return;
 
         // Reveal the easter egg card once any level is chosen
-        const eggCard = document.querySelector('#egg-card');
+        // (eggCard declared above)
         if (eggCard) eggCard.style.display = '';
 
         // Measure card position relative to the section
@@ -91,7 +95,7 @@ if (membershipSelect && membershipSection) {
         membershipSection.classList.add('has-selection');
     });
 }
-// Format digits as 555 555 5555 (spaces, no country code — that's in the select)
+// Format digits as 555 555 5555 (spaces, no country code � that's in the select)
 if (phoneInput) {
     phoneInput.addEventListener('input', () => {
         const digits = phoneInput.value.replace(/\D/g, '').slice(0, 10);
@@ -133,7 +137,7 @@ const watchForRicksterModal = () => {
     observer.observe(modal, { attributes: true, attributeFilter: ['style'] });
 };
 
-// rickster-egg-v2.js injects #video-container on DOMContentLoaded � poll until it exists
+// rickster-egg-v2.js injects #video-container on DOMContentLoaded ? poll until it exists
 const eggPoll = setInterval(() => {
     if (document.getElementById('video-container')) {
         clearInterval(eggPoll);

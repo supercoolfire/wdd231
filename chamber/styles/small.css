@@ -1,4 +1,4 @@
-﻿:root, [data-theme="light"] {
+:root, [data-theme="light"] {
     --toggle-btn-bg: #2a2a2a;
     --toggle-text-color: #f0f0f0;
     --body-text-color:   #000000;
@@ -163,7 +163,7 @@ h2 {
 /*                           H O M E                           */
 /* ----------------------------------------------------------- */
 
-/* ── Hero ──────────────────────────────────────────────────── */
+/* -- Hero ---------------------------------------------------- */
 .hero {
     width: 100%;
 }
@@ -203,7 +203,7 @@ h2 {
     opacity: 0.85;
 }
 
-/* ── Events ────────────────────────────────────────────────── */
+/* -- Events -------------------------------------------------- */
 .home-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(338px, 1fr));
@@ -236,7 +236,7 @@ h2 {
     font-size: 0.9rem;
 }
 
-/* ── Weather ───────────────────────────────────────────────── */
+/* -- Weather ------------------------------------------------- */
 .weather {
     padding: 0;
 }
@@ -294,7 +294,7 @@ h2 {
     white-space: nowrap;
 }
 
-/* ── Spotlights ────────────────────────────────────────────── */
+/* -- Spotlights ---------------------------------------------- */
 .spotlights {
     padding: 0;
 }
@@ -530,12 +530,12 @@ h2 {
     align-items: inherit;
 }
 
-/* ── Membership cards section outline ── */
+/* -- Membership cards section outline -- */
 .membership-cards-section {
     position: relative;
     padding: 1rem;
 }
-/* Animated outline — travels section→card, stays behind cards */
+/* Animated outline � travels section?card, stays behind cards */
 .membership-cards-section::before {
     content: '';
     position: absolute;
@@ -585,7 +585,7 @@ h2 {
     margin: 0 0 0.5rem;
 }
 
-/* ── Phone field: Code box + Phone number box ── */
+/* -- Phone field: Code box + Phone number box -- */
 .phone-field {
     display: flex;
     gap: 0.75rem;
@@ -626,20 +626,21 @@ h2 {
     color: var(--card-color);
     font-weight: 500;
 }
+/* Invisible select overlays the entire code box � parent selector beats generic form rules */
 .phone-code-box select {
     position: absolute;
     inset: 0;
-    width: 100% !important;
-    height: 100% !important;
+    width: 100%;
+    height: 100%;
     opacity: 0;
-    padding: 0 !important;
-    margin: 0 !important;
-    border: none !important;
-    border-radius: 10px !important;
-    background: none !important;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 10px;
+    background: none;
+    box-shadow: none;
     cursor: pointer;
 }
-/* Phone number box */
 .phone-number-box {
     flex: 1;
     display: flex;
@@ -655,7 +656,7 @@ h2 {
     color: var(--phone-label-color);
     margin: 0 0 0.2rem;
 }
-/* Reset generic form styles on the tel input inside the box — specificity via parent selector */
+/* Reset generic form styles on the tel input inside the box � specificity via parent selector */
 .phone-number-box input[type="tel"] {
     border: none;
     background: none;
@@ -852,7 +853,7 @@ section mark,
 /*          Dots Entertainment          |
 \-------------------------------------*/
 
-/* ── Reduced motion ── */
+/* -- Reduced motion -- */
 /* -- Membership cards: staggered fade-in-up on page load -- */
 @keyframes card-enter {
     from { opacity: 0; transform: translateY(24px); }
