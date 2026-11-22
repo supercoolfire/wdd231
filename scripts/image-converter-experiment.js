@@ -12,7 +12,8 @@
 *
 * Usage: 
 * 1. Modify the CONFIG block below to match your targets.
-* 2. Execute the script from your project root: node scripts/image-converter-experiment.js
+ * Run in root dir:
+node scripts/image-converter-experiment.js
 *
 */
 
@@ -35,13 +36,13 @@ const CONFIG = {
 
     // sources: ['../hero-raw'],
     // outputFolder: 'images/hero',
-    sources: ['data/people-img'],
-    outputFolder: 'data/people-webp',
+    sources: ['../kevin.jpg'],
+    outputFolder: 'chamber/images',
     
     // Base maximum quality ceiling (used as the highest bound for dynamicQuality scaling)
     // When dynamicQualityScaling is true, this value is the maximum quality for the largest crops
     // When dynamicQualityScaling is false, this value is used as the fixed quality for all output images
-    baseQuality: 50, // Optimized to balance visual quality and file size for market competitiveness
+    baseQuality: 70, // Optimized to balance visual quality and file size for market competitiveness
     // If dynamicQualityScaling is on, baseQuality becomes the maximum quality ceiling, and quality scales proportionally to crop size down to 30
     // baseQuality is only used as a static global quality if dynamicQualityScaling is set to false
     dynamicQualityScaling: true,
@@ -58,7 +59,7 @@ const CONFIG = {
 
     // single image
     aspectRatio: 1/1,
-    crop: [{fileSuffix: "", width: 256 }],
+    crop: [{fileSuffix: "", width: 200 }],
 
     // hero
     // aspectRatio: 16/9,

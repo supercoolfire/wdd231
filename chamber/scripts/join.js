@@ -1,4 +1,4 @@
-/*
+﻿/*
  * join.js
  * Author: Jayser Pilapil
  * Description: Handles the W04 Chamber Join page.
@@ -59,7 +59,6 @@ if (countrySelect && countryFlag) {
 
 // ── Membership card selection animation ───────────────────────
 const membershipSelect = document.querySelector('#membershipLevel');
-const membershipCards = document.querySelectorAll('.membership-card[data-level]');
 const membershipSection = document.querySelector('.membership-cards-section');
 
 if (membershipSelect && membershipSection) {
@@ -69,25 +68,29 @@ if (membershipSelect && membershipSection) {
         if (!chosen) {
             // Reset: ::before snaps back to full section size
             membershipSection.classList.remove('has-selection');
-        } else {
-            const target = document.querySelector(`.membership-card[data-level="${chosen}"]`);
-            if (!target) return;
-
-            // Measure card position relative to the section
-            const sRect = membershipSection.getBoundingClientRect();
-            const tRect = target.getBoundingClientRect();
-
-            membershipSection.style.setProperty('--outline-top',    (tRect.top    - sRect.top)    + 'px');
-            membershipSection.style.setProperty('--outline-left',   (tRect.left   - sRect.left)   + 'px');
-            membershipSection.style.setProperty('--outline-right',  (sRect.right  - tRect.right)  + 'px');
-            membershipSection.style.setProperty('--outline-bottom', (sRect.bottom - tRect.bottom) + 'px');
-
-            // Add class AFTER setting vars so transition runs correctly
-            membershipSection.classList.add('has-selection');
+            return;
         }
+
+        const target = document.querySelector(`.membership-card[data-level="${chosen}"]`);
+        if (!target) return;
+
+        // Reveal the easter egg card once any level is chosen
+        const eggCard = document.querySelector('#egg-card');
+        if (eggCard) eggCard.style.display = '';
+
+        // Measure card position relative to the section
+        const sRect = membershipSection.getBoundingClientRect();
+        const tRect = target.getBoundingClientRect();
+
+        membershipSection.style.setProperty('--outline-top',    (tRect.top    - sRect.top)    + 'px');
+        membershipSection.style.setProperty('--outline-left',   (tRect.left   - sRect.left)   + 'px');
+        membershipSection.style.setProperty('--outline-right',  (sRect.right  - tRect.right)  + 'px');
+        membershipSection.style.setProperty('--outline-bottom', (sRect.bottom - tRect.bottom) + 'px');
+
+        // Add class AFTER setting vars so transition runs correctly
+        membershipSection.classList.add('has-selection');
     });
 }
-
 // Format digits as 555 555 5555 (spaces, no country code — that's in the select)
 if (phoneInput) {
     phoneInput.addEventListener('input', () => {
@@ -100,3 +103,40 @@ if (phoneInput) {
         phoneInput.value = formatted;
     });
 }
+
+// -- Easter egg: insert kevin.webp into egg card when rickster modal closes --
+const watchForRicksterModal = () => {
+    const modal = document.getElementById('video-container');
+    const eggCard = document.getElementById('egg-card');
+    if (!modal || !eggCard) return;
+
+    const insertKevin = () => {
+        if (eggCard.querySelector('.egg-kevin')) return;
+        const img = document.createElement('img');
+        img.src = 'images/kevin.webp';
+        img.alt = 'Kevin';
+        img.className = 'egg-kevin';
+        img.width = 200;
+        eggCard.appendChild(img);
+
+        // Reset select to blank and dispatch change so the animation handler runs
+        const membershipSel = document.querySelector('#membershipLevel');
+        if (membershipSel) {
+            membershipSel.value = '';
+            membershipSel.dispatchEvent(new Event('change'));
+        }
+    };
+
+    const observer = new MutationObserver(() => {
+        if (modal.style.display === 'none') insertKevin();
+    });
+    observer.observe(modal, { attributes: true, attributeFilter: ['style'] });
+};
+
+// rickster-egg-v2.js injects #video-container on DOMContentLoaded � poll until it exists
+const eggPoll = setInterval(() => {
+    if (document.getElementById('video-container')) {
+        clearInterval(eggPoll);
+        watchForRicksterModal();
+    }
+}, 50);

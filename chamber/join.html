@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="light">
 
 <head>
@@ -31,6 +31,7 @@
     <script src="scripts/date.js" defer></script>
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/theme-toggle.js" defer></script>
+    <script src="scripts/rickster-egg-v2.js" defer></script>
     <script src="scripts/join.js" type="module"></script>
 </head>
 
@@ -64,7 +65,7 @@
                     <label>
                         First Name *
                         <input type="text" name="firstName" id="firstName"
-                            required aria-required="true"
+                            required
                             title="Enter your first name"
                             placeholder="Monkey"
                             autocomplete="given-name">
@@ -73,7 +74,7 @@
                     <label>
                         Last Name *
                         <input type="text" name="lastName" id="lastName"
-                            required aria-required="true"
+                            required
                             title="Enter your last name"
                             placeholder="Primate"
                             autocomplete="family-name">
@@ -91,59 +92,58 @@
                     <label>
                         Email Address *
                         <input type="email" name="email" id="email"
-                            required aria-required="true"
+                            required
                             title="Enter a valid email address"
                             autocomplete="email"
                             placeholder="you@example.com">
                     </label>
 
-                    <label>
-                        Mobile Phone *
-                        <div class="phone-field">
-                            <!-- Code box: flag + dial code shown visually; invisible select handles interaction -->
-                            <div class="phone-code-box">
-                                <span class="phone-code-label">Code</span>
-                                <div class="phone-code-inner">
-                                    <img id="country-flag"
-                                        src=""
-                                        alt=""
-                                        width="28"
-                                        height="20"
-                                        aria-hidden="true">
-                                    <span id="dial-code-display" class="loading-dots"></span>
-                                </div>
-                                <select id="country-code"
-                                    name="countryCode"
-                                    aria-label="Country dial code"
-                                    title="Select your country dial code">
-                                    <option value="">Loading…</option>
-                                </select>
+                    <!-- Mobile Phone: <div> inside <label> is invalid HTML — split as siblings -->
+                    <label class="field-label">Mobile Phone *</label>
+                    <div class="phone-field">
+                        <div class="phone-code-box">
+                            <span class="phone-code-label">Code</span>
+                            <div class="phone-code-inner">
+                                <img id="country-flag"
+                                    src="images/flag-placeholder.webp"
+                                    alt="Country flag"
+                                    width="28"
+                                    height="14"
+                                    aria-hidden="true">
+                                <span id="dial-code-display" class="loading-dots"></span>
                             </div>
-                            <!-- Phone number box -->
-                            <div class="phone-number-box">
-                                <span class="phone-number-label">Phone number</span>
-                                <input type="tel" name="phone" id="phone"
-                                    required aria-required="true"
-                                    title="Enter your mobile phone number"
-                                    autocomplete="tel"
-                                    placeholder="555 555 5555">
-                            </div>
+                            <label for="country-code" class="visually-hidden">Country dial code</label>
+                            <select id="country-code"
+                                name="countryCode"
+                                aria-label="Country dial code"
+                                title="Select your country dial code">
+                                <option value="">Loading…</option>
+                            </select>
                         </div>
-                    </label>
+                        <div class="phone-number-box">
+                            <span class="phone-number-label">Phone number</span>
+                            <label for="phone" class="visually-hidden">Phone number</label>
+                            <input type="tel" name="phone" id="phone"
+                                required
+                                title="Enter your mobile phone number"
+                                autocomplete="tel"
+                                placeholder="555 555 5555">
+                        </div>
+                    </div>
 
                     <label>
                         Business / Organization Name *
                         <input type="text" name="businessName" id="businessName"
-                            required aria-required="true"
+                            required
                             title="Enter your business or organization name"
-                            autocomplete="organization-title"
+                            autocomplete="organization"
                             placeholder="Monkey Business">
                     </label>
 
                     <label>
                         Membership Level *
                         <select name="membershipLevel" id="membershipLevel"
-                            required aria-required="true"
+                            required
                             title="Select a membership level">
                             <option value="">— Select a level —</option>
                             <option value="np">NP Membership — Non-profit (no fee)</option>
@@ -157,7 +157,8 @@
                         Business Description
                         <textarea name="description" id="description"
                             title="Briefly describe your business or organization"
-                            rows="4"></textarea>
+                            rows="4"
+                            placeholder="Tell us about your business or organization..."></textarea>
                     </label>
 
                     <input type="hidden" name="timestamp" id="timestamp">
@@ -198,6 +199,14 @@
                         <p class="membership-price">$300 / year</p>
                         <p>Full access: spotlight advertising, sponsorships, and social media features.</p>
                         <button class="open-modal-btn" data-modal="gold-modal" aria-label="Learn more about Gold Membership">Learn More</button>
+                    </div>
+
+                    <!-- Easter egg — revealed when any level is selected -->
+                    <div class="membership-card membership-card--egg" id="egg-card" style="display: none;">
+                        <h3>Keep trying</h3>
+                        <p class="membership-price">Free</p>
+                        <p>You guys give up, or are you thirsty for more?</p>
+                        <button class="rickster-egg" aria-label="Surprise membership option">Learn More</button>
                     </div>
 
                 </div>
