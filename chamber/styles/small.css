@@ -667,10 +667,15 @@ textarea:not(:placeholder-shown) {
     color: var(--body-background-color);
 }
 
+select#membershipLevel:has(option[value=""]:checked) {
+    border-left: 10px solid var(--required); 
+}
 select:has(option:checked:not([value=""])) {
     background-color: var(--required-complied);
     color: var(--body-background-color);
+    
 }
+
 input::placeholder,
 textarea::placeholder {
     color: var(--card-border);
