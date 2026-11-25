@@ -29,6 +29,7 @@
     --required-complied: #20208F;
     --input-filled-bg: #ffffff;
     --input-filled-color: #000000;
+    --placeholder-color: rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="dark"] {
@@ -62,6 +63,7 @@
     --required-complied: #64D2FF;
     --input-filled-bg: #2C2C2E;
     --input-filled-color: #EBEBF5;
+    --placeholder-color: rgba(200, 200, 200, 0.3);
 }
 
 [data-theme="light"] .dark  { display: none; }
@@ -678,7 +680,7 @@ select:has(option:checked:not([value=""])) {
 
 input::placeholder,
 textarea::placeholder {
-    color: var(--card-border);
+    color: var(--placeholder-color);
     opacity: 1;
 }
 
